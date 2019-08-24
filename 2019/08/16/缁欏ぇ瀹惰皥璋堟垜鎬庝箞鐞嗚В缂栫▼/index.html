@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>给大家谈谈我怎么理解编程 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="current">
+                    <a href="/index">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/HTML5/">HTML5</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flex/">Flex</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>给大家谈谈我怎么理解编程</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/16/缁欏ぇ瀹惰皥璋堟垜鎬庝箞鐞嗚В缂栫▼/">给大家谈谈我怎么理解编程</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-16
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/16/缁欏ぇ瀹惰皥璋堟垜鎬庝箞鐞嗚В缂栫▼/">给大家谈谈我怎么理解编程</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-16
+            </p>
+            <p>
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="给大家谈谈我怎么理解编程"><a href="#给大家谈谈我怎么理解编程" class="headerlink" title="给大家谈谈我怎么理解编程"></a>给大家谈谈我怎么理解编程</h1><p><strong>目录</strong></p>
+<p><a href="#前言">前言</a></p>
+<p><a href="#什么是编程">什么是编程</a></p>
+<p><a href="#从问题出发">从问题出发</a></p>
+<p><a href="#在自己的生活中使用编程">在自己的生活中使用编程</a></p>
+<p><a href="#给初学者的入门路线——略知天高地厚">给初学者的入门路线——略知天高地厚</a></p>
+<p><a href="#写在最后">写在最后</a></p>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司要招一个人后端程序员，把面试的工作安排给了我。面试招人也很顺利，也招到了一个不错的小伙子，但让我印象深刻的是其中一个有着三年工作经验的“老程序员”。这位“老程序员”非常自信地给我展示了十多个他写的网站后台以及哪些千篇一律 CRUD 的表单，然后跟我谈他写的 SQL。</p>
+<p>“你看你写了那么多差不多相似的东西，那你有没有积累一套自己的库或者工具用来快速生成这些 CRUD 的表单？”，我问道。“啊？”。看出了他明显有些疑惑，于是接着问道，“那你除了给公司写这些业务代码以外，有尝试过给自己写过代码吗？也就是说方便自己生活或者工作的工具之类的？”。“……”，他沉默了，不知道该怎么回答我。最终的结果当然不言而喻，否则我也不会写在这篇文章里面。在我看来，这位拥有三年工作经验的老程序猿，虽然他熟悉语言，熟悉框架，熟悉业务，但其实并没有学会编程，甚至不如我们刚招进来的应届生小伙子。</p>
+<p>这次事情让我想了很久，也向身边很多人交了一下，才发现原来在编程时候，很多我觉得理所当然的基本能力，居然都是稀缺资源。这当然并不怪谁，因为“意识”或者“思维”这个看不到摸不到的东西，并不是说自己只要努力就行了，还需要向别人借鉴吸取经验，也需要有自己的悟性和思考。那么借着这篇文章，我也结合那么多年来的所想所感来聊聊怎么学编程，怎么学好编程。</p>
+<hr>
+<h2 id="什么是编程"><a href="#什么是编程" class="headerlink" title="什么是编程"></a>什么是编程</h2><p>我的理解的编程是：面对一个问题，经过思考后，最后将解决这个问题的思路用计算机能理解的方式表达出来。这里面有三个关键词，“问题”、“思考”以及“表达”，我觉得这是三个关键词也是编程最关键的地方。但是非常多的人看待编程这个问题的时候，往往都只能看到最浅层面上的写代码，而“问题”和“思考”这个两个关键词则被大多数人所忽视了。</p>
+<p>其实“程序员”这项工作，无论是想做技术还是转管理，无论是做学术还是做工程，只要越往上走，“问题” 所占的重量就会越来越高，相应的写代码所占到的能力比重会越来越低。甚至一些顶层的大型系统架构师，顶层的算法科学家，甚至可能一行代码都不需要写。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMzLnpoaW1nLmNvbS84MC92Mi0xOTU0MmE3NzRmYTRjMDA1YmI1MDQ3ZTY4N2UxMDFhNl9oZC5qcGc" alt></p>
+<h2 id="从问题出发"><a href="#从问题出发" class="headerlink" title="从问题出发"></a>从问题出发</h2><p>举个例子，乔帮主的 iPhone 为什么能重新定义手机，因为一开始大家将手机所解决的问题定死在了打电话收短信这个通信领域，而乔帮主用 iPhone 重新定义了手机所解决的问题，让打电话和收短信支部会是附属的功能之一。乔帮主重新定义了问题，让以通讯起家的摩托罗拉，诺基亚等大厂从此衰败的。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMxLnpoaW1nLmNvbS84MC92Mi02NmFiNzM1NDBmYjM1OWVmNmEzNTkxN2ZiMTFiOTQ5NF9oZC5qcGc" alt></p>
+<p>众所周知，前端技术发展迅速，很多前端们大呼学习成本高，但是前端的小伙伴们真的想明白了前端为什么会如此迅速地发展，到底是什么在领着大家快速往前跑？答案还是我们这章节的标题——问题。比如，Vue / React 等框架的出现，并不是解决了 jQuery 所面临的 DOM 操作复杂的问题，而是从新定义了问题。前端的高速发展，就是我们的先辈们一遍一遍重新定义我们面对的问题而产生的。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMyLnpoaW1nLmNvbS84MC92Mi02NTQ2YjI1NWUwNDc5MmNiZTZjY2IyMzU3ZTY4NzJiNV9oZC5qcGc" alt></p>
+<p>我在知乎或者其他编程社区经常能看到有人问类似的问题，大致是说已经学会了一门编程语言了，但是却不知道自己能干什么。这种问题最常出现在计算机科班学生的身上，比如大一的时候学了 C / C艹 了，所有的语法都学会了，但是不知道自己能干嘛。</p>
+<p>因为在那时我们并不知道自己学了这门编程语言，面对的是什么样的问题。老师从来都没有告诉我们学一门学科要拿来干嘛。这就导致了我们在学习的时候，尤其是学习计算机一些理论基础的时候，完全没有目的，不知道自己学习的这门学科面对的是什么问题，不知道它需要解决什么问题，在现实中是要怎么用。最终非常多学计算机的莘莘学子，像我一样，哪怕在双一流高校学习了四年，甚至靠着高中积累下来的应试经验拿了很高的成绩，却依然是一脸懵逼。</p>
+<p>学习编程，尤其是计算机科班朋友一定要注意，在你学习一门课程的时候，请一定一定先了解这门学科的背景，历史以及所面临和需要解决的问题。</p>
+<hr>
+<h2 id="在自己的生活中使用编程"><a href="#在自己的生活中使用编程" class="headerlink" title="在自己的生活中使用编程"></a>在自己的生活中使用编程</h2><p>我大学时候是软件工程专业，我曾经推荐过一个直系小学妹用“按键精灵”这个工具。她非常疑惑为什么我一个她眼中的“专业”人士会给她这个正在走向专业道路上的人推荐一个“业余”工具。我跟她说，如果她能用好这个工具，那么肯定就能学好编程。</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.anjian.com/" target="_blank" rel="noopener">按键精灵2014正式版_按键精灵Mac版_按键精灵下载-按键精灵官方网站-免费下载www.anjian.com</a></p>
+<p>按键精灵，这样一个非常非常业余，很多所谓“专业人士”都看不上的小工具，却蕴含着编程这个领域非常深刻的理解。那就是发现我们生活中的问题，并且用我们手上能利用的工具来改善我们生活，方便我们生活的能力。</p>
+<p>还记得我们初中历史上学的内容吗？人与动物根本区别是什么呢？答案是：会不会制造和使用工具。我们要解决一个问题的前提是，我们知道这是一个问题。我们人类会制造和使用工具，前提是我们人类明白 “提高效率” 这是一个问题。</p>
+<p>在按键精灵上面写脚本的大部分都不是专业的程序员，他们可能是已经在工作的公务员，小学老师，也可能是闲着蛋疼的大学生，甚至可能是一个喜欢玩游戏的初中生在给自己做游戏挂机脚本。但是在我眼里，他们是一群保留了人类进步那种最原始的动力和火种的人。所以我也相信，这些人如果真的从事了程序员这个行业，毫无疑问都将会是其中的佼佼者，因为他们都懂得编程，只不过还不会一门编程语言而已。</p>
+<h2 id="给初学者的入门路线——略知天高地厚"><a href="#给初学者的入门路线——略知天高地厚" class="headerlink" title="给初学者的入门路线——略知天高地厚"></a>给初学者的入门路线——略知天高地厚</h2><p>“好的，你说的道理我都懂了，那么我想学编程，我应该怎么办？”</p>
+<p>不给勺的鸡汤都是耍流氓，我写这篇文章当然不是为了只耍个流氓就跑的，所以还是希望给想学编程的小伙伴们一些更为实质的意见吧。</p>
+<p><strong>学一门“性价比”极高的编程语言——JavaScript</strong></p>
+<p>首先对于选择编程语言方面不要犹豫，就学 JavaScript。我从来都喜欢推荐萌新入门学习 JavaScript，甚至我推荐所有相关行业都学一下 JavaScript 备用，这不是因为 JavaScript 有多好，而只是因为 JavaScript “性价比”非常高。</p>
+<p>我推荐用 JavaScript 入门的原因非常简单：</p>
+<ol>
+<li>简单好学，并且包含虽有主流编程语言范式。</li>
+<li>可以简单快速的建立漂亮的 UI 界面。</li>
+<li>从前端到后端，从 PC 端到移动端，从应用到游戏，从嵌入式和机器人到深度学习以及人工智能， JavaScript 都能有所涉及。</li>
+</ol>
+<p>回到我们本章的标题《略知天高地厚》，略知代表我们并不需要去深入研究所有领域，我们只需要依赖 JavaSciprt 这个环境，以及知道这些领域的成果，我们就可以通过“调包”、“调API”来为我们解决问题就行了，所以才是略知天高地厚。</p>
+<p><strong>找到自己的方向</strong></p>
+<p>略知天高地厚，是大概清楚编程的能力，大致能干什么。现在你已经有足够的能力去找到一个自己喜欢或者适合的领域自学了。现代环境对程序员的要求已经慢慢变高了，一个正经的程序员基本上都能熟练使用 3 门以上的编程语言。所以不要纠结于编程语言，需要用到就去学便是。</p>
+<p>到目前为止，上面学到的所有东西也许可能不见得会成为你吃饭的直接工具，但是绝对是你背后的助力。</p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>编程是一项对一个人综合能力的集中体现，并不是说学个语言，会写两行代码就叫做会编程的。最后欢迎来到我们编程世界！也希望大家能够自由地畅游在我们这个多最多彩的世界！</p>
+<p>Hello world!</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '给大家谈谈我怎么理解编程'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱涓夌瘒 鏃ュ織杈撳嚭/">SpringBoot入门系列：第三篇 日志输出</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱鍥涚瘒 鏃ュ織璇﹁В/">SpringBoot入门系列：第四篇 日志详解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱浜岀瘒 鍐嶅Hello World/">SpringBoot入门系列：第二篇 再学Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/璇讳功璇綍5/">读书语录5</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/鍦ㄨ櫄鎷熸満瀹夎Win7鍑虹幇锛歞irectory ezboot not /">在虚拟机安装Win7出现：directory ezboot not</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/璇讳功璇綍4/">读书语录4</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/鐢╬hpnow鎼缓PHP鐜/">用phpnow搭建PHP环境</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/PanDownload缃戠洏涓嬭浇/">PanDownload网盘下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/npm瀹夎鏁欑▼/">npm安装教程</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/CSS3涓璅lex寮规€у竷灞€璇ュ浣曠伒娲昏繍鐢紵/">CSS3中Flex弹性布局该如何灵活运用？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/PHP 瀹夎/">PHP 安装</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/php鍏ラ棬瑙嗛鏁欑▼/">php入门视频教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/娴忚鍣ㄥ敜璧稱Q鏂规硶/">浏览器唤起QQ方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/浠€涔堟槸鏁版嵁缁撴瀯/">什么是数据结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/璇讳功璇綍3/">读书语录3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/鍦ㄨ櫄鎷熸満瀹夎Win7鍑虹幇锛歞irectory ezboot not /">在虚拟机安装Win7出现：directory ezboot not</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/鐜板湪鐨勫姫鍔涳紝鏄负浜嗗皬鏃跺€欏惞杩囩殑鐗涢€硷紒/">现在的努力，是为了小时候吹过的牛逼！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/GitHub-Hexo-鎼缓涓汉鍗氬鍙蹭笂鏈€璇︾粏鏁欑▼/">GitHub+Hexo 搭建个人博客史上最详细教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Vue-js妗嗘灦/">Vue.js框架</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/16/缁欏ぇ瀹惰皥璋堟垜鎬庝箞鐞嗚В缂栫▼/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/16/缁欏ぇ瀹惰皥璋堟垜鎬庝箞鐞嗚В缂栫▼/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/16/缁欏ぇ瀹惰皥璋堟垜鎬庝箞鐞嗚В缂栫▼/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Apache/" style="font-size: 16.334300288616767px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 17.499956168768232px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 13.590148594259897px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 17.092690054626516px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/css/" style="font-size: 10.678588481578068px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 9.331625107987758px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/node-js/" style="font-size: 8.48791397021156px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 19.31531977800976px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 9.434435163722537px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 8.41820128573912px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/js/" style="font-size: 14.347381651406927px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 10.200446104785478px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/java/" style="font-size: 10.165953843330591px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/Java/" style="font-size: 13.054440269900027px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 15.36174157269353px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/hexo/" style="font-size: 13.945884884906548px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 9.976088103084605px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 19.244356981775148px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 10.068793477332736px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/数据库/" style="font-size: 15.586695270901256px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/final/" style="font-size: 14.54691876441836px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 13.67416731726054px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/npm/" style="font-size: 15.405268215583394px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/Vue/" style="font-size: 15.657112762965173px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 9.531944951668759px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 14.649742882022991px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/博客/" style="font-size: 9.10999765239816px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/mysql/" style="font-size: 11.06038218789812px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 16.128201240933677px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/CSS/" style="font-size: 16.605253678954938px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 19.396721881327245px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 9.260629835829864px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 17.756305465617526px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Android/" style="font-size: 11.514349177812013px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/图床/" style="font-size: 16.935503642102965px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 9.658081317022933px;" class="tag-cloud-link">Vue.js</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Fri Aug 16 2019 08:53:58 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'https://github.com/Armani6/Armani6.github.io.git'
+      window.commentConfig.client_id = '6a212ab58be58e590ade'
+      window.commentConfig.client_secret = '5c2075d8dac7efd415af06d1f32332360dff4aba'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Fri Aug 16 2019 08:53:58 GMT+0800',
+        owner: 'Armani6',
+        repo: 'https://github.com/Armani6/Armani6.github.io.git',
+        client_id: '6a212ab58be58e590ade',
+        client_secret: '5c2075d8dac7efd415af06d1f32332360dff4aba',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>

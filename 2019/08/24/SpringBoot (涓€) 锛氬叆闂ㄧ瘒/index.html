@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>SpringBoot (一) ：入门篇 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="current">
+                    <a href="/index">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/HTML5/">HTML5</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flex/">Flex</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>SpringBoot (一) ：入门篇</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/Java/">Java</a>, 
+                
+                <a href="/tags/SpringBoot/">SpringBoot</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-24
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-24
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/Java/">Java</a>, 
+                
+                <a href="/tags/SpringBoot/">SpringBoot</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="什么是spring-boot"><a href="#什么是spring-boot" class="headerlink" title="什么是spring boot"></a><strong>什么是spring boot</strong></h2><p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。用我的话来理解，就是spring boot其实不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包，spring boot整合了所有的框架（不知道这样比喻是否合适）。</p>
+<h2 id="使用spring-boot有什么好处"><a href="#使用spring-boot有什么好处" class="headerlink" title="使用spring boot有什么好处"></a><strong>使用spring boot有什么好处</strong></h2><p>其实就是简单、快速、方便！平时如果我们需要搭建一个spring web项目的时候需要怎么做呢？</p>
+<p>1）配置web.xml，加载spring和spring mvc</p>
+<p>2）配置数据库连接、配置spring事务</p>
+<p>3）配置加载配置文件的读取，开启注解</p>
+<p>4）配置日志文件</p>
+<p>…</p>
+<p>配置完成之后部署tomcat 调试</p>
+<p>…</p>
+<p>现在非常流行微服务，如果我这个项目仅仅只是需要发送一个邮件，如果我的项目仅仅是生产一个积分；我都需要这样折腾一遍!</p>
+<p>但是如果使用spring boot呢？</p>
+<p>很简单，我仅仅只需要非常少的几个配置就可以迅速方便的搭建起来一套web项目或者是构建一个微服务！</p>
+<p><strong>快速入门</strong></p>
+<p>说了那么多，手痒痒的很，马上来一发试试!</p>
+<p><strong>maven构建项目</strong></p>
+<p>1、访问<a href="http://start.spring.io/" target="_blank" rel="noopener">http://start.spring.io/</a></p>
+<p>2、选择构建工具Maven Project、Spring Boot版本1.3.6以及一些工程基本信息，点击“Switch to the full version.”java版本选择1.7，可参考下图所示：</p>
+<p><img src="https://s2.ax1x.com/2019/08/22/ma4Pu4.png" alt></p>
+<p>3、点击Generate Project下载项目压缩包</p>
+<p>4、解压后，使用eclipse，Import -&gt; Existing Maven Projects -&gt; Next -&gt;选择解压后的文件夹-&gt; Finsh，OK done!</p>
+<p>项目结构介绍</p>
+<p><img src="https://s2.ax1x.com/2019/08/22/ma4m8K.png" alt></p>
+<p>如上图所示，Spring Boot的基础结构共三个文件:</p>
+<ul>
+<li>src/main/java 程序开发以及主程序入口</li>
+<li>src/main/resources 配置文件</li>
+<li>src/test/java 测试程序</li>
+</ul>
+<p>另外，spingboot建议的目录结果如下：</p>
+<p>root package结构：com.example.myproject</p>
+<blockquote>
+<p>com</p>
+<p>  +- example</p>
+<p>​    +- myproject</p>
+<p>​      +- Application.java</p>
+<p>​      |</p>
+<p>​      +- domain</p>
+<p>​      |  +- Customer.java</p>
+<p>​      |  +- CustomerRepository.java</p>
+<p>​      |</p>
+<p>​      +- service</p>
+<p>​      |  +- CustomerService.java</p>
+<p>​      |</p>
+<p>​      +- controller</p>
+<p>​      |  +- CustomerController.java</p>
+<p>​      |</p>
+</blockquote>
+<ol>
+<li>Application.java 建议放到根目录下面,主要用于做一些框架配置</li>
+<li>domain目录主要用于实体（Entity）与数据访问层（Repository）</li>
+<li>service 层主要是业务类代码</li>
+<li>controller 负责页面访问控制</li>
+</ol>
+<p>采用默认配置可以省去很多配置，当然也可以根据自己的喜欢来进行更改</p>
+<p>最后，启动Application main方法，至此一个java项目搭建好了！</p>
+<p><strong>引入web模块</strong></p>
+<p>1、pom.xml中添加支持web的模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>pom.xml文件中默认有两个模块：</p>
+<p>spring-boot-starter ：核心模块，包括自动配置支持、日志和YAML；</p>
+<p>spring-boot-starter-test ：测试模块，包括JUnit、Hamcrest、Mockito。</p>
+<p>2、编写controller内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class HelloWorldController &#123;</span><br><span class="line">    @RequestMapping(&quot;/hello&quot;)</span><br><span class="line">    public String index() &#123;</span><br><span class="line">        return &quot;Hello World&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@RestController 的意思就是controller里面的方法都以json格式输出，不用再写什么jackjson配置的了！</p>
+<p>3、启动主程序，打开浏览器访问<a href="http://localhost:8080/hello，就可以看到效果了，有木有很简单！" target="_blank" rel="noopener">http://localhost:8080/hello，就可以看到效果了，有木有很简单！</a></p>
+<p><strong>如何做单元测试</strong></p>
+<p>打开的src/test/下的测试入口，编写简单的http请求来测试；使用mockmvc进行，利用MockMvcResultHandlers.print()打印出执行结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@SpringApplicationConfiguration(classes = MockServletContext.class)</span><br><span class="line">@WebAppConfiguration</span><br><span class="line">public class HelloWorldControlerTests &#123;</span><br><span class="line">    private MockMvc mvc;</span><br><span class="line">    @Before</span><br><span class="line">    public void setUp() throws Exception &#123;</span><br><span class="line">        mvc = MockMvcBuilders.standaloneSetup(new HelloWorldController()).build();</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void getHello() throws Exception &#123;</span><br><span class="line">    mvc.perform(MockMvcRequestBuilders.get(&quot;/hello&quot;).accept(MediaType.APPLICATION_JSON))</span><br><span class="line">                .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">                .andDo(MockMvcResultHandlers.print())</span><br><span class="line">                .andReturn();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>开发环境的调试</strong></p>
+<p>热启动在正常开发项目中已经很常见了吧，虽然平时开发web项目过程中，改动项目启重启总是报错；但springBoot对调试支持很好，修改之后可以实时生效，需要添加以下的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">        &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br><span class="line"> </span><br><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;configuration&gt;</span><br><span class="line">                &lt;fork&gt;true&lt;/fork&gt;</span><br><span class="line">            &lt;/configuration&gt;</span><br><span class="line">        &lt;/plugin&gt;</span><br><span class="line">&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
+
+<p>该模块在完整的打包环境下运行的时候会被禁用。如果你使用java -jar启动应用或者用一个特定的classloader启动，它会认为这是一个“生产环境”。</p>
+<p><strong>总结</strong></p>
+<p>使用spring boot可以非常方便、快速搭建项目，使我们不用关心框架之间的兼容性，适用版本等各种问题，我们想使用任何东西，仅仅添加一个配置就可以，所以使用sping boot非常适合构建微服务。</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'SpringBoot (一) ：入门篇'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱涓夌瘒 鏃ュ織杈撳嚭/">SpringBoot入门系列：第三篇 日志输出</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱鍥涚瘒 鏃ュ織璇﹁В/">SpringBoot入门系列：第四篇 日志详解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱浜岀瘒 鍐嶅Hello World/">SpringBoot入门系列：第二篇 再学Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/璇讳功璇綍5/">读书语录5</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/鍦ㄨ櫄鎷熸満瀹夎Win7鍑虹幇锛歞irectory ezboot not /">在虚拟机安装Win7出现：directory ezboot not</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/璇讳功璇綍4/">读书语录4</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/鐢╬hpnow鎼缓PHP鐜/">用phpnow搭建PHP环境</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/PanDownload缃戠洏涓嬭浇/">PanDownload网盘下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/npm瀹夎鏁欑▼/">npm安装教程</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Hexo浣跨敤缁嗚妭鍙婂浘鐗囦笉鏄剧ず闂/">Hexo使用细节及图片不显示问题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/PHP EOF(heredoc) 浣跨敤璇存槑/">PHP EOF(heredoc) 使用说明</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo甯哥敤鎸囦护/">hexo常用指令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/姣忎釜浜洪兘鏈夎嚜宸辩殑娲绘硶锛屾病蹇呰鍘诲鍒跺埆浜虹殑鐢熸椿/">每个人都有自己的活法，没必要去复制别人的生活</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/榧犳爣鐐瑰嚮缃戦〉鍑虹幇鐖卞績鐗规晥/">鼠标点击网页出现爱心特效</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/11绉嶉珮鏁堝崟璇嶈蹇嗘硶锛屼綘鎯宠鐨勯兘鏈夛紒/">11种高效单词记忆法，你想要的都有！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/寤惰繜鍔犺浇-Lazyload-涓夌瀹炵幇鏂瑰紡/">延迟加载(Lazyload)三种实现方式</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/寮规€у拰妯″瀷浠嬬粛/">弹性和模型介绍</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo鏁欑▼-鍩烘湰閰嶇疆-鏇存崲涓婚/">hexo教程:基本配置+更换主题</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Apache/" style="font-size: 15.184988860697786px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 18.91844699417481px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 14.454732230798566px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 15.430537684548964px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/css/" style="font-size: 19.569151223390758px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 13.600310630105504px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/node-js/" style="font-size: 12.383135965309297px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 13.998956642769526px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 12.822202312934724px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 13.717410561565792px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/js/" style="font-size: 18.023843165031664px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 18.986660745230036px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/java/" style="font-size: 19.51152877672103px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/Java/" style="font-size: 15.800631319436278px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 19.887592863709504px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/hexo/" style="font-size: 17.375026741018956px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 8.359493779949446px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 11.486398261238218px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 16.888789860875633px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/数据库/" style="font-size: 19.25822621088571px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/final/" style="font-size: 9.28346365319813px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 13.54160739005355px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/npm/" style="font-size: 14.357177125344188px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/Vue/" style="font-size: 8.276874182689902px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 17.557891894394025px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 14.06372023535741px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/博客/" style="font-size: 10.467972047416723px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/mysql/" style="font-size: 15.331934886606916px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 8.495258275309286px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/CSS/" style="font-size: 19.198440782042656px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 13.634248692705057px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 15.971178835782023px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 13.157251005859255px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Android/" style="font-size: 16.880984157793936px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/图床/" style="font-size: 8.330803326424178px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 19.7927350822125px;" class="tag-cloud-link">Vue.js</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sat Aug 24 2019 10:07:28 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'https://github.com/Armani6/Armani6.github.io.git'
+      window.commentConfig.client_id = '6a212ab58be58e590ade'
+      window.commentConfig.client_secret = '5c2075d8dac7efd415af06d1f32332360dff4aba'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Sat Aug 24 2019 10:07:28 GMT+0800',
+        owner: 'Armani6',
+        repo: 'https://github.com/Armani6/Armani6.github.io.git',
+        client_id: '6a212ab58be58e590ade',
+        client_secret: '5c2075d8dac7efd415af06d1f32332360dff4aba',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>

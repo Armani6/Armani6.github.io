@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>Java实现简单记事本 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="current">
+                    <a href="/index">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/HTML5/">HTML5</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flex/">Flex</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>Java实现简单记事本</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/21/Java瀹炵幇绠€鍗曡浜嬫湰/">Java实现简单记事本</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/Java/">Java</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-21
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/21/Java瀹炵幇绠€鍗曡浜嬫湰/">Java实现简单记事本</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-21
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/Java/">Java</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="java实现简单记事本"><a href="#java实现简单记事本" class="headerlink" title="java实现简单记事本"></a>java实现简单记事本</h1><p>本次做这个记事本小程序，主要是为了学习Swing包中几个重要的类JFileChooser，JOptionPane，JMenu，当然也顺便巩固一下前面学的IO 流的知识。</p>
+<h2 id="一、简要介绍"><a href="#一、简要介绍" class="headerlink" title="一、简要介绍"></a>一、简要介绍</h2><p>1、JFileChooser</p>
+<p> JFileChooser为用户选择文件提供了一种简单机制，可弹出针对用户主目录的文件选择器。编写记事本程序主要用到了以下几种方法:</p>
+<p>a.  showOpenDialog(Component parent) :弹出一个 “Open File” 文件选择器对话框，该文件选择器被弹下时返回一个int型数据，包括以下几种状态： </p>
+<pre><code> JFileChooser.CANCEL_OPTION         取消
+
+JFileChooser.APPROVE_OPTION      确认
+
+JFileChooser.ERROR_OPTION            如果发生错误或者该对话框已被解除 </code></pre><p>b.  showSaveDialog(Component parent) : 弹出一个 “Save File” 文件选择器对话框，该文件选择器被弹下时返回一个int型数据，状态同上；</p>
+<p>c. getSelectedFile()    返回选中的文件，返回值为File类型；</p>
+<p>d. getName(File f) 返回文件名，返回值为String类型</p>
+<p>2、JOptionPane</p>
+<p> 1.1、用途：JOptionPane主要用来弹出要求用户提供值或向其发出通知的标准对话框。</p>
+<p> 1.2、特点：所有对话框都是有模式的，在用户交互完成之前，每个 showXxxDialog 方法都一直阻塞调用者。</p>
+<p> 1.3、基本类型：</p>
+<pre><code>showConfirmDialog()：  确认对话框 
+            showInputDialog()：         输入对话框 
+            showMessageDialog()：消息提示框 
+            showOptionDialog()：     选择对话框
+
+ JOptionPane类方法众多，但基本上用起来都是对上述四种方法的单行调用。</code></pre><p>1.4、参数介绍：</p>
+<p>以下述方法为例：</p>
+<blockquote>
+<p>showOptionDialog(Component parentComponent, Object message, String title, int optionType, int messageType, Icon icon, Object[] options, Object initialValue)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th align="center">描述</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>parentComponent</td>
+<td align="center">对话框容器</td>
+<td align="left">Component</td>
+</tr>
+<tr>
+<td>message</td>
+<td align="center">消息框</td>
+<td align="left">Object</td>
+</tr>
+<tr>
+<td>title</td>
+<td align="center">对话框标题</td>
+<td align="left">String</td>
+</tr>
+<tr>
+<td>optionType</td>
+<td align="center">选择按钮类型</td>
+<td align="left">int： DEFAULT_OPTION          YES_NO_OPTION  YES_NO_CANCEL_OPTION    OK_CANCEL_OPTION</td>
+</tr>
+<tr>
+<td>messageType</td>
+<td align="center">消息类型</td>
+<td align="left">int：ERROR_MESSAGE      INFORMATION_MESSAGE WARNING_MESSAGE  QUESTION_MESSAGE   PLAIN_MESSAGE</td>
+</tr>
+<tr>
+<td>icon</td>
+<td align="center">自定义消息图标</td>
+<td align="left">Icon</td>
+</tr>
+<tr>
+<td>options</td>
+<td align="center">操作选项</td>
+<td align="left">Object[]</td>
+</tr>
+<tr>
+<td>intiaIValue</td>
+<td align="center">默认选择</td>
+<td align="left">Object</td>
+</tr>
+</tbody></table>
+<p>有关JOptionPane的具体用法可参考源代码或者下面这篇博客：</p>
+<p><a href="https://blog.csdn.net/tjk123456/article/details/77868034" target="_blank" rel="noopener">https://blog.csdn.net/tjk123456/article/details/77868034</a></p>
+<p>3、JMenu</p>
+<p>3.1、菜单分为下拉式菜单和弹出式菜单（JPopupMenu），其中下拉式菜单需要使用三个组件：JMenuBar（菜单栏）、JMenu（菜单）、JMenuItem（菜单项）。</p>
+<p>3.2、JMenuBar：</p>
+<pre><code>a.  JMenuBar表示一个水平的菜单栏，用来管理菜单，不参与用户交互操作；
+
+b.  可通过调用setJMenuBar( )方法将JMenuBar设置在顶级窗口的顶部；
+
+c.   可通过调用add( JMenu menu)方法添加菜单。</code></pre><p>3.3、 JMenu</p>
+<pre><code>a.  JMenu 表示一个菜单，用来整理菜单项；
+
+b.  通过调用add( )方法可向菜单里面添加菜单项或者菜单、按钮等；
+
+c.  通过调用addSeparator( )方法可向菜单栏里面添加分隔符。</code></pre><p>3.4、 JMenuItem</p>
+<pre><code>a.  JMenuIten表示菜单项，是菜单系统中最基本的组件；
+
+b. JMenuIten继承AbstractButton类，因此可以把它看作一个按钮。</code></pre><h2 id="二、记事本功能实现"><a href="#二、记事本功能实现" class="headerlink" title="二、记事本功能实现"></a>二、记事本功能实现</h2><p>1、实现了记事本的文件打开和保存功能（主要功能）；</p>
+<p>2、更换了标题栏默认的java图标,改成记事本图标；</p>
+<p>3、重写了窗体关闭事件方法，点击关闭按钮时，先做文件是否保存判断，若文件已保存则直接退出程序，否则弹出是否保存文件对话框；</p>
+<p>4、记事本输入框采用滚动条加文本框设计；</p>
+<p>5、文中多次运用JOptionPane和JFileChooser对话框，尽量做到与windows运行机制一样，包含大量操作提示信息；</p>
+<p>6、实现了文件读取、写入、命名、路径选择等功能；</p>
+<h2 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h2><pre><code>package com.liao.notepad0822;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class MainUI extends JFrame {
+
+    private static final long serialVersionUID = -8533346717300013642L;
+    private JTextArea jta;
+    private JScrollPane jsp;
+    private static String name;
+    private JFileChooser jfc = new JFileChooser();
+
+    public static void main(String[] args) {
+        new MainUI().init();
+    }
+
+    // 初始化界面
+    public void init() {
+        setSize(800, 600);
+        setLocationRelativeTo(null);
+        // 设置关闭按钮动作不执行任何操作
+        setDefaultCloseOperation(0);
+        name = &quot;新建文本文档.txt&quot;;
+        // 设置标志图案
+        ImageIcon ii = new ImageIcon(&quot;file\\1.png&quot;);
+        setIconImage(ii.getImage());
+        // 设置文件名
+        setTitle(name + &quot; - 记事本&quot;);
+        // 添加菜单栏
+        addMenu();
+        // 添加文本框
+        jta = new JTextArea();
+        // 添加滚动条
+        jsp = new JScrollPane(jta);
+        jsp.setPreferredSize(new Dimension(780, 550));
+        add(jsp, BorderLayout.CENTER);
+        setVisible(true);// 设置窗口可见
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (showSaveDialog() != JOptionPane.CANCEL_OPTION)// 若不是取消按钮，关闭程序
+                    setDefaultCloseOperation(3);
+            }
+        });
+    }
+
+    // 添加菜单栏
+    private void addMenu() {
+        // 添加菜单栏
+        JMenuBar jmb = new JMenuBar();
+        // 设置菜单栏位置在顶级窗口的顶部
+        setJMenuBar(jmb);
+        // 菜单栏菜单
+        JMenu jm_file = new JMenu(&quot;文件&quot;);
+        JMenu jm_edit = new JMenu(&quot;编辑&quot;);
+        jmb.add(jm_file);
+        jmb.add(jm_edit);
+        // 给文件菜单添加菜单项
+        JMenuItem item1 = new JMenuItem(&quot;打开&quot;);
+        JMenuItem item2 = new JMenuItem(&quot;保存&quot;);
+        jm_file.add(item1);
+        jm_file.add(item2);
+
+        // &quot;打开&quot;菜单项添加动作监听器
+        item1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 是否保存对原文件修改
+                if (showSaveDialog() == JOptionPane.CANCEL_OPTION) {// 取消按钮，则返回
+                    return;
+                }
+                // 弹出一个 &quot;Open File&quot; 文件选择器对话框
+                int select = jfc.showOpenDialog(MainUI.this);
+                // 选择打开文件，则读写文件
+                if (select == JFileChooser.APPROVE_OPTION) {
+                    jta.setText(readFile());// 写入文本框
+                    jta.setCaretPosition(0);// 定位光标至行首
+                }
+            }
+        });
+
+        // “保存”菜单项添加动作监听器
+        item2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (jfc.getSelectedFile() == null) {
+                    createFile();//调用创建文件方法
+                } else {
+                    showSaveDialog();//调用文件是否保存方法
+                }
+            }
+        });
+    }
+
+    // 读取文件
+    private String readFile() {
+        // 声明缓冲字符流变量
+        BufferedReader br = null;
+        StringBuilder sb = null;
+        try {
+            br = new BufferedReader(new FileReader(jfc.getSelectedFile()));
+            sb = new StringBuilder();// 创建缓冲字符串
+            String str;
+            int count = 0;//控制添加换行符，与原文保持一致
+            while ((str = br.readLine()) != null) {
+                if (count == 0)
+                    sb.append(str);
+                if (count++ != 0)
+                    sb.append(&quot;\n&quot; + str);// 添加换行
+            }
+        } catch (FileNotFoundException e1) {
+            // 弹出“文件未找到”对话框，返回null
+            JOptionPane.showMessageDialog(null, &quot;未找到该文件！&quot;);
+            return null;
+        } catch (IOException e1) {
+            // 弹出“文件读取异常”对话框，返回null
+            JOptionPane.showMessageDialog(null, &quot;文件读取异常&quot;);
+            return null;
+        } finally {
+            // 关闭字符流
+            if (br != null)
+                try {
+                    br.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+        }
+        name = jfc.getSelectedFile().getName();
+        setTitle(name + &quot; - 记事本&quot;);//设置文件名
+        return sb.toString();
+    }
+
+    // 保存对话框
+    private int showSaveDialog() {
+        int select = 0;
+        // 判断文本框是否为空
+        if (!jta.getText().equals(&quot;&quot;)) {
+            // 判断文件是否为空
+            if (jfc.getSelectedFile() == null) {
+                select = JOptionPane.showConfirmDialog(MainUI.this, &quot;是否保存修改?&quot;);
+                if (select == JOptionPane.YES_OPTION) {
+                    createFile();//文件不存在，则创建文件
+                }
+            } else {
+                if (!isSaved()) {// 文件未保存
+                    select = JOptionPane.showConfirmDialog(MainUI.this, &quot;是否保存修改?&quot;);
+                    if (select == JOptionPane.YES_OPTION) {
+                        saveFile(jfc.getSelectedFile());
+                    }
+                }
+            }
+        }
+        return select;// 返回选项
+    }
+
+    // 创建新文件
+    private void createFile() {
+        // String name = null;
+        File file = null;
+        // 选择保存或取消
+        if (jfc.showSaveDialog(MainUI.this) == JFileChooser.APPROVE_OPTION) {
+            file = jfc.getSelectedFile();// 获取选中的文件
+        } else {
+            return;
+        }
+        name = jfc.getName(file);// 获取输入的文件名
+        if (file.exists()) { // 若选择已有文件----询问是否要覆盖
+            int i = JOptionPane.showConfirmDialog(null, &quot;该文件已存在,是否覆盖原文件&quot;, &quot;确认&quot;, JOptionPane.YES_NO_OPTION);
+            if (i == JOptionPane.YES_OPTION) {
+                saveFile(file);
+            } else {
+                jfc.showSaveDialog(MainUI.this);// 重新选择
+            }
+        } else {//文件不存在，则直接保存
+            saveFile(file);
+        }
+    }
+
+    // 判断文件是否保存
+    private Boolean isSaved() {
+        // 比较内容
+        if (jta.getText().equals(readFile())) {
+            return true;
+        }
+        return false;
+    }
+
+    // 保存文件,文件不存在则创建新文件
+    private void saveFile(File file) {
+        BufferedWriter bw = null;
+        try {
+            bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+            bw.write(jta.getText());//写入文件
+            bw.flush();
+        } catch (FileNotFoundException e1) {
+            JOptionPane.showMessageDialog(MainUI.this, &quot;文件保存出错&quot; + e1.getMessage());
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } finally {
+            try {
+                if (bw != null)
+                    bw.close();
+            } catch (IOException e1) {
+            }
+        }
+    }
+}</code></pre><h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><p>此次编写记事本程序，基本完成了预期目标，熟悉了解了菜单栏、标题栏、对话框、JFileChooser，JOptionPane以及IO流的相关知识。不过花费的时间略微超过了预期，主要是记事本这个程序看着简单，但实际上对逻辑上的要求比较高。主体功能实现后，后期的一些细节处理往往需要大量的时间去测试、整理及优化。</p>
+<p>这里有个小细节需要注意一下，使用reaLline()读取数据时，要特别注意换行符的使用，保持跟原文结构一样。</p>
+<p>好了，由于本次写记事本主要是为了熟悉Swing里面的几个类，所以记事本其它的一些功能并未去实现，各位有兴趣的话可以自己去尝试！<br> ———————————————— </p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'Java实现简单记事本'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱涓夌瘒 鏃ュ織杈撳嚭/">SpringBoot入门系列：第三篇 日志输出</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱鍥涚瘒 鏃ュ織璇﹁В/">SpringBoot入门系列：第四篇 日志详解</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/25/SpringBoot鍏ラ棬绯诲垪锛氱浜岀瘒 鍐嶅Hello World/">SpringBoot入门系列：第二篇 再学Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (涓€) 锛氬叆闂ㄧ瘒/">SpringBoot (一) ：入门篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/璇讳功璇綍5/">读书语录5</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/鍦ㄨ櫄鎷熸満瀹夎Win7鍑虹幇锛歞irectory ezboot not /">在虚拟机安装Win7出现：directory ezboot not</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/璇讳功璇綍4/">读书语录4</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/鐢╬hpnow鎼缓PHP鐜/">用phpnow搭建PHP环境</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/PanDownload缃戠洏涓嬭浇/">PanDownload网盘下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/npm瀹夎鏁欑▼/">npm安装教程</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Hexo浣跨敤缁嗚妭鍙婂浘鐗囦笉鏄剧ず闂/">Hexo使用细节及图片不显示问题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Node-js鍩烘湰璇硶/">Node.js基本语法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo甯哥敤鎸囦护/">hexo常用指令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/php鍏ラ棬瑙嗛鏁欑▼/">php入门视频教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/娴忚鍣ㄥ敜璧稱Q鏂规硶/">浏览器唤起QQ方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/榧犳爣鐐瑰嚮缃戦〉鍑虹幇鐖卞績鐗规晥/">鼠标点击网页出现爱心特效</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/16/濡備綍灏嗚嚜宸辩殑缃戠珯涓婁紶鑷虫湇鍔″櫒骞堕€氳繃鍩熷悕杩涜璁块棶/">如何将自己的网站上传至服务器并通过域名进行访问</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/绾康鍗氬鎼缓瀹屾垚/">纪念博客搭建完成</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/11绉嶉珮鏁堝崟璇嶈蹇嗘硶锛屼綘鎯宠鐨勯兘鏈夛紒/">11种高效单词记忆法，你想要的都有！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo鏁欑▼-鍩烘湰閰嶇疆-鏇存崲涓婚/">hexo教程:基本配置+更换主题</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/21/Java瀹炵幇绠€鍗曡浜嬫湰/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/21/Java瀹炵幇绠€鍗曡浜嬫湰/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/21/Java瀹炵幇绠€鍗曡浜嬫湰/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Apache/" style="font-size: 12.958210136293719px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 17.753340455158508px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 14.863033589574165px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 15.262676319077489px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/css/" style="font-size: 13.867851516030548px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 19.022179539090466px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/node-js/" style="font-size: 12.091902491988172px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 10.958429799538793px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 12.692739198261663px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 10.504183570298324px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/js/" style="font-size: 17.495300444842606px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 17.6995083574165px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/java/" style="font-size: 9.869040085789848px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/Java/" style="font-size: 16.071287044974838px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 13.868839316768485px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/hexo/" style="font-size: 8.571308750182762px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 8.071986781381248px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 8.075809875607426px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 16.11860227025503px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/数据库/" style="font-size: 8.118412440556401px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/final/" style="font-size: 16.607876232457187px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 8.420048687555624px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/npm/" style="font-size: 15.92411906641042px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/Vue/" style="font-size: 12.591764884463243px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 13.099509604175616px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 8.53293850069212px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/博客/" style="font-size: 19.68032019908999px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/mysql/" style="font-size: 11.939580712768198px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 18.46436954211003px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/CSS/" style="font-size: 19.369040893744906px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 11.860117585527924px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 14.816319485721877px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 11.632200305154196px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Android/" style="font-size: 17.179716559370924px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/图床/" style="font-size: 8.652211479688244px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 15.220427365090178px;" class="tag-cloud-link">Vue.js</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Wed Aug 21 2019 09:38:21 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'https://github.com/Armani6/Armani6.github.io.git'
+      window.commentConfig.client_id = '6a212ab58be58e590ade'
+      window.commentConfig.client_secret = '5c2075d8dac7efd415af06d1f32332360dff4aba'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Wed Aug 21 2019 09:38:21 GMT+0800',
+        owner: 'Armani6',
+        repo: 'https://github.com/Armani6/Armani6.github.io.git',
+        client_id: '6a212ab58be58e590ade',
+        client_secret: '5c2075d8dac7efd415af06d1f32332360dff4aba',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
