@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>spring boot入门教程——Spring Boot快速入门指南 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/3-hexo/">3-hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>spring boot入门教程——Spring Boot快速入门指南</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/24/spring boot入门教程——Spring Boot快速入门指南/">spring boot入门教程——Spring Boot快速入门指南</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Java/">Java</a>, 
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/SpringBoot/">SpringBoot</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-24
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/24/spring boot入门教程——Spring Boot快速入门指南/">spring boot入门教程——Spring Boot快速入门指南</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-24
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Java/">Java</a>, 
+                
+                <a href="/tags/java/">java</a>, 
+                
+                <a href="/tags/SpringBoot/">SpringBoot</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>Spring Boot已成为当今最流行的微服务开发框架，本文是如何使用Spring Boot快速开始Web微服务开发的指南，我们将使创建一个可运行的包含内嵌Web容器（默认使用的是Tomcat）的可运行Jar包。</p>
+<p>传统的Spring应用程序需要配置大量的XML文件才能运行，而使用Spring Boot只需极少的配置，就可以快速获得一个正常运行的Spring应用程序，而这些配置使用的都是注解的形式，不需要再配置XML。</p>
+<p>与Go语言的应用不同，我们知道所有的Java Web应用都必须放在servlet容器（不是像docker容器的那种容器），如Tomcat、Jetty等。Servlet容器被定位为托管web应用程序的高可用组件。</p>
+<h2 id="使用Java构建微服务并发布到Kubernetes平台"><a href="#使用Java构建微服务并发布到Kubernetes平台" class="headerlink" title="使用Java构建微服务并发布到Kubernetes平台"></a>使用Java构建微服务并发布到Kubernetes平台</h2><p>Java作为多年的编程语言届的No.1（使用人数最多，最流行），使用它来构建微服务的人也不计其数，Java的微服务框架Spring中的Spring Boot和Spring Cloud已成为当前最流行的微服务框架。</p>
+<p>下面是Sping技术栈所包含的技术框架图。</p>
+<p><img src="https://s2.ax1x.com/2019/08/22/maIV1K.png" alt></p>
+<p>当然如果在Kubernetes中运行Java语言构建的微服务应用，我们不会使用上图中所有的技术，本节将主要讲解如何使用Spring Boot构建微服务应用。</p>
+<h2 id="Spring的基本原理"><a href="#Spring的基本原理" class="headerlink" title="Spring的基本原理"></a>Spring的基本原理</h2><p>Spring是一套Java开发框架，框架的作用就是为了减少代码的冗余和模块之间的偶尔，使代码逻辑更加清晰，主要是用了<a href="https://docs.spring.io/spring/docs/2.5.x/reference/aop.html" target="_blank" rel="noopener">AOP</a>（Aspect Oriented Programming，面向切面编程）和<a href="http://blog.xiaohansong.com/2015/10/21/IoC-and-DI/" target="_blank" rel="noopener">IoC</a>（Inversion of Control，控制反转）容器的思想，其中AOP是利用了Java的反射机制实现的。为了便于理解AOP可以参考<a href="http://www.blogjava.net/javadragon/archive/2006/12/03/85115.html" target="_blank" rel="noopener">一个简单的Spring的AOP例子</a>。</p>
+<h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>在开始Spring Boot开发之前，需要先确认您的电脑上已经有以下环境：</p>
+<ul>
+<li>JDK8</li>
+<li>Maven3.0+</li>
+<li>Intellij IDEA</li>
+</ul>
+<p>JDK最好使用JDK8版本，Maven和IDEA的安装都十分简单，Maven的仓库配置有必要说一下。</p>
+<h3 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h3><p>在安装好Maven之后，默认的<code>~/.m2</code>目录下是没有maven仓库配置文件<code>settings.xml</code>的，默认使用的是官方的仓库，访问速度会非常慢，我们需要配置下国内的仓库。</p>
+<p>创建<code>~/.m2/settings.xml</code>文件，文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">  &lt;mirrors&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">            &lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">        &lt;/mirror&gt;</span><br><span class="line">  &lt;/mirrors&gt;</span><br><span class="line">  &lt;profiles&gt;</span><br><span class="line">    &lt;profile&gt;</span><br><span class="line">       &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">        &lt;repositories&gt;</span><br><span class="line">            &lt;repository&gt;</span><br><span class="line">                &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">                &lt;name&gt;local private nexus&lt;/name&gt;</span><br><span class="line">                &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;</span><br><span class="line">                &lt;releases&gt;</span><br><span class="line">                    &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">                &lt;/releases&gt;</span><br><span class="line">                &lt;snapshots&gt;</span><br><span class="line">                    &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">                &lt;/snapshots&gt;</span><br><span class="line">            &lt;/repository&gt;</span><br><span class="line">        &lt;/repositories&gt;</span><br><span class="line"></span><br><span class="line">        &lt;pluginRepositories&gt;</span><br><span class="line">            &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;nexus&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;local private nexus&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;</span><br><span class="line">            &lt;releases&gt;</span><br><span class="line">                &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">            &lt;/releases&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">            &lt;/pluginRepository&gt;</span><br><span class="line">        &lt;/pluginRepositories&gt;</span><br><span class="line">    &lt;/profile&gt;&lt;/profiles&gt;</span><br><span class="line">&lt;/settings&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中使用的是阿里云的mirror，国内的下载速度非常快。</p>
+<h2 id="创建第一个Spring-Boot应用"><a href="#创建第一个Spring-Boot应用" class="headerlink" title="创建第一个Spring Boot应用"></a>创建第一个Spring Boot应用</h2><p>我们可以使用以下两种方式创建Spring Boot应用：</p>
+<ul>
+<li>springboot</li>
+<li>maven</li>
+</ul>
+<h3 id="使用springboot命令创建Spring-Boot应用"><a href="#使用springboot命令创建Spring-Boot应用" class="headerlink" title="使用springboot命令创建Spring Boot应用"></a>使用springboot命令创建Spring Boot应用</h3><p>首先需要安装<code>springboot</code>命令行工具。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap pivotal/tap</span><br><span class="line">brew install springboot</span><br></pre></td></tr></table></figure>
+
+<p>使用下面的命令创建应用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring init --build maven --groupId com.example --version 0.0.1-SNAPSHOT --java-version 1.8 --dependencies web --name myproject myproject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>--build</code>使用maven编译或者是gradle</li>
+<li><code>--groupId</code>和<code>--version</code>与maven的<code>pom.xml</code>中的设置对应</li>
+<li><code>--dependencies</code>可以指定多个，如<code>web</code>、<code>jpa</code>、<code>security</code>等starter</li>
+</ul>
+<p>执行上述命令后，将创建如下的目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">└── myproject</span><br><span class="line">    ├── mvnw</span><br><span class="line">    ├── mvnw.cmd</span><br><span class="line">    ├── pom.xml</span><br><span class="line">    └── src</span><br><span class="line">        ├── main</span><br><span class="line">        │   ├── java</span><br><span class="line">        │   │   └── com</span><br><span class="line">        │   │       └── example</span><br><span class="line">        │   │           └── myproject</span><br><span class="line">        │   │               └── MyprojectApplication.java</span><br><span class="line">        │   └── resources</span><br><span class="line">        │       ├── application.properties</span><br><span class="line">        │       ├── static</span><br><span class="line">        │       └── templates</span><br><span class="line">        └── test</span><br><span class="line">            └── java</span><br><span class="line">                └── com</span><br><span class="line">                    └── example</span><br><span class="line">                        └── myproject</span><br><span class="line">                            └── MyprojectApplicationTests.java</span><br><span class="line"></span><br><span class="line">15 directories, 6 files</span><br></pre></td></tr></table></figure>
+
+<p>运行默认的示例应用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
+
+<p>第一次运行需要下载依赖包所以会比较耗费时间，以后每次编译运行速度就会很快。</p>
+<p>在浏览器中访问<a href="localhost:8080" target="_blank" rel="noopener">localhost:8080</a>将看到如下输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Whitelabel Error Page</span><br><span class="line">This application has no explicit mapping for /error, so you are seeing this as a fallback.</span><br><span class="line"></span><br><span class="line">Mon Mar 12 16:26:42 CST 2018</span><br><span class="line">There was an unexpected error (type=Not Found, status=404).</span><br><span class="line">No message available</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Maven创建Spring-Boot应用"><a href="#使用Maven创建Spring-Boot应用" class="headerlink" title="使用Maven创建Spring Boot应用"></a>使用Maven创建Spring Boot应用</h3><p>使用Maven创建Spring Boot应用需要执行以下步骤：</p>
+<ol>
+<li>创建Maven工程所需的<code>pom.xml</code>文件</li>
+<li>生成Maven工程</li>
+<li>编译打包发布</li>
+</ol>
+<h4 id="创建pom-xml"><a href="#创建pom-xml" class="headerlink" title="创建pom.xml"></a>创建pom.xml</h4><p>为Maven项目构建创建<code>pom.xml</code>文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">    xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.example&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;myproject&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.4.1.BUILD-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;repositories&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;http://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;http://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">    &lt;/repositories&gt;</span><br><span class="line">    &lt;pluginRepositories&gt;</span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;http://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;http://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;/pluginRepositories&gt;</span><br><span class="line">    &lt;!-- 添加classpath依赖 --&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">    	&lt;dependency&gt;</span><br><span class="line">   	 	    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">   		    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">	    &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- 开发者工具，当classpath下有文件更新自动触发应用重启 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">            &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">    &lt;!-- maven编译插件，用于创建可执行jar包 --&gt;</span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>现在执行<code>mvn dependency:tree</code>可以看到项目中的依赖关系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">com.example:myproject:jar:0.0.1-SNAPSHOT</span><br><span class="line">\- org.springframework.boot:spring-boot-starter-web:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   +- org.springframework.boot:spring-boot-starter:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   |  +- org.springframework.boot:spring-boot:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   |  |  +- ch.qos.logback:logback-classic:jar:1.1.7:compile</span><br><span class="line">   |  |  |  +- ch.qos.logback:logback-core:jar:1.1.7:compile</span><br><span class="line">   |  |  |  \- org.slf4j:slf4j-api:jar:1.7.21:compile</span><br><span class="line">   |  |  +- org.slf4j:jcl-over-slf4j:jar:1.7.21:compile</span><br><span class="line">   |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.21:compile</span><br><span class="line">   |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.21:compile</span><br><span class="line">   |  +- org.springframework:spring-core:jar:4.3.3.RELEASE:compile</span><br><span class="line">   |  \- org.yaml:snakeyaml:jar:1.17:runtime</span><br><span class="line">   +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.1.BUILD-SNAPSHOT:compile</span><br><span class="line">   |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.5:compile</span><br><span class="line">   |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.5:compile</span><br><span class="line">   |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.5:compile</span><br><span class="line">   +- org.hibernate:hibernate-validator:jar:5.2.4.Final:compile</span><br><span class="line">   |  +- javax.validation:validation-api:jar:1.1.0.Final:compile</span><br><span class="line">   |  +- org.jboss.logging:jboss-logging:jar:3.3.0.Final:compile</span><br><span class="line">   |  \- com.fasterxml:classmate:jar:1.3.1:compile</span><br><span class="line">   +- com.fasterxml.jackson.core:jackson-databind:jar:2.8.3:compile</span><br><span class="line">   |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.8.3:compile</span><br><span class="line">   |  \- com.fasterxml.jackson.core:jackson-core:jar:2.8.3:compile</span><br><span class="line">   +- org.springframework:spring-web:jar:4.3.3.RELEASE:compile</span><br><span class="line">   |  +- org.springframework:spring-aop:jar:4.3.3.RELEASE:compile</span><br><span class="line">   |  +- org.springframework:spring-beans:jar:4.3.3.RELEASE:compile</span><br><span class="line">   |  \- org.springframework:spring-context:jar:4.3.3.RELEASE:compile</span><br><span class="line">   \- org.springframework:spring-webmvc:jar:4.3.3.RELEASE:compile</span><br><span class="line">      \- org.springframework:spring-expression:jar:4.3.3.RELEASE:compile</span><br></pre></td></tr></table></figure>
+
+<p>这其中包括Tomcat web服务器和Spring Boot自身。</p>
+<h5 id="Spring-Boot-推荐的基础-POM-文件"><a href="#Spring-Boot-推荐的基础-POM-文件" class="headerlink" title="Spring Boot 推荐的基础 POM 文件"></a>Spring Boot 推荐的基础 POM 文件</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>spring-boot-starter</td>
+<td>核心 POM，包含自动配置支持、日志库和对 YAML 配置文件的支持。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-amqp</td>
+<td>通过 spring-rabbit 支持 AMQP。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-aop</td>
+<td>包含 spring-aop 和 AspectJ 来支持面向切面编程（AOP）。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-batch</td>
+<td>支持 Spring Batch，包含 HSQLDB。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-jpa</td>
+<td>包含 spring-data-jpa、spring-orm 和 Hibernate 来支持 JPA。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-mongodb</td>
+<td>包含 spring-data-mongodb 来支持 MongoDB。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-rest</td>
+<td>通过 spring-data-rest-webmvc 支持以 REST 方式暴露 Spring Data 仓库。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jdbc</td>
+<td>支持使用 JDBC 访问数据库。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-security</td>
+<td>包含 spring-security。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-test</td>
+<td>包含常用的测试所需的依赖，如 JUnit、Hamcrest、Mockito 和 spring-test 等。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-velocity</td>
+<td>支持使用 Velocity 作为模板引擎。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-web</td>
+<td>支持 Web 应用开发，包含 Tomcat 和 spring-mvc。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-websocket</td>
+<td>支持使用 Tomcat 开发 WebSocket 应用。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-ws</td>
+<td>支持 Spring Web Services。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-actuator</td>
+<td>添加适用于生产环境的功能，如性能指标和监测等功能。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-remote-shell</td>
+<td>添加远程 SSH 支持。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jetty</td>
+<td>使用 Jetty 而不是默认的 Tomcat 作为应用服务器。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-log4j</td>
+<td>添加 Log4j 的支持。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-logging</td>
+<td>使用 Spring Boot 默认的日志框架 Logback。</td>
+</tr>
+<tr>
+<td>spring-boot-starter-tomcat</td>
+<td>使用 Spring Boot 默认的 Tomcat 作为应用服务器。</td>
+</tr>
+</tbody></table>
+<p>所有这些 POM 依赖的好处在于为开发 Spring 应用提供了一个良好的基础。Spring Boot 所选择的第三方库是经过考虑的，是比较适合产品开发的选择。但是 Spring Boot 也提供了不同的选项，比如日志框架可以用 Logback 或 Log4j，应用服务器可以用 Tomcat 或 Jetty。</p>
+<h3 id="生成Maven工程"><a href="#生成Maven工程" class="headerlink" title="生成Maven工程"></a>生成Maven工程</h3><p>对于普通的Java项目或者Java Web项目可以使用下面的命令创建maven结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn archetype:generate -DgroupId=com.example -DartifactId=myproject -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false</span><br></pre></td></tr></table></figure>
+
+<p>下表是以上参数的使用说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mvn archetype:generate</td>
+<td>固定格式</td>
+</tr>
+<tr>
+<td>-DgroupId</td>
+<td>组织标识（包名）</td>
+</tr>
+<tr>
+<td>-DartifactId</td>
+<td>项目名称</td>
+</tr>
+<tr>
+<td>-DarchetypeArtifactId</td>
+<td>指定ArchetypeId，maven-archetype-quickstart，创建一个Java Project；maven-archetype-webapp，创建一个Web Project</td>
+</tr>
+<tr>
+<td>-DinteractiveMode</td>
+<td>是否使用交互模式</td>
+</tr>
+</tbody></table>
+<p>这将生成以下的目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">└── myproject</span><br><span class="line">    ├── pom.xml</span><br><span class="line">    └── src</span><br><span class="line">        └── main</span><br><span class="line">            ├── resources</span><br><span class="line">            └── webapp</span><br><span class="line">                ├── WEB-INF</span><br><span class="line">                │   └── web.xml</span><br><span class="line">                └── index.jsp</span><br><span class="line"></span><br><span class="line">6 directories, 3 files</span><br></pre></td></tr></table></figure>
+
+<p>对于Spring Boot项目，无法使用<code>mvn</code>命令直接生成，需要手动创建目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p src/main/java</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建示例代码"><a href="#创建示例代码" class="headerlink" title="创建示例代码"></a>创建示例代码</h4><p>创建<code>src/main/java/Example.java</code>文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import org.springframework.boot.*;</span><br><span class="line">import org.springframework.boot.autoconfigure.*;</span><br><span class="line">import org.springframework.stereotype.*;</span><br><span class="line">import org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">@EnableAutoConfiguration</span><br><span class="line">public class Example &#123;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/&quot;)</span><br><span class="line">    String home() &#123;</span><br><span class="line">        return &quot;Hello World!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        SpringApplication.run(Example.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>@RestController</code>注解告诉Spring以字符串的形式渲染结果，并直接返回给调用者。</li>
+<li><code>@EnableAutoConfiguration</code>注解告诉Spring Boot根据添加的jar依赖猜测你想如何配置Spring。由于<code>spring-boot-starter-web</code>添加了Tomcat和Spring MVC，所以auto-configuration将假定你正在开发一个web应用，并对Spring进行相应地设置。</li>
+<li><code>@RequestMapping</code>注解提供路由信息，它告诉Spring任何来自”/“路径的HTTP请求都应该被映射到<code>home</code>方法。</li>
+</ul>
+<p>注：<code>@RestController</code>和<code>@RequestMapping</code>是Spring MVC中的注解（它们不是Spring Boot的特定部分）。</p>
+<h4 id="编译和发布"><a href="#编译和发布" class="headerlink" title="编译和发布"></a>编译和发布</h4><p>运行该项目有以下两种方式。</p>
+<p>方式1：直接mvn命令运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure>
+
+<p>方式2：编译打包成可执行jar包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br><span class="line">java -jar target/myproject-0.0.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+
+<p>不论使用哪种方式编译，访问<a href="localhost:8080" target="_blank" rel="noopener">localhost:8080</a>可以看到web页面上显示<code>Hello world!</code>。</p>
+<p>在<code>target</code>目录下，你应该还能看到一个很小的名为<code>myproject-0.0.1-SNAPSHOT.jar.original</code>的文件，这是在Spring Boot重新打包前，Maven创建的原始jar文件。实际上可运行jar包中包含了这个小的jar包。</p>
+<p><strong>我有一个微信公众号，经常会分享一些Java技术相关的干货；如果你喜欢我的分享，可以用微信搜索“Java团长”或者“javatuanzhang”关注。</strong></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://spring.io/" target="_blank" rel="noopener">Spring官方网站</a></li>
+<li><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html" target="_blank" rel="noopener">Spring core technologies | spring.io</a></li>
+<li><a href="https://www.tianmaying.com/tutorial/spring-boot-overview" target="_blank" rel="noopener">Spring Boot——开发新一代Spring Java应用</a></li>
+<li><a href="https://www.tianmaying.com/tutorial/spring-mvc-quickstart" target="_blank" rel="noopener">Spring MVC快速入门教程</a></li>
+<li><a href="https://github.com/qibaoguang/Spring-Boot-Reference-Guide" target="_blank" rel="noopener">Spring Boot Reference Guide中文翻译 -《Spring Boot参考指南》</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-spring-boot/" target="_blank" rel="noopener">使用 Spring Boot 快速构建 Spring 框架应用</a></li>
+<li><a href="http://blog.csdn.net/edward0830ly/article/details/8748986" target="_blank" rel="noopener">maven3常用命令、java项目搭建、web项目搭建详细图解</a></li>
+<li><a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank" rel="noopener">Servlet教程 | runoob.com</a></li>
+<li><a href="https://docs.spring.io/spring/docs/2.5.x/reference/aop.html" target="_blank" rel="noopener">AOP - Aspect Oriented Programming | spring.io</a></li>
+<li><a href="https://www.cnblogs.com/moonlightL/p/7891803.html" target="_blank" rel="noopener">Spring Boot 入门之基础篇（一）</a></li>
+<li><a href="http://www.cnblogs.com/ityouknow/p/5662753.html" target="_blank" rel="noopener">spring boot(一):入门篇</a></li>
+<li><a href="http://blog.csdn.net/lxhjh/article/details/51711148" target="_blank" rel="noopener">SpringBoot入门系列：第一篇 Hello World</a></li>
+</ul>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'spring boot入门教程——Spring Boot快速入门指南'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/资源分享/">资源分享</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/我就是我/">我就是我</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/27/Jekyll建立Github博客/">Jekyll建立Github博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/支付宝诞生的故事  /">支付宝诞生的故事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/腾讯视频如何转换MP4格式的2种方法/">腾讯视频如何转换MP4格式的2种方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/关于第三方支付，看这篇文章就够了！/">关于第三方支付，看这篇文章就够了！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/JAVA 排序之选择排序、堆排序/">JAVA 排序之选择排序、堆排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/Java 排序之插入排序、希尔排序/">Java 排序之插入排序、希尔排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/为什么说-Java-程序员到了必须掌握-Spring-Boot-的时候？/">为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Node-js基本语法/">Node.js基本语法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/hexo教程搜索SEO+阅读量统计+访问量统计+评论系统/">hexo教程搜索SEO+阅读量统计+访问量统计+评论系统</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/为什么学习-JavaScript/">为什么学习 JavaScript?</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/人生若只如初见-《围城》/">人生若只如初见-《围城》</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/找到惹一个好看的h5引导页/">找到惹一个好看的h5引导页</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/数字整除-题解-Java描述/">数字整除-题解(Java描述)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/数据结构有哪些/">数据结构有哪些</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/20/高逼格Android转场动画/">高逼格Android转场动画</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/">鸿蒙OS将向全球开发者开源！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/关于第三方支付，看这篇文章就够了！/">关于第三方支付，看这篇文章就够了！</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/24/spring boot入门教程——Spring Boot快速入门指南/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/24/spring boot入门教程——Spring Boot快速入门指南/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/24/spring boot入门教程——Spring Boot快速入门指南/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/hexo/" style="font-size: 9.104296793825316px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 9.073330317668631px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/Apache/" style="font-size: 14.604454641251134px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 16.75801717192482px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 18.18790199819399px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/css/" style="font-size: 16.19504912127995px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 14.497600799799187px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/HTML/" style="font-size: 18.31049297043982px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 9.796126374064286px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 18.50383027238718px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/idea/" style="font-size: 15.270821868181187px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 14.7713104864246px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 8.391310820565806px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 18.491340633269672px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 18.267016857410844px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 10.655861490568544px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 9.032401164588386px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 15.502987271356169px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 15.380541089120813px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 16.53728574800678px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 16.145000950529976px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/Python/" style="font-size: 12.70859350718401px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/java/" style="font-size: 10.090345597632616px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 18.06370233683294px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/Vue/" style="font-size: 18.71437248973786px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 11.463315860721131px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 16.012479700816513px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 11.312608054966464px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 19.716506399611077px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/final/" style="font-size: 9.362335676362715px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 13.619076885530554px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 13.975968742391846px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 11.654196851949008px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 17.16134302048222px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/mysql/" style="font-size: 18.222860722277325px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/npm/" style="font-size: 18.371690683162388px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/安卓/" style="font-size: 9.81109420481761px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 16.89632291027179px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/reading/" style="font-size: 9.78858055111608px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 15.552716785802275px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 12.41880322271245px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 10.024504621939013px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 14.67110192027247px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 19.753831178933954px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 19.877508996788134px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 18.326366169250658px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 18.345298776111115px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/引导页/" style="font-size: 18.310283980799483px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 13.729061556018578px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 11.180896273020688px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/物语/" style="font-size: 16.028471853184932px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 15.512431084054956px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/CSS/" style="font-size: 14.193296686169218px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 9.392772748251616px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 16.338298187135862px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 15.242894112575762px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 19.67972429984472px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 19.33113082909878px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 11.81637101080709px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/Android/" style="font-size: 12.13922252241813px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 19.892524183258477px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 10.49170846236824px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 12.94859110023148px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 17.56297432754833px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 9.20536854347985px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sat Aug 24 2019 11:07:28 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Sat Aug 24 2019 11:07:28 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>

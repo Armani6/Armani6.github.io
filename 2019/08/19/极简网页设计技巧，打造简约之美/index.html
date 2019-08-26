@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>极简网页设计技巧，打造简约之美 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/3-hexo/">3-hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>极简网页设计技巧，打造简约之美</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/19/极简网页设计技巧，打造简约之美/">极简网页设计技巧，打造简约之美</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/网页设计/">网页设计</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-19
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/19/极简网页设计技巧，打造简约之美/">极简网页设计技巧，打造简约之美</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-19
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/网页设计/">网页设计</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p><img src="https://img02.mockplus.cn/mockplus/image/1565600477594/Minimalist-website-design-inspiring-design-secrets-and-examples-in-2018-image.png" alt="极简主义网页设计风格"></p>
+<p><strong>极简主义网页设计风格，如何才能做到简约而不简单？简约风设计需要了解和掌握哪些禁忌和技巧，才能让网页设计简洁而不失魅力？继续阅读文章，小编将结合具体实例为大家一一讲解。</strong></p>
+<p>近几年，极简主义设计风格（也称简约设计风格）越来越多的为设计师们所认可，采用并日渐流行。而这不仅仅是因为其界面简单整洁，便于用户理解和操作，还因其在提升网站和软件应用的加载速度，页面屏幕兼容度，以及用户体验愉悦度等方面，作用巨大。</p>
+<p>然而，简约设计风格并不是机械地删除或减少网站或页面组件/模块那么简单。相反，界面中每一个小细节都应该被重视，且饱含设计师创意和用心。</p>
+<p>那么，作为UX/UI设计师，如何才能设计出简约而不失活力以及魅力的网页呢？网页极简主义设计究竟有哪些设计技巧和禁忌呢？</p>
+<p>以下小编就结合最新的网页设计实例，为大家分析和讲解简约页面设计风格的相关技巧，禁忌以及思路：</p>
+<p><strong>首先，究竟什么是极简主义设计风格？</strong></p>
+<p>极简主义设计风格，也称简约设计风格，顾名思义，就是使用尽可能少的组件或部件，实现网站以及软件应用的人机交互。</p>
+<p>当然，这并不代表设计师可以毫无节制的简化网页或软件界面，以致丢失掉其本有魅力和生命力，造成界面难以理解，甚至使用更加复杂的局面。反而应该在去除多余组件或模块的基础上，使用最少的元素，达到最佳的用户体验和销售效果。</p>
+<p>而这一点上，与小编经常使用的一款名为<a href="https://www.mockplus.cn/" target="_blank" rel="noopener">Mockplus</a>的原型工具，不断追求更快，更简单地设计，制作，测试，分享和迭代网页或软件应用原型的设计理念是不谋而合的。Mockplus对你创建简约而极具魅力的网页设计非常有用。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600568868/1.What-is-the-minimalist-style-in-website-design-image.png" alt="什么是极简主义设计风格"></p>
+<p>如图，简约风格的网页设计，简洁而直观。</p>
+<p><strong>其次，为什么选择简约设计风格？</strong></p>
+<p>在阅读简约网页设计风格的相关概念之后，希望能够进一步了解其为设计师所追捧的真正原因？以及极简主义网页设计风格的相关作用具体体现在哪些方面？不用担心，大家可以从以下几个方面简单理解这类网页设计风格的效用：</p>
+<p>1.简约网页设计更加简洁易用，用户体验愉悦度极高</p>
+<p>2.极简主义设计简单且兼容性强，更易于软件或网页响应式设计</p>
+<p>3.简单干净的界面设计更符合现今快节奏的用户需求</p>
+<p>4.简约整洁的网页设计，加载速度更快，能有效地降低网页跳出率</p>
+<p>5.简洁低噪音的界面设计，更易于用户专注于界面内容和产品功能，提升产品销量</p>
+<p>总之，极简主义设计风格是一种既能满足用户需求，又能体现设计师创造性和独特性的设计方式。它不仅是<a href="https://www.mockplus.cn/blog/post/827" target="_blank" rel="noopener">现今热门的UI设计流行趋势</a>，还将在相当长的一段时间内继续流行下去。所以，作为app或web UX/UI设计师，了解和学习相关技巧，结合网站，软件或产品特色，有选择的使用简约设计风格，也是非常必要的。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600640047/2.Simple-and-clean-websites-enables-users-to-focus-on-the-page+contents-image.png" alt="为什么选择简约设计风格"></p>
+<p>如图，简洁低噪音的界面设计，更易于展示网页产品，增加其销量。</p>
+<p><strong>如何才能在网页界面设计中体现简约之美？</strong></p>
+<p>既然简约设计在提升用户体验愉悦度，加载速度以及页面兼容性和产品销量方面，作用如此巨大，究竟如何才能在页面设计中体现其简约之美？简约设计的技巧和禁忌有哪些？接下来，小编就结合最新网页设计实例以及小编利用<a href="https://www.mockplus.cn/" target="_blank" rel="noopener">更快，更简单的原型工具</a>制作的相关实例，为大家讲解，在网页界面设计中该如何兼具魅力和简约之美：</p>
+<p><strong>1.**</strong>利用自然留白，突出软件或产品功能/<strong>**特色</strong></p>
+<p>与绘画中添加留白以增加作品神秘感，给予受众足够想象空间的目的不同，网页页面设计中留白（也称负空间）的使用，则更偏向于减少界面噪音，突出界面展示内容。让用户更自然地将视线集中于展示的软件或产品功能，服务和特色，加深用户印象，从而增加产品销量。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600685635/3.Use-whitespace-to-stand-out-page-contents-image.png" alt="利用留白突出页面内容"></p>
+<p>如图，利用大量留白突出页面展示内容。</p>
+<p>所以，设计师在界面设计中，要注意自然留白的设计和应用，引导用户点击或购买。</p>
+<p><strong>2.**</strong>巧用色彩，让界面简约而不失视觉吸引力**</p>
+<p>简单色彩的选择和应用，不仅不会增加页面的复杂程度，相反，还能帮助划分界面功能模块，让界面简单而不失视觉魅力。而这一方面，大家可以从以下几个方面进行尝试：</p>
+<p><strong>***</strong>简单色彩或配色方案的选择和应用，提升界面视觉吸引力**</p>
+<p>简约界面设计风格并不等于毫无色彩或仅仅单调地使用一种或黑白两种色彩。事实上，即使是简单使用一种色彩，结合<a href="https://www.mockplus.cn/blog/post/877" target="_blank" rel="noopener">色彩渐变</a>，饱和度以及透明度的变化，也可以使整个网页设计简洁而极富视觉效果。</p>
+<p>所以，在极简主义网页设计中，设计师可以尝试一种，多种以及同一色系色彩的选择和应用，简化界面设计，提升其视觉吸引力。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/faDJOV.png" alt="巧用色彩, 实现简约设计"></p>
+<p>如图，简单选择同一色系色彩，结合形状以及背景图片，让页面视觉上更加丰富而出众。</p>
+<p>当然，色彩的选择也应把握一个度。过多的色彩应用，反而事倍功半，使界面更加复杂。</p>
+<p>而且，即使是日渐流行的简单黑白配色的选择，巧妙结合设计师创意，也可以大气时尚。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600790808/5.Simple-website-design-with-a-black-white-color-scheme-image.png" alt="黑白配色的极简主义网页设计"></p>
+<p>如图，简单的黑白配色，也可时尚而独特。</p>
+<p><strong>***</strong>色块可兼具划分界面功能/<strong>**模块的作用</strong></p>
+<p>为简化页面设计，色块的使用也可兼具界面功能/板块划分的作用。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600825217/6.Use-color-blocks-to-divide-interface-functions-image.png" alt="色块划分界面功能区"></p>
+<p>如图，利用简单色块划分界面功能区。</p>
+<p><a href="https://idoc.mockplus.cn/?home=1&hmsr=mockplusblog" target="_blank" rel="noopener">标注、切图、交互、原型，2019年必备神器！</a></p>
+<p><a href="https://idoc.mockplus.cn/?home=1&hmsr=mockplusblog" target="_blank" rel="noopener">立即体验iDoc</a></p>
+<p>而就这一方面而言，在使用Mockplus原型化相关简约界面设计时，设计师可以简单的拖拽“形状”组件以及文本相关组件，结合其色彩，透明度以及边框等属性设置轻松实现。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600864446/7.Create-color-block-with-Mockplus-image.png" alt="利用Mockplus打造页面功能色块"></p>
+<p>如图，利用Mockplus的形状，图片以及文本等组件，通过不同背景色彩划分页面功能模块。</p>
+<p><strong>***</strong>色彩的对比使用，增强界面活力**</p>
+<p>色彩属性（例如色彩透明度和饱和度），形状以及明暗色系的对比使用，不仅能够极大地提升界面视觉效果，在增强界面生命力和活力方面作用也不容小觑。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/uYE4wa.png" alt="利用鲜明的色彩对比"></p>
+<p>如图，利用跳跃的色彩对比，提升页面视觉影响力。</p>
+<p>简而言之，色彩的简单使用，能够简化页面的同时，提升其视觉吸引力和生命力。</p>
+<p><strong>3.**</strong>优化界面字体以及排版，体现界面层次结构**</p>
+<p>除去色彩，界面文本内容，字体以及排版的优化，也能使整款网页设计更加简洁干净，直观生动地展示其页面层次结构。比如：</p>
+<p><strong>***</strong>简化文本内容，让界面更加直观易懂**</p>
+<p>采用更加简洁的用语，句式或形式（例如小标题或列表）简化界面文本内容，让页面设计更加简单易懂，直观实用。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600935089/9.Simplify-ui-texts-image.png" alt="利用列表简化页面文本内容"></p>
+<p>如图，利用列表简化页面文本内容。</p>
+<p><strong>***</strong>巧用文字属性<strong><strong>/</strong></strong>排版，体现页面结构和层次**</p>
+<p>优秀的简约网页设计，一般不会使用太多字体和排版。简单一两种，结合文字大小，颜色，粗细，行间距以及排列位置（例如包含，并列等排列方式）等属性设置，也能简单而直观地体现页面结构和层次关系。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565600960051/10.Create-text-hierarchies-with-text-fonts-and-typography-image.png" alt="利用不同字体排版打造简约网页设计"></p>
+<p>如图，利用文本尺寸，字体以及排版的不同展现页面的层次关系。</p>
+<p>而这一点上，设计师们可以直接使用Mockplus的“单行文本”和“多行文本”组件轻松实现。无论是其文本色彩，下划线，斜体，字体，尺寸，对齐方式，还是文字边框，行间距，自动折行，外部链接以及排版等属性设计，都能简单实现，真正的做到“所见即所得”。</p>
+<p>因此，在你网页或软件应用的设计之中，除了简化文本内容，也要注意文本字体，属性以及排版的选择和使用，突出其页面层次和结构。</p>
+<p><strong>4.**</strong>利用图片对界面文本进行阐释**</p>
+<p>极简主义界面设计，“少即是多”的设计理念告诉我们，当千言万语也无法清楚表情达意时，简单地添加适当图片，更能清晰明了的表达设计师意愿，事半而功倍。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/TfxzCI.png" alt="利用图片解释文本，打造极简风网页设计"></p>
+<p>如图，利用图片更加生动直观地阐释文字。</p>
+<p>而在图片添加方面，设计师可以充分尝试Mockplus的“图片”，“GIF”组件以及“我的组件库”等功能，实现静态，动态以及批量图片的添加的和优化。<a href="http://doc.mockplus.cn/?p=2875" target="_blank" rel="noopener">Sketch图片的导入</a>，批量图标的添加和编辑等等，都不是问题。</p>
+<p><strong>5.**</strong>利用网格区分界面功能和重要性**</p>
+<p>简单的网格设计是网页极简主义设计风格中，设计师们最常用的功能/模块划分方式之一。当软件或网页设计中使用一致的网格设计时，不仅能够简洁直观的划分和展示其功能模块，还能帮助用户在浏览页面的过程中形成一定的阅读习惯，从而更加快速流畅的查询需要的网页内容。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565601076304/12.Simplify-your-website-pages-with-intuitive-grids-image.png" alt="网格区分界面功能和重要性"></p>
+<p>如图，简单网格的应用，更加直观地划分页面功能模块。</p>
+<p>而网格的设计，设计师可以尝试使用Mockplus的 “<a href="https://www.mockplus.cn/newfeatures/post/639" target="_blank" rel="noopener">格子</a>”和“<a href="https://www.mockplus.cn/newfeatures/post/616" target="_blank" rel="noopener">自动填充</a>”功能，一键批量填充所需界面文本或图片，一次性解决重复性工作。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/CnSrc4.png" alt="Mockplus的 “格子”和“自动填充”功能"></p>
+<p><strong>6.**</strong>保留菜单和导航设计，优化用户体验**</p>
+<p>极简主义设计风格并不是毫无节制的减少界面部件。而网页菜单和导航设计，作为优化用户体验的重要因素，即便是简约风格的页面设计，也不应该被忽略或删除。反而应该使用更加直观易识别的方式呈现，例如使用链接，侧边栏或隐藏菜单栏的方式呈现导航或菜单设计，优化用户体验。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/S2dHDo.png" alt="保留菜单栏导航设计"></p>
+<p>如图，保留菜单栏导航设计，引导用户使用，提升用户体验。</p>
+<p><strong>7.**</strong>简约设计风格与其他设计技巧的完美结合**</p>
+<p>极简主义设计风格，因其简单直观且灵活的设计特点，在具体的设计实例中，可以轻松地与其他设计风格和技巧进行结合，创建更加优质的网页设计。比如，设计师们可以从以下解各方面进行尝试：</p>
+<p><strong>***</strong>与渐进式设计技巧的结合，让页面更加简洁直观**</p>
+<p>渐进式设计技巧，即通过添加简单的组件或元素（例如侧边栏或隐藏菜单栏等部件）逐渐展现网页或界面功能的设计技巧。用户需要时，即可简单点击，展开和了解更能多软件网页功能。而这一点上，在本质上与追求界面简洁直观的简约设计风格是相符合的。所以，设计中，可简单的加以结合。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/ltLjQo.png" alt="结合渐进式设计技巧"></p>
+<p>如图，用户可以简单的点击右上角加号按钮进入注册界面，点击右下角箭头，查看其他用户详情页面。是简约设计风格与渐进式设计技巧相结合的不错案例。</p>
+<p><strong>***</strong>与扁平化设计风格的结合，让界面更具画面感**</p>
+<p><a href="https://www.mockplus.cn/blog/post/529" target="_blank" rel="noopener">扁平化设计风格</a>，作为又一热门UI设计趋势，追求界面简约整洁的同时，也使界面极具画面感。所以，结合扁平化设计风格进行设计，也不失为提升界面的一个好方法。如下图：</p>
+<p><img src="https://upload.cc/i1/2019/08/21/OEwk4R.png" alt="结合扁平化设计风格"></p>
+<p><strong>***</strong>与不同设计主题的结合，切合网页或产品主题/<strong>**特色</strong></p>
+<p>极简主义设计也可在图标，色彩以及图片的选择上体现不同的主题，以切合不同网页或产品主题或特色，加深用户印象。</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565601199209/17.Choose-a-design-theme-based-on-features-of+websites-products-image.png" alt="结合不同设计主题"></p>
+<p>如图，直接首页轮播展示产品图片，加深用户印象，提升产品销量。</p>
+<p><strong>***</strong>与设计师创意的结合，打造网页的独特魅力**</p>
+<p>简约网页设计处处都可体现设计师的创意和用心，注重设计与创意的结合，打造网页的特有魅力。</p>
+<p>总之，设计师需要开动脑筋，结合不同的设计热点，风格或技巧，打造简单而独特的网页设计。</p>
+<p><strong>8.**</strong>采用Web<strong>**设计习惯用法，让网页设计更符合用户“口味”</strong></p>
+<p>网页设计中的习惯用法，是无数设计师根据用户需求，不断实践，调整和改进的结果，是符合用户“口味”的设计方法。所以，设计师在进行极简主义设计的过程中，也可直接沿用一些Web设计习惯用法，让界面更加实用。</p>
+<p>例如，web导航习惯用法（包括站点ID，搜索方式，实用工具，回主页的方式，导航栏目等五个基本元素）的使用，让导航真正发挥其引导作用。如图：</p>
+<p><img src="https://img02.mockplus.cn/mockplus/image/1565601250770/18.Use-a-commonly-used-bar-to-guide-users-image.png" alt="web导航习惯用法"></p>
+<p>或者，利用用户所熟知的“矩形 + 链接”的方式，设计CTA按钮，增加其点击率。利用放大镜图标或图样，指代界面搜索功能。以及使用侧边栏或隐藏式菜单栏扩展界面功能等等。</p>
+<p>使用习惯性用法，使网页设计更易于用户识别区分，简化操作过程。而且，在一定情景下，设计所对应的解释文本都可以在不影响达意的情况下，直接省略，从而简化网页设计。</p>
+<p><strong>9.**</strong>注意界面细节设计，让每一个部件或设计都发挥其作用**</p>
+<p>简约设计，是尽量减少多余的组件或元素的设计。所以，设计师需要花费足够多的时间对留下来的组件或元素进行优化，让每一个组件都发挥其应有的作用。简而言之，就是在实际的设计案例中，注重网页logo, 色彩，图标，网格，文字字体排版，几何图形选择与添加以及简单交互与动画的创意设计等等细节的设计，扩展界面功能。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/p1LNHj.png" alt="注意界面细节设计"></p>
+<p>如图，利用简单小动画或交互，吸引用户注意力。</p>
+<p>比如，在使用Mockplus创建简约网页设计原型时，可以使用其<a href="http://doc.mockplus.cn/?p=1584" target="_blank" rel="noopener">交互设计</a>和<a href="http://doc.mockplus.cn/?p=395" target="_blank" rel="noopener">交互状态</a>功能为界面按钮，文字或组件添加简单交互或动画，优化用户体验。</p>
+<p>此外，界面打开之后，默认选中项的设置，对于简化页面设计，引导或暗示用户完成某项操作，作用也是非常明显的。</p>
+<p>细节决定成败，网页的简约设计更是如此。</p>
+<p>总之，希望以上罗列的设计实例和技巧能对你的极简主义网页设计有所帮助。</p>
+<p><strong>牢记简约风设计思路：</strong></p>
+<p>设计师在进行简约风格网页设计时，也需要牢记一些简单的设计思路，简化整个设计过程</p>
+<p><strong>首先，先复杂，再逐个简化</strong></p>
+<p>为了防止漏掉某些设计元素或功能，设计师可以通过先将所有需要的设计一一添加到界面中，然后再逐个根据需要简化的思路，准确而稳步的进行优化。</p>
+<p>当然，为对比前后效果，也可使用Mockplus将它们快速的制作成交互原型，逐个测试修改前后界面设计的实用性和有效性。而且其提供的<a href="http://doc.mockplus.cn/?p=1390" target="_blank" rel="noopener">8种预览和分享方式</a>，对于设计师根据需要，及时收集设计反馈和建议，作用也不容小觑。</p>
+<p><strong>其次，注意微调</strong></p>
+<p>简约设计风格，一定程度上讲，就是设计师细节设计的优化和竞争，所以，一定要注意网页界面细节的微调，再微调。</p>
+<p><strong>然后，注意把握全局</strong></p>
+<p>注意细节的同时，也不要忘记整体网页或软件应用在色彩，主题以及功能等方面的全局统一性。太过独立的页面设计，对于软件或网页页面的连贯性，以及用户使用时的流畅性，非常不利。所以，设计过程中，注意把握全局进行设计，做到胸有成足。</p>
+<p><strong>最后，原型测试必不可少</strong></p>
+<p>无论设计师的设计如何新颖独特，抑或简约直观，如若无法得到用户的认可，一切都只是纸上谈兵。所以，设计师在设计的同时，也需要选择优质好用的原型工具（比如功能强大的Mockplus），及时地将简约的网页设计转化成交互性原型，测试其实际效用和可行性。</p>
+<p>例如Mockplus的强大组件库和<a href="http://doc.mockplus.cn/?p=3350" target="_blank" rel="noopener">样式库</a>，对于设计师添加，收藏，复用和分享需要的组或组件设计，功能巨大。而其<a href="https://www.mockplus.cn/blog/post/390" target="_blank" rel="noopener">超过3000个的矢量图标库</a>，对于设计师添加和设计简约的图标，按钮和logo，也是非常方便。此外，其新增的团队和企业版本的<a href="http://doc.mockplus.cn/?p=3443" target="_blank" rel="noopener">团队管理和协作功能</a>，对于提升简约网页设计的团队协作效率也是非常实用。</p>
+<p><img src="https://upload.cc/i1/2019/08/21/cy6lS2.png" alt="团协作设计和管理"></p>
+<p><strong>结语</strong>：</p>
+<p>尽管极简主义设计风格对于实现人机之间的无缝交流，提升用户体验和增加产品销量和品牌知名度方面，发挥着至关重要的作用。然而，简约设计风格并不适用于所有的网页设计。事实上，对于某些网页类型，例如一些黄页类网站，太简单的界面设计，则极有可能降低网页权威性和可行性，有时甚至可能让用户无所适从。所以，设计师应该根据网页或产品特色，目标客户以及受众的不同，有所取舍和选择。</p>
+<p>总之，希望以上分析的最新设计实例，技巧，禁忌，思路以及测试用原型工具（Mockplus）等，能对你设计更加直观优质的简约风格网页有所帮助。</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '极简网页设计技巧，打造简约之美'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/资源分享/">资源分享</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/我就是我/">我就是我</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/27/Jekyll建立Github博客/">Jekyll建立Github博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/支付宝诞生的故事  /">支付宝诞生的故事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/腾讯视频如何转换MP4格式的2种方法/">腾讯视频如何转换MP4格式的2种方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/关于第三方支付，看这篇文章就够了！/">关于第三方支付，看这篇文章就够了！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/JAVA 排序之选择排序、堆排序/">JAVA 排序之选择排序、堆排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/Java 排序之插入排序、希尔排序/">Java 排序之插入排序、希尔排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/为什么说-Java-程序员到了必须掌握-Spring-Boot-的时候？/">为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/CSS3中Flex弹性布局该如何灵活运用？/">CSS3中Flex弹性布局该如何灵活运用？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Java连接MySQL数据库——含步骤和代码/">Java连接MySQL数据库——含步骤和代码</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/PHP-简介/">PHP 简介</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/PanDownload网盘下载/">PanDownload网盘下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/20/你要安静的努力，然后悄无声息的变强/">你要安静的努力，然后悄无声息的变强</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/蛋炒饭的制作方法/">蛋炒饭的制作方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/资源文件夹/">资源文件夹</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/带你入门-CSS-Grid-布局/">带你入门 CSS Grid 布局</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/轻松装Win10：VMware-Workstation-12虚拟机下载/">轻松装Win10：VMware Workstation 12虚拟机下载</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/极简网页设计技巧，打造简约之美/">极简网页设计技巧，打造简约之美</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/19/极简网页设计技巧，打造简约之美/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/19/极简网页设计技巧，打造简约之美/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/19/极简网页设计技巧，打造简约之美/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/hexo/" style="font-size: 17.793879711531588px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 17.964393663401207px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/Apache/" style="font-size: 11.608892587949676px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 18.1867560753006px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 16.967322026055697px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/css/" style="font-size: 11.205542134855389px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 17.696195902308503px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/HTML/" style="font-size: 11.13571357090067px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 8.45130257460265px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 17.77693222067237px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/idea/" style="font-size: 13.794222216724913px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 8.958940415758292px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 19.021057822412118px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 9.964763591763823px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 14.204185143386955px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 9.22434509626481px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 10.90801908666122px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 10.96202193426664px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 19.185260828984003px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 9.755789047906148px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 9.489859302037454px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/Python/" style="font-size: 10.071697151285065px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/java/" style="font-size: 19.527789543235496px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 17.39179130988181px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/Vue/" style="font-size: 10.304675135435538px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 10.334600050359189px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 19.482340743691783px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 9.198134061221644px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 16.281477752875144px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/final/" style="font-size: 11.808028386922278px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 18.763662338727833px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 18.76594003574847px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 13.782338360157201px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 15.10842311941024px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/mysql/" style="font-size: 16.682438775132535px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/npm/" style="font-size: 19.724590970733956px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/安卓/" style="font-size: 9.683315871477468px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 15.97561431630544px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/reading/" style="font-size: 18.02249322836795px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 19.219228773318815px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 8.193159057939685px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 16.91483901535439px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 12.149097524396062px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 13.447677496859676px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 10.403352304723176px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 16.7802926146478px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 18.62861705534941px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/引导页/" style="font-size: 16.446674496433996px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 14.511405461361846px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 13.518177075027932px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/物语/" style="font-size: 19.578517034804044px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 15.877552243116423px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/CSS/" style="font-size: 15.301376919115288px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 10.885066664113342px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 18.24358969051489px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 12.325819772961625px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 12.137345088942455px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 10.941015401491718px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 15.956923607367864px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/Android/" style="font-size: 19.893753160860808px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 12.325516179079418px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 12.883188216830295px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 9.774259959130308px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 10.629462514821387px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 17.413220035514087px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Mon Aug 19 2019 09:22:21 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Mon Aug 19 2019 09:22:21 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>

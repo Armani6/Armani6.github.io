@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>鸿蒙OS将向全球开发者开源！ | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/3-hexo/">3-hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>鸿蒙OS将向全球开发者开源！</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/">鸿蒙OS将向全球开发者开源！</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-16
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/">鸿蒙OS将向全球开发者开源！</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-16
+            </p>
+            <p>
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="鸿蒙OS将向全球开发者开源！那开源的本质又是什么，免费还是自由？"><a href="#鸿蒙OS将向全球开发者开源！那开源的本质又是什么，免费还是自由？" class="headerlink" title="鸿蒙OS将向全球开发者开源！那开源的本质又是什么，免费还是自由？"></a>鸿蒙OS将向全球开发者开源！那开源的本质又是什么，免费还是自由？</h1><blockquote>
+<p>开源的本质，是自由而不是免费。</p>
+</blockquote>
+<p>就在昨天，华为消费者业务CEO余承东在2019华为开发者大会现场宣布，鸿蒙OS正式发布，这是目前全球最早的、基于微内核的全场景分布式OS之一。<br>而“鸿蒙”采用微内核，无需ROOT权限，“外核服务相互隔离，可提升系统安全。”也就是说，华为“鸿蒙”OS的安全级别将远胜于安卓。</p>
+<p>紧接着，华为“鸿蒙”OS宣布开源！余承东表示，未来华为不止要做一家企业的操作系统，而是希望做能“走向世界”，打通各行业壁垒的操作系统。</p>
+<h1 id="开源是什么？"><a href="#开源是什么？" class="headerlink" title="开源是什么？"></a>开源是什么？</h1><p>国内的很多软件公司或研究机构对开源的热情仅限于免费的代码，而绝少深度参与开源社区的活动。我们对于开源始终是利用多，而贡献少，从国内发起的有一定影响力的开源项目如果不是完全没有，恐怕也是凤毛麟角。我们是如此的吝啬，即使对于正在使用的开源项目，也不肯轻易“浪费”任何的开发的测试的资源。我有幸两次聆听过自由软件的精神领袖级的人物 Richard Stallman 的演讲，他特别强调“Free is not free”，自由不是免费。同样地，开源是自由（Free），而不是免费（Free）。也许，大家在毫无顾忌地尽情地享用开源的免费大餐的时候，完全忘记了开源的真正力量是自由，而不是免费。</p>
+<p>开源是什么？简单地讲，开源包括三个方面的内涵：</p>
+<p>首先，开源是一个项目 (Project)。</p>
+<p>作为项目，为了吸引更多的有兴趣且热心的技术的和非技术的人们的参与，开源往往有其独特的灵活的的项目组织方式和开发流程，这一点和公司截然不同。当然，一般地讲，一个开源项目常常由一个或若干个公司主导，但绝对不会排斥任何它他组织、公司、以及独立开发者的参与。开源项目的管理团队大多通过民主的方式产生。</p>
+<p>其次，开源是一个社区（Community）。</p>
+<p>作为社区，开源为开发者、测试者、捐赠者、和用户提供了一个由邮件列表、 论坛、IRC 和各种会议构成的交流平台。Open Source 中的 Open 不仅仅是开放的代码，同时也是开放的交流的平台。只要本着相互尊重的原则，技术的、开发的、测试的、使用的、管理的几乎所有的问题都可以是讨论的对象。大家一起出主意、想办法，从各个方面为开源贡献力量。</p>
+<p>最后，开源是一个产品（Product）。</p>
+<p>很多时候，开源发布的产品难以满足用户的需求。所以，在不违反相关许可证 (License) 的条件下，有些公司对其加以定制，就变身为自己的产品或解决方案。当然，有些公司也会反哺开源的发展。这是一个双赢的良性循环。几乎所有的开源项目都有相关的产品发布。这样的例子可谓举不胜举。Linux 的产品化就是一个最经典的例子，可以说，如果没有 Linux 的产品化，也不会有 Linux 开源的枝繁叶茂。另外的例子还有 Eclipse 的各种衍生产品。而 OpenOffice.org 的分裂和衰落也许是其产品化不够多不够好导致的。在我们这个神奇的国度，据说有一个绝顶聪明的院士，把国外的一个开源项目发挥到了极致的水平，竟以此荣获了国家自然科学一等奖，令人叹为观止，不服不行。</p>
+<h1 id="开源从哪里来？"><a href="#开源从哪里来？" class="headerlink" title="开源从哪里来？"></a>开源从哪里来？</h1><p>开源是一个自由的世界。人们可以自由地加入或退出社区，自由地讨论各种问题，发表各种建议。开发者可以自由地学习开源的代码和技术，用户可以自由地使用开源产品。有了开放的代码，在不违背开源代码和产品的许可证的条件下，可以自由改写、删除、增加开源产品的功能。公司和组织也可以自由地利用开源的代码和技术，自由地出售开源的产品。正如上文所述，开源鼓励公司参与的产品化。人人为我，我为人人，这也许可以作为开源的自由的真谛，不过，这实在是太美好了，美好得简直让人难以置信。回到现实，自由的愿景无论多么令人向往，一个开源项目 / 社区的成败最终还是系于民心士气，若自由的力量仍然不能唤起人们参与的热情，那么这个开源社区 / 项目存在的理由和价值就大大的值得怀疑了。</p>
+<p>另一方面，更为重要的是，有论者认为，开源本身就是一种免费商业模式，此言不虚也。这就如同正在被互联网公司演绎得如火如荼的免费商业模式一样。比如，我们虽然并没有为每次的 Google 搜索买单，但我们的搜索行为会作为大数据的一部分最终转化为 Google 的广告收入。拥有足够多的用户才是这种商业模式得以成功的关键所在。同样地，开源项目的源代码和最终的产品都是免费的，开放的，可以被自由地而不是任意地使用。开源的商业模式包括通过基金会募捐，向用户提供技术支持服务而收取费用，另外，许多公司在做开源项目产品化的同时也向开源直接贡献开发和测试资源，这其实也是一种资助行为。当然，正如上文所言，得到大量的免费用户的支持，这种开源商业模式才有可能取得成功。</p>
+<p>仅看到开源免费的好处，而无视开源的自由的力量，即使从纯功利的角度来讲，也绝对是一种短视的行为。对于正在使用开源的公司而言，积极的参与开源社区的建设起码可以从以下两个方面获益：第一，对开源的贡献越多，影响就会越大，从而产生良好的广告效应。通过开源，能够更好地展示自己的技术、产品和解决方案，并赢得用户的信赖。第二，如果实力足够强，有能力主导开源项目的开发方向，就可以更好的汇聚开源社区的资源来完善自己的产品，这给公司带来的好处自然是不言而喻的。</p>
+<p>对于程序员来讲，参与开源的最大好处就是贡献所得到的成就感。在 IBM 工作的时候，我所在的产品线 Symphony 是基于 OpenOffice.org 的办公套件，当时，我开发了一个回退字体 (rollback font) 快速匹配的算法，当用户为文本指定的字体在系统中不存在时，该算法可快速地从系统中找到一个最合适的替代字体，这可以大大提高文本的渲染速度，改善文本的显示质量。我把这一算法成功地提交给了 OpenOffice.org。我清楚地知道，用户每次使用 OpenOffice.org 打开编辑一个文档时，都可能运行这个算法，这种成就感便油然而生。当然，令人遗憾的是 OpenOffice.org 分裂了。不过 libreoffice.org 依然还继续存在。</p>
+<p>其实，阻止国内程序员参与开源的一个重要的原因不是技术能力的限制，而是英语水平的限制。学了那么多年的英语，即便是得到了四六级证书，也会发现学的那点哑巴英语根本派不上用场。语言不通所导致的交流不畅是一个艰涩的困难，但远远小于心中对外部不可知的世界和不可控的变化的畏惧所产生的苟且偷安的惰性思想的障碍。我无意在这里讨论如何提高个人的英语水平，只是想强调，有志者事竟成，一个有出息的程序员，如果心胸足够的开放，对未知的领域充满了好奇和向往，英语就绝非不可攻克的堡垒。况且，国内的程序员最担心的是听力和口语，而大多时候，开源社区都是通过书面的邮件来沟通。</p>
+<blockquote>
+<p>第一，几乎每个开源社区都向新手提供一个入门指南（Getting Started Guide）</p>
+</blockquote>
+<p>仔细阅读可以避免走不必要的弯路。</p>
+<blockquote>
+<p>第二，和社区大胆的互动。</p>
+</blockquote>
+<p>有什么问题不明白，不要自己冥思苦想，尽管大胆的提出来，即使再简单，也总是会有热心的人们来回答，更不会有人嘲笑你。当然，交流的时候，一定要尊重对方。邮件中要包含基本的礼貌，对别人的帮助要表示感谢。与此同时，也不要忘了帮助别人。</p>
+<blockquote>
+<p>第三，开源的开发多少有一点自由的散漫，没有太严格的计划。</p>
+</blockquote>
+<p>所以，有时候，会觉得自己的要求没有得到很快的响应和满足。需要注意的是，并不是自己提交的 BUG 就一定被认可，并不是自己提交的代码就一定被接受。遇到这种情况，要把道理讲清楚，而不要意气用事。</p>
+<blockquote>
+<p>第四，有些开源项目的代码质量实在是不敢恭维。</p>
+</blockquote>
+<p>这可能是参与开发的程序员良莠不齐，加之监管不严所致，但也并非全部如此。我还记得经常开玩笑说，OpenOffice.org 代码有些函数长得常常从这头看不到另一头。哥德尔不完全定理指出，任何一个类似于罗素和怀特海在《数学原理》中给出的数论的形式系统，无论有多强，都是不完全的，总有一个良构的 G 命题，既不能被证明是真，也不能被证明为假，所以任何形式系统都不能完全地描述数论乃至于数学的全部的性质，这当然不是十全十美的结论，但从另一方面讲，这又意味着数学真理的发现仍然有赖于数学家们创造性的聪明才智，可谓失之东隅, 收之桑榆。</p>
+<p>大而言之，人生总是有太多的缺憾、苦难、荒谬、离别、烦恼、虚荣、忧愁、彷徨、伤心、失恋、平庸、志大而才疏、怀才却不遇、白富美的空幻、矮矬穷的苦痛等等，相反，正是这坏的一面才反衬出那好的一面更值得珍惜，只有那些不完美才成就了完美，这就是一个哲学思辨的怪圈。集众人之力开发的开源的计算机程序又何尝不是如此。所以，凡事还需忍耐些，且行且珍惜吧。</p>
+<blockquote>
+<p>第五，理论上讲，若要实现一个软件功能，只要在邱奇 - 图灵论题可计算的范围之内，都可以用计算机编程语言来表达，在这一点上，无论多么高明的算法和程序，其实并没有什么艰深得不可逾越的技术鸿沟。</p>
+</blockquote>
+<p>可以说，技术总是简单，自己能够做到的，别人照样可以做到，反之亦然。但是，艺术却是无限，如果想要达到艾舍尔那样的绘画水平或巴赫那样的音乐水平，做不到就是做不到啊。</p>
+<p>当然，计算机编程也可以看做艺术，如 Donald Ervin Knuth 的名著《计算机程序设计艺术》（The Art of Computer Programming）所呈现的技巧，因此，程序的质量和算法的性能确实有上下高低之别。总之，无论是公司和个人，完全没有必要把一切东西都当做宝贝疙瘩，像祖传的武功秘籍或中药秘方那样严密的珍藏保护起来，以为这样，就可以做到我有而别人不能够有，那可就大错特错了。所以，很多情况下，对开源的贡献并不会损害公司的竞争力，相反，还会加强公司的竞争力。</p>
+<blockquote>
+<p>第六，与第五点相反，作为独立的程序员，也要充分了解你所在公司关于知识产权的政策。</p>
+</blockquote>
+<p>千万不要把公司专有知识产权的代码提交到开源社区。</p>
+<blockquote>
+<p>第七，提一个思考题：你觉得中国企业、程序员的开源有哪些是值得赞赏的，又有哪些乱象是需要批判的？</p>
+</blockquote>
+<p>*声明：本文于网络整理，版权归原作者所有，如来源信息有误或侵犯权益，请联系我们删除或授权事宜。</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '鸿蒙OS将向全球开发者开源！'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/资源分享/">资源分享</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/我就是我/">我就是我</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/27/Jekyll建立Github博客/">Jekyll建立Github博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/支付宝诞生的故事  /">支付宝诞生的故事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/腾讯视频如何转换MP4格式的2种方法/">腾讯视频如何转换MP4格式的2种方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/关于第三方支付，看这篇文章就够了！/">关于第三方支付，看这篇文章就够了！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/JAVA 排序之选择排序、堆排序/">JAVA 排序之选择排序、堆排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/Java 排序之插入排序、希尔排序/">Java 排序之插入排序、希尔排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/为什么说-Java-程序员到了必须掌握-Spring-Boot-的时候？/">为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/CSS3中Flex弹性布局该如何灵活运用？/">CSS3中Flex弹性布局该如何灵活运用？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/Node-js基本语法/">Node.js基本语法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/你真的了解-Cookie-和-Session-吗/">你真的了解 Cookie 和 Session 吗?</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/20/城市非官方短片《心在颍上》/">城市非官方短片《心在颍上》</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/述说《邻家诗话》/">述说《邻家诗话》</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/8个有用的JavaScript技巧/">8个有用的JavaScript技巧</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot ( 二 ) ：web 综合开发/">SpringBoot ( 二 ) ：web 综合开发</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (三) ：Spring Boot 中 Redis 的使用/">SpringBoot (三) ：Spring Boot 中 Redis 的使用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/辅助函数（Helpers）/">辅助函数（Helpers）</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/我成了六零后/">我成了六零后</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/16/鸿蒙OS将向全球开发者开源！/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/hexo/" style="font-size: 12.506242090244388px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 16.08264110850509px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/Apache/" style="font-size: 16.767391090993677px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 15.563755853630767px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 12.560827975577606px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/css/" style="font-size: 11.645080501313554px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 19.007101981817552px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/HTML/" style="font-size: 16.524745322713414px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 12.082566653206456px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 14.026600884603308px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/idea/" style="font-size: 14.163127889239114px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 10.115541712323626px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 13.56382242188781px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 17.62993216797873px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 14.868332210815732px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 18.1233617665665px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 8.410758852306609px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 12.483377748796908px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 16.96487464222559px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 10.157725101621857px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 11.611163319664808px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/Python/" style="font-size: 9.781592057733395px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/java/" style="font-size: 8.525138252406837px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 16.24133090216417px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/Vue/" style="font-size: 18.55701913874635px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 15.267794489216516px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 8.043687079281916px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 12.037461223937758px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 10.034308693918984px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/final/" style="font-size: 14.567241737062488px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 11.77462653869343px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 10.218651360158368px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 9.936048999950748px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 8.381344434359399px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/mysql/" style="font-size: 10.832427913892626px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/npm/" style="font-size: 19.548246966437784px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/安卓/" style="font-size: 16.42278570203188px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 18.551517482573427px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/reading/" style="font-size: 17.018205675169167px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 11.022305442314522px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 14.3419465755485px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 14.364189270552139px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 16.06850000710601px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 14.088676501811573px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 10.319076008989741px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 13.618785402041553px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 14.714311109254853px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/引导页/" style="font-size: 18.747780398405865px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 19.371364095138013px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 15.04278361727226px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/物语/" style="font-size: 19.10073440158688px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 13.064757588958791px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/CSS/" style="font-size: 13.54378275411672px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 14.914340788355553px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 13.616284460677232px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 15.496216606951439px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 8.616939356525279px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 19.314901649395644px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 16.779391379630212px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/Android/" style="font-size: 14.50841342609953px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 17.41391695142383px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 19.382167406557304px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 18.74687656941062px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 19.36792277837549px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 18.993078910897722px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Fri Aug 16 2019 08:46:43 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Fri Aug 16 2019 08:46:43 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
