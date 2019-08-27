@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>HTML5网页音乐播放器 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'https://t1.picb.cc/uploads/2019/08/27/gbxCTR.jpg,https://t1.picb.cc/uploads/2019/08/27/gbxlnW.jpg,https://t1.picb.cc/uploads/2019/08/27/gbxmZ8.jpg,https://t1.picb.cc/uploads/2019/08/27/gbxu7w.jpg,https://t1.picb.cc/uploads/2019/08/27/gbxnDL.jpg,https://t1.picb.cc/uploads/2019/08/27/gbx4XX.jpg,https://t1.picb.cc/uploads/2019/08/27/gbxH2G.jpg,https://t1.picb.cc/uploads/2019/08/27/gbx18g.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/3-hexo/">3-hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="http://www.zhsh666.xyz/demo/myseo">
+                        <i class="fa fa-home"></i>导航
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="https://www.picb.cc/">
+                        <i class="fa fa-"></i>图床
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>HTML5网页音乐播放器</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/19/HTML5网页音乐播放器/">HTML5网页音乐播放器</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/HTML5/">HTML5</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-19
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/19/HTML5网页音乐播放器/">HTML5网页音乐播放器</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-19
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/HTML5/">HTML5</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="一、功能介绍"><a href="#一、功能介绍" class="headerlink" title="一、功能介绍"></a><strong>一、功能介绍</strong></h2><p>HTML5中推出了音视频标签，可以让我们不借助其他插件就可以直接播放音视频。下面我们就利用H5的audio标签及其相关属性和方法来制作一个简单的音乐播放器。主要包括以下几个功能：</p>
+<p>1、播放暂停、上一首和下一首</p>
+<p>2、调整音量和播放进度条</p>
+<p>3、根据列表切换当前歌曲</p>
+<p>先来看一下最终的完成效果：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-8cf0eca492b88b37c4743e6a4d52ea68_hd.jpg" alt></p>
+<p>这个音乐播放器的结构主要分为三部分：歌曲信息、播放器和播放列表，我们重点介绍一下播放器部分。首先在播放器中放三个audio标签用于播放：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio id=&quot;music1&quot;&gt;浏览器不支持audio标签</span><br><span class="line">&lt;source  src=&quot;media/Beyond - 光辉岁月.mp3&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;/audio&gt;</span><br><span class="line">&lt;audio id=&quot;music2&quot;&gt;浏览器不支持audio标签</span><br><span class="line">&lt;source  src=&quot;media/Daniel Powter - Free Loop.mp3&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;/audio&gt;</span><br><span class="line">&lt;audio id=&quot;music3&quot;&gt;浏览器不支持audio标签</span><br><span class="line">&lt;source  src=&quot;media/周杰伦、费玉清 - 千里之外.mp3&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面的播放列表也对应三个audio标签：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;playList&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li id=&quot;m0&quot;&gt;Beyond-光辉岁月&lt;/li&gt;</span><br><span class="line">        &lt;li id=&quot;m1&quot;&gt;Daniel Powter-Free Loop&lt;/li&gt;</span><br><span class="line">        &lt;li id=&quot;m2&quot;&gt;周杰伦、费玉清-千里之外&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们就开始逐步实现上面提到的功能吧，先来完成播放和暂停功能，在按下播放按钮时我们要做到进度条随歌曲进度前进，播放时间也逐渐增加，同时播放按钮变成暂停按钮，播放列表的样式也对应改变。</p>
+<p>在做功能之前我们要先把三个audio标签获取id后存到一个数组中，供后续使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var music1= document.getElementById(&quot;music1&quot;);</span><br><span class="line">var music2= document.getElementById(&quot;music2&quot;);</span><br><span class="line">var music3= document.getElementById(&quot;music3&quot;);</span><br><span class="line">var mList = [music1,music2,music3];</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、播放与暂停"><a href="#二、播放与暂停" class="headerlink" title="二、播放与暂停"></a><strong>二、播放与暂停</strong></h2><p>我们现在就可以完成播放按钮的功能啦，首先设置一个标志，用来标记音乐的播放状态，再为数组的索引index设置一个默认值：</p>
+<p>然后对播放状态进行判断，调用对应的函数，并修改flag的值和列表对应项目样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function playMusic()&#123;</span><br><span class="line">if(flag&amp;&amp;mList[index].paused)&#123;</span><br><span class="line">            mList[index].play();</span><br><span class="line">        document.getElementById(&quot;m&quot;+index).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">progressBar();</span><br><span class="line">        playTimes();</span><br><span class="line">        play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">        flag = false;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">        mList[index].pause();</span><br><span class="line">        flag = true;</span><br><span class="line">        play.style.backgroundImage = &quot;url(media/play.png)&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中调用了多个函数，其中播放和暂停是audio标签自带的方法，而其他的函数则是我们自己定义的。下面我们就来看一下这些函数是怎么实现的，又对应了哪些功能吧。</p>
+<h2 id="三、进度条和播放时间"><a href="#三、进度条和播放时间" class="headerlink" title="三、进度条和播放时间"></a><strong>三、进度条和播放时间</strong></h2><p>首先是进度条功能，获取歌曲的全部时长，然后再根据当前播放的进度与进度条总长度相乘计算出进度条的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function progressBar()&#123;</span><br><span class="line">var lenth=mList[index].duration;</span><br><span class="line">timer1=setInterval(function()&#123;</span><br><span class="line">        cur=mList[index].currentTime;//获取当前的播放时间</span><br><span class="line">        progress.style.width=&quot;&quot;+parseFloat(cur/lenth)*300+&quot;px&quot;;</span><br><span class="line">        progressBtn.style.left= 60+parseFloat(cur/lenth)*300+&quot;px&quot;;</span><br><span class="line">&#125;,10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是改变播放时间功能，这里我们设置一个定时函数，每隔一段时间来执行一次以改变播放时间。因为我们获取到的歌曲时长是以秒来计算，所以我们要利用if语句对时长判断来进行换算，将播放时间改为以几分几秒的形式来显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function playTimes()&#123;</span><br><span class="line">timer2=setInterval(function()&#123;</span><br><span class="line">        cur=parseInt(mList[index].currentTime);//秒数</span><br><span class="line">        var minute=parseInt(cur/60);</span><br><span class="line">        if (minute&lt;10) &#123;</span><br><span class="line">            if(cur%60&lt;10)&#123;</span><br><span class="line">                playTime.innerHTML=&quot;0&quot;+minute+&quot;:0&quot;+cur%60+&quot;&quot;;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                playTime.innerHTML=&quot;0&quot;+minute+&quot;:&quot;+cur%60+&quot;&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else&#123;</span><br><span class="line">            if(cur%60&lt;10)&#123;</span><br><span class="line">                playTime.innerText= minute+&quot;:0&quot;+cur%60+&quot;&quot;;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                playTime.innerText= minute+&quot;:&quot;+cur%60+&quot;&quot;;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125; </span><br><span class="line">&#125;,1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、调整播放进度和音量"><a href="#四、调整播放进度和音量" class="headerlink" title="四、调整播放进度和音量"></a>四、调整播放进度和音量</h2><p>接下来我们再来完成一下通过进度条调整播放进度和调整音量功能。</p>
+<p>调整播放进度功能利用了event对象来实现，因为offsetX属性只有IE事件具有，所以推荐使用IE浏览器查看效果。先对进度条添加事件监听，当在进度条上点击鼠标时，获取鼠标的位置，并根据位置除以进度条的总长度来计算当前的播放进度，然后对歌曲进行设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//调整播放进度</span><br><span class="line">total.addEventListener(&quot;click&quot;,function(event)&#123;</span><br><span class="line">var e = event || window.event;</span><br><span class="line">document.onmousedown = function(event)&#123;</span><br><span class="line">        var e = event || window.event;</span><br><span class="line">        var mousePos1 = e.offsetX;</span><br><span class="line">        var maxValue1 = total.scrollWidth;</span><br><span class="line">        mList[index].currentTime = (mousePos1/300)*mList[index].duration;</span><br><span class="line">        progress.style.width = mousePos1+&quot;px&quot;;</span><br><span class="line">        progressBtn.style.left = 60+ mousePos1 +&quot;px&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>下面是调整音量功能，音量的调整我们采用拖动的形式实现，思路也是对音量条的按钮球添加事件监听，然后根据拖动的位置来计算按钮球相对于音量条整体的位置，最后根据计算结果与音量相乘得出当前音量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">volBtn.addEventListener(&quot;mousedown&quot;,function(event)&#123;</span><br><span class="line">var e = event || window.event;</span><br><span class="line">var that =this;</span><br><span class="line">//阻止球的默认拖拽事件</span><br><span class="line">e.preventDefault();</span><br><span class="line">document.onmousemove = function(event)&#123;</span><br><span class="line">var e = event || window.event;</span><br><span class="line">var mousePos2 = e.offsetY;</span><br><span class="line">var maxValue2 = vol.scrollHeight;</span><br><span class="line">if(mousePos2&lt;0)&#123;</span><br><span class="line">            mousePos2 = 0;</span><br><span class="line">&#125;</span><br><span class="line">if(mousePos2&gt;maxValue2)&#123;</span><br><span class="line">            mousePos2=maxValue2;</span><br><span class="line">&#125;</span><br><span class="line">mList[index].volume = (1-mousePos2/maxValue2);</span><br><span class="line">console.log(mList[index].volume);</span><br><span class="line">volBtn.style.top = (mousePos2)+&quot;px&quot;;</span><br><span class="line">volBar.style.height = 60-(mousePos2)+&quot;px&quot;;</span><br><span class="line">document.onmouseup = function(event)&#123;</span><br><span class="line">            document.onmousemove = null;</span><br><span class="line">            document.onmouseup = null;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、歌曲切换"><a href="#五、歌曲切换" class="headerlink" title="五、歌曲切换"></a>五、歌曲切换</h2><p>最后我们再来实现比较复杂的歌曲切换功能。</p>
+<p>先来看用上一首和下一首按钮进行切换，在切换音乐时我们要注意的问题有下面几个：第一，我们要停止当前播放的音乐，转而播放下一首音乐；第二，要清空进度条和播放时间，重新计算；第三，歌曲信息要随之改变，播放器下面的播放列表样式也要变化。在弄清楚上面三点以后我们就可以开始实现功能了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">//上一曲</span><br><span class="line">function prevM()&#123;</span><br><span class="line">clearInterval(timer1);</span><br><span class="line">clearInterval(timer2);</span><br><span class="line">stopM();</span><br><span class="line">qingkong();</span><br><span class="line">cleanProgress();</span><br><span class="line">--index;</span><br><span class="line">if(index==-1)&#123;</span><br><span class="line">        index=mList.length-1;</span><br><span class="line">&#125;</span><br><span class="line">clearListBgc();</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">changeInfo(index);</span><br><span class="line">mList[index].play();</span><br><span class="line">progressBar();</span><br><span class="line">playTimes();</span><br><span class="line">if (mList[index].paused) &#123;</span><br><span class="line">    play.style.backgroundImage = &quot;url(media/play.png)&quot;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125; </span><br><span class="line">//下一曲</span><br><span class="line">function nextM()&#123;</span><br><span class="line">clearInterval(timer1);</span><br><span class="line">clearInterval(timer2);</span><br><span class="line">stopM();</span><br><span class="line">qingkong();</span><br><span class="line">cleanProgress();</span><br><span class="line">++index;</span><br><span class="line">if(index==mList.length)&#123;</span><br><span class="line">    index=0;</span><br><span class="line">&#125;</span><br><span class="line">clearListBgc();</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">changeInfo(index);</span><br><span class="line">mList[index].play();</span><br><span class="line">progressBar();</span><br><span class="line">playTimes();</span><br><span class="line">if (mList[index].paused) &#123;</span><br><span class="line">    play.style.backgroundImage = &quot;url(media/play.png)&quot;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面的代码是点击列表切换歌曲。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">m0.onclick = function ()&#123;</span><br><span class="line">clearInterval(timer1);</span><br><span class="line">clearInterval(timer2);</span><br><span class="line">qingkong();</span><br><span class="line">flag = false;</span><br><span class="line">stopM();</span><br><span class="line">index = 0;</span><br><span class="line">pauseall();</span><br><span class="line">play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">clearListBgc();</span><br><span class="line">document.getElementById(&quot;m0&quot;).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">mList[index].play();</span><br><span class="line">cleanProgress();</span><br><span class="line">progressBar();</span><br><span class="line">changeInfo(index);</span><br><span class="line">playTimes();</span><br><span class="line">&#125;</span><br><span class="line">m1.onclick = function ()&#123;</span><br><span class="line">clearInterval(timer1);</span><br><span class="line">clearInterval(timer2);</span><br><span class="line">flag = false;</span><br><span class="line">qingkong();</span><br><span class="line">stopM();</span><br><span class="line">index = 1;</span><br><span class="line">pauseall();</span><br><span class="line">clearListBgc();</span><br><span class="line">play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">document.getElementById(&quot;m1&quot;).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">mList[index].play();</span><br><span class="line">cleanProgress();</span><br><span class="line">changeInfo(index);</span><br><span class="line">progressBar();</span><br><span class="line">playTimes();</span><br><span class="line">&#125;</span><br><span class="line">m2.onclick = function ()&#123;</span><br><span class="line">clearInterval(timer1);</span><br><span class="line">clearInterval(timer2);</span><br><span class="line">flag = false;</span><br><span class="line">qingkong();</span><br><span class="line">stopM();</span><br><span class="line">index = 2;</span><br><span class="line">pauseall();</span><br><span class="line">play.style.backgroundImage = &quot;url(media/pause.png)&quot;;</span><br><span class="line">clearListBgc();</span><br><span class="line">document.getElementById(&quot;m2&quot;).style.backgroundColor = &quot;#A71307&quot;;</span><br><span class="line">document.getElementById(&quot;m&quot;+index).style.color = &quot;white&quot;;</span><br><span class="line">mList[index].play();</span><br><span class="line">cleanProgress();</span><br><span class="line">changeInfo(index);</span><br><span class="line">progressBar();</span><br><span class="line">playTimes();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过播放列表来切换歌曲与通过按钮切换的思路差不多，只是根据对应的列表项来设置当前应该播放哪首歌曲。</p>
+<p>上面切换歌曲的函数中都调用了几个方法，下面我们来看看这些方法的用途都是什么吧。</p>
+<p>首先是切换歌曲信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function changeInfo(index)&#123;</span><br><span class="line">if (index==0) &#123;</span><br><span class="line">    musicName.innerHTML = &quot;光辉岁月&quot;;</span><br><span class="line">    singer.innerHTML = &quot;Beyond&quot;;</span><br><span class="line">&#125;</span><br><span class="line">if (index==1) &#123;</span><br><span class="line">    musicName.innerHTML = &quot;Free Loop&quot;;</span><br><span class="line">    singer.innerHTML = &quot;Daniel Powter&quot;;</span><br><span class="line">&#125;</span><br><span class="line">if (index==2) &#123;</span><br><span class="line">    musicName.innerHTML = &quot;千里之外&quot;;</span><br><span class="line">    singer.innerHTML = &quot;周杰伦、费玉清&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后清空两个定时器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//将进度条置0</span><br><span class="line">function cleanProgress(timer1)&#123;</span><br><span class="line">if(timer1!=undefined)&#123;</span><br><span class="line">    clearInterval(timer1);</span><br><span class="line">&#125;</span><br><span class="line">progress.style.width=&quot;0&quot;;</span><br><span class="line">progressBtn.style.left=&quot;60px&quot;;</span><br><span class="line">&#125; </span><br><span class="line">function qingkong(timer2)&#123; </span><br><span class="line">if(timer2!=undefined)&#123;</span><br><span class="line">    clearInterval(timer2);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再把播放的音乐停止，并且将播放时间恢复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function stopM()&#123;</span><br><span class="line">if(mList[index].played)&#123;</span><br><span class="line">    mList[index].pause();</span><br><span class="line">    mList[index].currentTime=0;</span><br><span class="line">    flag=false;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后的最后，改变下面播放列表的样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function clearListBgc()&#123;</span><br><span class="line">document.getElementById(&quot;m0&quot;).style.backgroundColor = &quot;#E5E5E5&quot;;</span><br><span class="line">document.getElementById(&quot;m1&quot;).style.backgroundColor = &quot;#E5E5E5&quot;;</span><br><span class="line">document.getElementById(&quot;m2&quot;).style.backgroundColor = &quot;#E5E5E5&quot;;</span><br><span class="line">document.getElementById(&quot;m0&quot;).style.color = &quot;black&quot;;</span><br><span class="line">document.getElementById(&quot;m1&quot;).style.color = &quot;black&quot;;</span><br><span class="line">document.getElementById(&quot;m2&quot;).style.color = &quot;black&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到此，音乐播放器我们就基本完成了，来看一下动图的效果：</p>
+<p><img src="https://pic1.zhimg.com/v2-4d2b406640060689bee8e39113480d10_b.jpg" alt></p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'HTML5网页音乐播放器'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/资源分享/">资源分享</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/我就是我/">我就是我</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/27/Jekyll建立Github博客/">Jekyll建立Github博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/支付宝诞生的故事  /">支付宝诞生的故事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/腾讯视频如何转换MP4格式的2种方法/">腾讯视频如何转换MP4格式的2种方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/关于第三方支付，看这篇文章就够了！/">关于第三方支付，看这篇文章就够了！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/JAVA 排序之选择排序、堆排序/">JAVA 排序之选择排序、堆排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/Java 排序之插入排序、希尔排序/">Java 排序之插入排序、希尔排序</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/为什么说-Java-程序员到了必须掌握-Spring-Boot-的时候？/">为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/CSS3中Flex弹性布局该如何灵活运用？/">CSS3中Flex弹性布局该如何灵活运用？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo中输入数学公式/">hexo中输入数学公式</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/一款超级强大的系统优化工具/">一款超级强大的系统优化工具</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/在虚拟机安装Win7出现：directory ezboot not /">在虚拟机安装Win7出现：directory ezboot not</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/我就是我/">我就是我</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/12/面试指南，求职必看/">面试指南，求职必看</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/Java-基础编程练习题/">Java 基础编程练习题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/浅谈前后端路由与前后端渲染/">浅谈前后端路由与前后端渲染</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/100道Java基础面试题收集整理（附答案）/">100道Java基础面试题收集整理（附答案）</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/hexo教程基本配置+更换主题+多终端工作+coding page部署分流/">hexo教程基本配置+更换主题+多终端工作+coding page部署分流</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/19/HTML5网页音乐播放器/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/19/HTML5网页音乐播放器/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/19/HTML5网页音乐播放器/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/hexo/" style="font-size: 12.933124951427104px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 16.538657550555847px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/Apache/" style="font-size: 19.168186026426746px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 12.335480768584741px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 18.84288149057206px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/css/" style="font-size: 15.16657792568719px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 11.581518839696542px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/HTML/" style="font-size: 9.741167698455175px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 14.494834746101928px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 12.364730976930105px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/idea/" style="font-size: 14.516839125011721px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 10.368278981953981px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 9.135686912508042px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 13.284167113688042px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 8.413245017945517px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 19.04009045494082px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 13.53067717087534px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 18.55117901993078px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 11.215889779595837px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 12.840873725277355px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 8.926488021466637px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/Python/" style="font-size: 18.151901065617857px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/java/" style="font-size: 17.082346081290268px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 13.853883171997698px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/Vue/" style="font-size: 18.19888288929622px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 15.899830493697916px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 16.14786857380862px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 17.745642599678995px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 19.10032736945408px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/final/" style="font-size: 15.610514890209078px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 19.778578949792106px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 17.079830621140385px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 16.619058449548234px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 14.665605678471326px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/mysql/" style="font-size: 13.681441376643303px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/npm/" style="font-size: 9.261487729388122px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/安卓/" style="font-size: 9.121168348119422px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 14.65818932880895px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/reading/" style="font-size: 19.65761493019856px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 14.662359181699152px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 14.96621716655546px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 16.97360860255866px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 15.493607176915162px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 18.88998743018188px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 17.114730527927236px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 18.698616454632912px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 15.664829984084504px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/引导页/" style="font-size: 10.484257073510275px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 9.362060931487044px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 15.631607572672658px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/物语/" style="font-size: 18.172617356836213px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 16.941135198151485px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/CSS/" style="font-size: 14.708165178000105px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 10.04319602879076px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 11.025247147949592px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 12.82637573720099px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 11.1212073675715px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 13.159213224884258px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 13.124952216241223px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/Android/" style="font-size: 11.551511222844342px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 8.741958796256384px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 11.96536106427742px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 12.120375053789257px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 18.65171415761261px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 12.412788779086299px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">【KDays Forum】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">【绅士导航♂】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">【萌导航】</a>
+    </li>
+    
+    <li>
+        <a href="http://chuangzaoshi.com/" target="_blank">【创造师】</a>
+    </li>
+    
+    <li>
+        <a href="http://yelog.org/" target="_blank">【叶落阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.qxxmx.com" target="_blank">【草莓酱】</a>
+    </li>
+    
+    <li>
+        <a href="https://wxy97.com/" target="_blank">【王旭阳】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.liaoxuefeng.com/wiki/1022910821149312" target="_blank">【廖雪峰】</a>
+    </li>
+    
+    <li>
+        <a href="https://xian6ge.cn/posts/82ce1911/" target="_blank">【贤柳阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://rzfyu.com/" target="_blank">【非汝鱼】</a>
+    </li>
+    
+    <li>
+        <a href="https://oriheart.top/" target="_blank">【梨花诗】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.live/" target="_blank">【 流  年】</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin/" target="_blank">【樱花庄】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.club/" target="_blank">【yremp】</a>
+    </li>
+    
+    <li>
+        <a href="http://bbs.kdays.net/index" target="_blank">【KDays论坛】</a>
+    </li>
+    
+    <li>
+        <a href="https://myau.moe/" target="_blank">【myau】</a>
+    </li>
+    
+    <li>
+        <a href="https://marmomento.github.io/" target="_blank">【marmomento】</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz" target="_blank">【Zevs】</a>
+    </li>
+    
+    <li>
+        <a href="https://powerlrl.github.io/" target="_blank">【LinYo】</a>
+    </li>
+    
+    <li>
+        <a href="https://jackym06.github.io/" target="_blank">【MaoLi】</a>
+    </li>
+    
+    <li>
+        <a href="http://fangzh.top/2018/2018090514/" target="_blank">【FangL】</a>
+    </li>
+    
+    <li>
+        <a href="http://litten.me" target="_blank">【Litten】</a>
+    </li>
+    
+    <li>
+        <a href="https://imsun.net/" target="_blank">【Sun】</a>
+    </li>
+    
+    <li>
+        <a href="http://hfanss.com/" target="_blank">【HFan】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.whyvv.top/" target="_blank">【Whyvv】</a>
+    </li>
+    
+    <li>
+        <a href="https://staunchkai.com/" target="_blank">【STAUN】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.creat.kim/" target="_blank">【DS Blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.wzdxy.com/" target="_blank">【WZdxy】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.zhaojun.im/" target="_blank">【ZJK】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.cnblogs.com/zhsh666/" target="_blank">【blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.php.cn" target="_blank">【PHP】</a>
+    </li>
+    
+    <li>
+        <a href="https://hellowangheng.github.io/" target="_blank">【WangH】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.damonare.cn/" target="_blank">【Damonare】</a>
+    </li>
+    
+    <li>
+        <a href="https://claiyre.github.io/" target="_blank">【Claiyre】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.slomoo.cn/" target="_blank">【Slomoo】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.givensir.cn/" target="_blank">【GivenSir】</a>
+    </li>
+    
+    <li>
+        <a href="https://laustar.fun/" target="_blank">【laustar】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mckinleylu.com/" target="_blank">【McKinley】</a>
+    </li>
+    
+    <li>
+        <a href="http://cnm.one/" target="_blank">【喵帕斯】</a>
+    </li>
+    
+    <li>
+        <a href="http://ibruce.info/" target="_blank">【不如】</a>
+    </li>
+    
+    <li>
+        <a href="https://xdlrt.github.io/" target="_blank">【小居】</a>
+    </li>
+    
+    <li>
+        <a href="http://damonare.cn/" target="_blank">【念念】</a>
+    </li>
+    
+    <li>
+        <a href="https://helloqingfeng.github.io/" target="_blank">【清风】</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://www.bilibili.com/" target="_blank">bibi</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz/demo/myseo" target="_blank">导航</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhsh666.xyz" target="_blank">皮皮猪</a>
+    </li>
+    
+    <li>
+        <a href="https://www.picb.cc/" target="_blank">图床</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin" target="_blank">樱花</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/mashirozx" target="_blank">主题</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/yremp" target="_blank">流年</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Mon Aug 19 2019 09:25:25 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Mon Aug 19 2019 09:25:25 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
