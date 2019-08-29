@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>Http转入Https的完整攻略 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview1.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview2.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview3.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview4.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview5.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview6.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview7.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flex/">Flex</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="http://www.zhsh666.xyz/demo/myseo">
+                        <i class="fa fa-home"></i>导航
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="https://www.picb.cc/">
+                        <i class="fa fa-"></i>图床
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>Http转入Https的完整攻略</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/26/Http转入Https的完整攻略/">Http转入Https的完整攻略</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/http/">http</a>, 
+                
+                <a href="/tags/https/">https</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-26
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/26/Http转入Https的完整攻略/">Http转入Https的完整攻略</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-26
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/http/">http</a>, 
+                
+                <a href="/tags/https/">https</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>现如今，由于隐私保护的原因，用户在网页上提供他们的个人信息时，往往会在网页上寻找有没有代表使用了Https协议的挂锁标志；Chrome和FireFox浏览器在没有使用Https提供表单的网页上明确标记了不安全标记，而这会影响到这个网页在搜索引擎上的优先级排序，通常也会对用户的隐私造成严重影响，这些都说明了Https是当下的必然趋势。此外，现在免费获取Https证书的方法多种多样，只要你愿意，把自己的网站转为使用Https就不是问题。</p>
+<p>对于没有经验的使用者来说，设置Https协议可能有点困难，它需要在不同的部分上完成许多步骤，也需要加密和服务器配置方面的专业知识，而且通常看起来十分复杂。 在这篇攻略中，我将讲解各个独立的部分和步骤，也将清楚地介绍配置Https的各个阶段。你应该会觉得这些不难，如果你的托管服务器提供商（hosting provider）也提供HTTPS证书，有可能你能轻松快速地在控制面板（control panel）上执行所有操作。 我已经在cPanel，Apache HTTP服务器的管理员（administrators），Linux和Unix上的Nginx以及Windows上的Internet Information Server中列出了共享托管计划的所有者的详细说明。 让我们先从基础知识开始吧！</p>
+<h2 id="HTTP、HTTPS、HTTP-2、SSL、TLS：这些都是什么鬼？"><a href="#HTTP、HTTPS、HTTP-2、SSL、TLS：这些都是什么鬼？" class="headerlink" title="HTTP、HTTPS、HTTP/2、SSL、TLS：这些都是什么鬼？"></a>HTTP、HTTPS、HTTP/2、SSL、TLS：这些都是什么鬼？</h2><p>标题中的首字母缩略词都是用于描述客户端和服务器之间的通信过程的，但这些往往被不熟悉内部知识的人搞混。 超文本传输协议（Hypertext Transfer Protocol，HTTP）是一种基本的通信协议，它要求客户端和服务器都必须实现才能在两者之间进行通信，它涵盖了请求、响应、会话、缓存、身份验证等等操作。HTTP协议和HTML（Hypertext Markup Language，超文本标记语言）是从1989年由Tim Berners-Lee及其在CERN的团队开始实现的。协议的第一个正式版本（HTTP 1.0）于1996年发布，不久之后又在1997年发布了目前广泛采用的版本（HTTP 1.1）。 协议以明文方式在浏览器和服务器之间传输信息，允许传输信息的网络查看传输的信息。这就带来了安全问题，也因此引入了HTTP Secure（HTTPS）协议，它允许客户端和服务器首先建立一个加密的通信信道，然后通过它传递明文HTTP消息，有效地保护他们免受窃听。 创建加密信道使用的协议是传输层安全协议（Transport Layer Security，TLS），以前叫做安全套接层（Secure Socket Layer ，SSL），SSL3.0就是被TLS1.0替代的，所以术语SSL和TLS通常可互换使用，它们的区别在于SSL是Netscape公司开发的协议，而TLS是IETF标准。在撰写本文时，所有版本的SSL（1.0,2.0,3.0）由于各种安全问题而被淘汰，并将在当前浏览器中产生警告，而TLS的三个版本（1.0,1.1,1.2）正在使用中，1.3还在草稿阶段。 因此，在1996、1997年左右，我们得到了目前互联网的稳定版本（HTTP 1.1，有或没有SSL和TLS），这仍然为今天的大多数网站提供着支持。以前，HTTP用于非敏感信息的传输（例如阅读新闻），而HTTPS用于敏感信息的传输（例如身份验证和电子商务）; 然而，对隐私的益发关注导致网络浏览器（如Google Chrome）现在将HTTP网站标记为“not private”，并将在未来对HTTP引入警告。 越来越多的网站正在采用的HTTP协议下一代版本HTTP/2增加了新功能（压缩，复用，优先级排序）以减少延迟并提高性能和安全性。 在HTTP版本1.1中，安全连接是可选项（这意味着HTTP和/或HTTPS是相互独立的），而在HTTP/2中它是强制性的。即使该标准并未在HTTP/2的定义中添加必须使用TLS，但大多数浏览器厂商还是表示他们只会用TLS实现对HTTP/2的支持。</p>
+<h2 id="Https协议都提供了些什么？"><a href="#Https协议都提供了些什么？" class="headerlink" title="Https协议都提供了些什么？"></a>Https协议都提供了些什么？</h2><p>一开始为什么要使用Https协议呢？主要是出于以下三个原因： 1. 保密性 这个协议保护了通信双方在互联网等公共传输环境下传输消息时不被其他方窃听。例如，不用HTTPS协议的话，Wi-Fi的主人可以在Wi-Fi的使用者在线购买时看到信用卡密码等私人信息。 2. 完整性 Https协议能确保信息完整不变地到达目的地。例如，我们的Wi-Fi使用者可以给我们阅读的网页添加额外的广告，也可以降低我们的图像的质量以节省带宽，或者是更改我们阅读的文章的内容，而HTTPS协议可确保网页无法被修改。 3. 身份验证 Https协议可以确保网站是从我们所期待的地方发来的。例如，当我们向服务器发送获取example.com网页的请求时，Wi-Fi的主人可以向浏览器返回一个假网页，而HTTPS协议可以确保example.com确实是网站example.com。一些证书甚至可以检查该网站运营者的法定身份，例如网站yourbank.com运营者是YourBank，Inc.</p>
+<h2 id="密码学基础简介"><a href="#密码学基础简介" class="headerlink" title="密码学基础简介"></a>密码学基础简介</h2><p>保密性，完整性和身份验证不是HTTPS的特定概念：它们是密码学的核心概念，我们再来深入了解一下。</p>
+<h3 id="保密性"><a href="#保密性" class="headerlink" title="保密性"></a>保密性</h3><p>保密性可以保护信息免受未经授权的第三方阅读，意味着对隐私信息的保护程度。该过程通常是将称为明文的信息的可读（或可听、可见）形式转换成有噪声干扰的，不可读的密文，这个过程称为加密。将不可读的密文转回可读明文的逆过程称为解密。有许多密码学函数（或算法）可用来加密和解密信息。 为了让双方能够沟通，他们应该就两件事情达成一致： 1、他们将使用哪种算法（密码函数）？ 2、选定了算法后，他们将用什么作为这个算法的关键参数（例如密码、密钥） 有两种主要的加密方式： 1、对称加密算法 双方共享一个相同的不公开的密钥。 2、非对称加密算法 密钥分为私钥（不公开的）和公钥（公开的），私钥只有一方拥有。非对称加密算法是公钥基础设施（PKI）的基础。 对称加密算法需要双方都有一个共享的密钥，发送方用密钥将信息加密，而接收方用相同的方法和密钥进行解密还原得到信息（见下图）。这种算法的问题在于双方要想安全地传输信息，就必须先传输密钥，而密钥的安全传输无法通过将密钥加密来实现，就需要有一种新的安全传输方法。<img src="https://s2.ax1x.com/2019/08/26/mRWZNV.png" alt></p>
+<p>非对称加密算法可以来解决这个问题-这种算法是基于公钥和私钥的，使用公钥进行加密，使用对应的私钥进行解密。 那么它是如何工作的呢？让我们假设有两方需要进行通信– Alice和Bob。他们都有一对钥匙：私钥和公钥。私钥只有他们各自的所有者才知道; 任何人都可以使用公钥。 如果Alice想向Bob发消息，她将获取Bob的公钥，用公钥加密明文后向他发送密文，然后Bob可以使用自己的私钥进行解密。 同样地，如果Bob想向Alice发消息，她将获取Alice的公钥，用公钥加密明文后向他发送密文，然后Alice可以使用自己的私钥进行解密。如下图所示</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWn9U.png" alt></p>
+<p>我们什么时候使用对称加密算法，什么时候使用非对称加密算法呢？非对称加密算法通常用于客户端和服务器之间交换密钥。在现实生活中一般不需要进行双向非对称通信-这是足够的，如果一方当事人（我们只是把它称为一个服务器，为简单起见）有密钥的集合，所以它可以接受的加密消息。它真正保护信息的安全性只有一个方向 - 从客户端到服务器，因为用公钥加密的信息只能使用私钥解密; 因此，只有服务器可以解密它。另一个方向不受保护 - 使用服务器的私钥加密的信息可以由任何人的公钥解密。 那一般什么时候使用对称加密算法，什么时候使用非对称加密算法呢？非对称加密算法通常用于客户端和服务器之间交换密钥。现实生活中一般不需要使用非对称加密算法进行 然后使用对称加密算法来保护通信中的实际数据，因为它比非对称加密快得多。双方（客户端和服务器）有了先前交换的密钥，就能够对信息进行加密和解密，而且只有他们能够进行。 这就是为什么握手的第一个非对称部分也被称为密钥交换，而实际通信中用于加密的算法才被真正称为加密算法。</p>
+<h3 id="完整性"><a href="#完整性" class="headerlink" title="完整性"></a>完整性</h3><p>HTTPS解决的另一个问题是数据的完整性：（1）信息是否全部成功获得，（2）是否被转接中的某人修改。为了确保信息完整成功传输，HTTPS使用了消息摘要算法。（译者注：这种算法基本思路是计算每条消息的消息认证码，如果传输后消息的消息认证码与传输前相同，则可认为消息在传输过程中没有被改变）。计算消息的消息认证码（MAC）是哈希算法，在获得消息认证码（可以理解为消息的标签）的过程中，哈希算法有以下几个重要特征： 1、更改消息一定会改变消息认证码 2、两个不同的消息一定会生成不同的标签 3、无法从消息认证码还原为消息本身。</p>
+<h3 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h3><p>什么是身份验证？ 公钥基础设施在现实中的应用存在一个问题：双方无法知道对方的真实身份—双方在物理上是分开的。为了证明另一方的身份，需要引入一个双方都信任的第三方:证书颁发机构（certificate authority，CA）。证书颁发机构负责颁发证书，证书包括以下内容：声明域名“example.com”（这个域名代表唯一标识符）与公钥“XXX”相关联；在某些情况下（例如，具有EV和OV证书—见下文），CA还将检查哪家公司控制该域名；此证书由哪家证书颁发机构认证；该认证有效时间区间是什么。所有这些信息都录入一个叫做HTTPS证书的文档里。打个比方，就像一个政府机构（代表所有人都信任的第三方）向一个人发出ID或护照（代表证书），那么这个ID的所有者就会得到信任政府的人的信任（假设ID不是假的，当然这种假设不在这个例子的讨论范围之内）。 证书颁发机构（CA）是有公信力去颁发证书的机构，Windows，MacOS，ios和Android等操作系统和Firefox等浏览器都有自己认为可信的证书颁发机构列表，您可以用一下方法查看您的浏览器或操作系统信任哪些证书颁发机构： 1、Firefox：“选项”→“高级”→“证书”→“查看证书”→“权限” 2、Windows：“控制面板”→“Internet选项”→“内容” - “证书”→“受信任的根证书颁发机构/中级认证机构” 3、Mac：“应用程序”→“实用程序”→“钥匙串访问”。在“类别”下选择“证书” 如果证书在可信证书列表里或证书已经被可信任的一方认证过了，那么浏览器或操作系统会检查并认为证书是可信任的，这种信任的传递机制被称为信任链：</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWKc4.png" alt="img"></p>
+<p>这种机制使得我们自己可以添加其他没有被认证过的证书颁发机构，当我们想用自己签名的证书时这种机制就派上用场了（一会会讨论这种情况）。 大多数情况仅要求客户端知道服务器的身份即可，比如说网购用户需要知道自己访问的网站是否来源于淘宝，所以只有网站需要证书，而有的情况要求客户端和服务器都应该向对方表明自己的身份，比如说电子政务系统，这意味着双方都应该向对方发送证书以证明自己的身份，这种情况不在本文的讨论范围之内。 HTTPS证书的类型 HTTPS证书有很多种，它们可以按照以下标准进行分类：</p>
+<h4 id="按身份验证（IDENTITY-VALIDATION）的类型分类"><a href="#按身份验证（IDENTITY-VALIDATION）的类型分类" class="headerlink" title="按身份验证（IDENTITY VALIDATION）的类型分类"></a>按身份验证（IDENTITY VALIDATION）的类型分类</h4><ol>
+<li><p>域验证（Domain validated，DV） 这是最常见的一种证书，DV证书负责验证域是和一个特定公钥匹配的，浏览器与服务器建立安全连接，并显示一个锁着的挂锁标志，点击挂锁标志将显示“本网站不提供所有权信息”。这种验证仅要求网站拥有域，DV证书只能确保这确实是该域对应的公钥，浏览器不显示域背后的法律实体。DV证书通常很便宜（每年10美元），甚至是免费的。</p>
+</li>
+<li><p>扩展验证（Extended validation，EV） EV证书可以验证网站背后的法律实体，这是最可靠的证书类型，它是在CA检查了域背后的法律实体后才颁发的，CA会采用以下方法进行检查： 检查实体是否控制着域，例如DV证书 检查政府业务记录，以确保法律实体确实注册了 检查独立的业务目录 打一个核实电话 检查证书中的所有域名（EV证书显式禁止通配符） 除了锁着的挂锁标志，EV证书还会在URL之前显示经过验证的法律实体（通常是注册公司）的名称。某些设备（如iOS Safari）仅显示经过验证的法律实体，完全不显示URL。单击标记将显示法律实体的相关详细信息，如名称、街道地址等，费用在每年150到300美元之间。</p>
+</li>
+<li><p>组织验证（Organization validated，OV） 像EV一样，OV证书会验证网站背后的法律实体，但与EV不同的是，OV证书不会在浏览器界面中显示经过验证的法定实体的名称，也就是说OV具有较高的验证要求但却不会向用户展示较高的验证要求带来的优势，因此，OV证书不太受欢迎。OV证书的价格在每年40到100美元之间。</p>
+<h4 id="按域覆盖的数量（NUMBER-OF-DOMAINS-COVERED）分类"><a href="#按域覆盖的数量（NUMBER-OF-DOMAINS-COVERED）分类" class="headerlink" title="按域覆盖的数量（NUMBER OF DOMAINS COVERED）分类"></a>按域覆盖的数量（NUMBER OF DOMAINS COVERED）分类</h4><p>在以前，HTTPS证书通常只在CN域中包含一个域，后来为了允许一个证书适用于多个域，HTTPS证书加入了“主题替代名称”（subject alternative name，SAN）字段。近来，所有HTTPS证书都被创建为一样的：即使那些只包含一个域的证书也会把该域的SAN（以及该域的www版本的SAN）添加进证书。然而，由于历史原因，许多证书的供应商仍然出售单域和多域HTTPS证书。</p>
+</li>
+<li><p>单域证书 这是最常见的一种证书类型，对域名和域名的www版本都有效。</p>
+</li>
+<li><p>多域证书（UCC / SAN） 这种类型的证书也称为统一通信证书（Unified Communications Certificate ，UCC）或主题备用名称（Subject Alternative Names ，SAN），可以适用于多个域（有数量的上限）。它不限于单个域，您可以混合不同的域和子域，证书本身价格通常包括3到5个域，但您可以花费额外的费用来包括更多的域。建议将这种证书用于相互关联的网站，因为客户端在检查网站时的证书将会看到主域和其他域。</p>
+</li>
+<li><p>通配符 这种类型的证书可以覆盖主域和不受限制的子域，比如说它可以覆盖example.com,<a href="http://www.example.com,mail.example.com,ftp.example.com等等。它的限制是它只适用于主域的子域。" target="_blank" rel="noopener">www.example.com,mail.example.com,ftp.example.com等等。它的限制是它只适用于主域的子域。</a></p>
+</li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>简要概括起来，HTTPS的四个部分需要加密： 1、初始密钥交换：用非对称加密算法（包括私钥和公钥）加密 2、身份验证（证书颁发机构颁发的HTTPS证书）：用非对称加密算法（包括私钥和公钥）加密 3、实际意义上的新息加密：用对称加密算法加密 4、信息的摘要：用哈希算法加密 每部分都使用一组密钥大小不同的常用加密算法（其中一些已被弃用）进行加密。客户端和服务器在握手时协商他们将使用哪些算法 - 从大约十几个公钥算法（密钥交换算法）中选择一个，十几个对称密钥（信息加密）算法中选择一个，再从三种消息摘要（哈希）算法中选择一个，这些算法可以选取数百种组合。 例如，设置ECDHE-RSA-AES256-GCM-SHA384意味着使用椭圆曲线Diffie-Hellman（Elliptic Curve Diffie-Hellman Ephemeral，ECDHE）密钥交换算法来交换密钥，CA使用Rivest-Shamir-Adleman（RSA）算法签署了证书; 对称消息加密将使用256位密钥和GCM模式的Advanced Encryption Standard（AES）加密算法; 并使用SHA安全散列算法生成384位消息摘要来验证消息的完整性。（有一个综合的算法组合列表。） 也就是说，加密算法有一定的选择空间。</p>
+<h3 id="加密算法组合"><a href="#加密算法组合" class="headerlink" title="加密算法组合"></a>加密算法组合</h3><p>在决定使用怎样的加密算法组合时要兼顾兼容性和安全性：与旧浏览器的兼容性需要服务器支持较旧的加密算法，然而，许多较旧的密码算法后来被认为是不安全的。 OpenSSL以加密强度的顺序列出了支持的组合（见上文），其中最安全的位于顶部，底部最弱。以这种方式设计，因为在客户端和服务器之间的初始握手期间，要使用的组合被协商，直到发现由双方支持的匹配。首先尝试最安全的组合是有道理的，只有在没有其他方式的情况下才逐渐降低安全性。 Mozilla SSL配置生成器是一个非常有用和强烈推荐的资源，建议在服务器上启用什么加密方法，稍后我们将使用实际的服务器配置。</p>
+<h3 id="关键的密钥"><a href="#关键的密钥" class="headerlink" title="关键的密钥"></a>关键的密钥</h3><p>椭圆曲线密码学（ECC）证书比RSA证书更快，使用更少的CPU，这对移动客户端尤为重要。然而，一些服务，如亚马逊，CloudFront和Heroku，在撰写本文时还没有支持ECC证书。 一般我们认为256位的ECC密钥就足够了。 Rivest Shamir Adleman（RSA）证书较慢，但与更多种类较旧的服务器兼容。RSA密钥较大，因此2048位RSA密钥在保证安全的情况下是最小的。4096位以上的RSA证书可能会损害性能 - 他们也可能被一个2048位的中介机构签署，破坏了大部分额外的安全性！ 您可能已经注意到上述声明的流动性和缺少任何数字 - 这是因为一台服务器上的重负载不在另一台服务器上。确定对性能的影响的最佳方法是通过您的真实网站和真实访问者来监控服务器上的负载。即使这样会随着时间的推移而改变。</p>
+<h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><h3 id="步骤综述"><a href="#步骤综述" class="headerlink" title="步骤综述"></a>步骤综述</h3><p>要获取HTTPS证书，请按以下步骤进行： 1、创建私钥-公钥对，并准备证书签名请求（ Certificate Signing Request，CSR），包括法定组织的信息和公钥。 2、联系认证机构，并根据CSR请求HTTPS证书。 3、获取签名的HTTPS证书并将其安装在您的Web服务器上。 这个步骤中需要用到一组包含公钥基础设施（PKI）的不同组件的文件：私钥，公钥，CSR和签名的HTTPS证书。然而，不同的组织用使用不同的名称（和文件扩展名）来识别同一个东西，让事情变得更复杂了。 首先，有两种流行的存储信息的格式–DER和PEM。第一个（DER）是二进制的，第二个（PEM）是一个base64编码（文本）DER文件。默认情况下，Windows直接使用DER格式，开源世界（Linux和UNIX）使用PEM格式。有一些工具（OpenSSL）负责在他们之间转换。 我们将在下面的步骤中作为示例使用的文件如下： 1、example.com.key 这个PEM格式的文件包含私钥。扩展名.key不是标准要求，所以有些可能使用它作为扩展名，有些可能用其他的扩展名，这个文件只能由系统超级用户进行保护和访问。 2、example.com.pub 这个PEM格式的文件包含公钥。因为可以从私有密钥生成公钥，所以实际上你并不需要这个文件（它从来没有显示出来），这里列出来只是为了便于说明。 3、example.com.csr 这是证书签名请求，是一个包含组织信息和服务器的公钥的PEM格式的文件，应该把它发送到颁发HTTPS证书的证书颁发机构。 4、example.com.crt 此HTTPS证书由证书颁发机构签署。它是一个PEM格式的文件，包括服务器的公钥，组织信息，CA签名，有效时间的区间等。扩展名.crt不是标准要求， 其他常见的扩展包括.cert和.cer。 文件名（和扩展名）不是标准要求， 他们可以是你喜欢的任何东西。我选择了这个命名约定，因为我认为它具有说明性，可以更明显地说明哪个组件具有什么功能。只要在整个过程中引用命令行中相应的密钥证书文件和服务器配置文件，您就可以使用任何您喜欢的命名法则。 私钥是具有一定长度的随机生成的字符串（我们将使用2048位），它看起来像这样子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN RSA PRIVATE KEY-----</span><br><span class="line">MIIEowIBAAKCAQEAm+036O2PlUQbKbSSs2ik6O6TYy6+Zsas5oAk3GioGLl1RW9N</span><br><span class="line">i8kagqdnD69Et29m1vl5OIPsBoW3OWb1aBW5e3J0x9prXI1W/fpvuP9NmrHBUN4E</span><br><span class="line">S17VliRpfVH3aHfPC8rKpv3GvHYOcfOmMN+HfBZlUeKJKs6c5WmSVdnZB0R4UAWu</span><br><span class="line">Q30aHEBVqtrhgHqYDBokVe0/H4wmwZEIQTINWniCOFR5UphJf5nP8ljGbmPxNTnf</span><br><span class="line">b/iHS/chjcjF7TGMG36e7EBoQijZEUQs5IBCeVefOnFLK5jLx+BC//X+FNzByDil</span><br><span class="line">Tt+l28I/3ZN1ujhak73YFbWjjLR2tjtp+LQgNQIDAQABAoIBAEAO2KVM02wTKsWb</span><br><span class="line">dZlXKEi5mrtofLhkbqvTgVE7fbOKnW8FJuqCl+2NMH31F1n03l765p4dNF4JmRhv</span><br><span class="line">/+ne4vCgOPHR/cFsH4z/0d5CpHMlC7JZQ5JjR4QDOYNOpUG51smVamPoZjkOlyih</span><br><span class="line">XGk/q72CxeU6F/gKIdLt6Dx03wBosIq9IAE8LwdMnioeuj18qaVg195OMeIOriIn</span><br><span class="line">tpWP4eFya5rTpIFfIdHdIxyXsd6hF/LrRc9BMWTY1/uOLrpYjTf7chbdNaxhwH7k</span><br><span class="line">buvKxBvCvmXmd6v/AeQQAXbUkdSnbTKDaB9B7IlUTcDJyPBJXvFS1IzzjN6vV+06</span><br><span class="line">XBwHx5ECgYEAyRZLzwnA3bw8Ep9mDw8JHDQoGuQkFEMLqRdRRoZ+hxnBD9V9M0T6</span><br><span class="line">HRiUFOizEVoXxf6zPtHm/T7cRD8AFqB+pA/Nv0ug6KpwUjA4Aihf5ADp0gem0DNw</span><br><span class="line">YlVkCA6Bu7c9IUlE0hwF7RLB7YrryJVJit9AymmUTUUHCQTWW2yBhC8CgYEAxoHS</span><br><span class="line">HGXthin5owOTNPwLwPfU2o7SybkDBKyW69uTi0KxAl3610DjyA/cV2mxIcFlPv1y</span><br><span class="line">HualGd9eNoeCMBy/AUtjzI0K77yeRpjj321rj6k8c8bYWPHH539SiBXLWTY/WQ0w</span><br><span class="line">pxfT3d/Z4QMh5d6p+p5f3UIrXESYQd+fAaG5tNsCgYEAksTdTB4YUT9EsWr6eN9G</span><br><span class="line">jPlclFQUKV3OMvq77bfYvg8EJORz32nnDDmWS7SUjoOtemwutBlMeWbaKk25aMp3</span><br><span class="line">5JNMXuV6apeMJ9Dd8GU7qBUqlIvVK31/96XPvzmnYzWZPqRVwO2HPcRFG3YcJmkg</span><br><span class="line">JmZQyexJvCQ3wFNxiYUm+y0CgYBXQSMhFnCUg4jWbbDcHlnwRT+LnjHrN2arPE3O</span><br><span class="line">eKLfGL6DotmqmjxFaStaRPv2MXMWgAMUsB8sQzG/WEsSaOBQaloAxJJlFIyhzXyE</span><br><span class="line">bi1UZXhMD8BzQDu1dxLI/IN4wE6SDykumVuocEfuDxlsWDZxEgJjWD2E/iXK9seG</span><br><span class="line">yRa+9wKBgEydVz+C1ECLI/dOWb20UC9nGQ+2dMa+3dsmvFwSJJatQv9NGaDUdxmU</span><br><span class="line">hRVzWgogZ8dZ9oH8IY3U0owNRfO65VGe0sN00sQtMoweEQi0SN0J6FePiVCnl7pf</span><br><span class="line">lvYBaemLrW2YI2B7zk5fTm6ng9BW/B1KfrH9Vm5wLQBchAN8Pjbu</span><br><span class="line">-----END RSA PRIVATE KEY-----</span><br></pre></td></tr></table></figure>
+
+<p>切记要保持私钥的私密性！也就是说你需要严格规定它的权限是600（只有root用户才能进行读写），不能将它开放给其他任何用户。 和私钥对应的是公钥，看起来像是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN PUBLIC KEY-----</span><br><span class="line">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm+036O2PlUQbKbSSs2ik</span><br><span class="line">6O6TYy6+Zsas5oAk3GioGLl1RW9Ni8kagqdnD69Et29m1vl5OIPsBoW3OWb1aBW5</span><br><span class="line">e3J0x9prXI1W/fpvuP9NmrHBUN4ES17VliRpfVH3aHfPC8rKpv3GvHYOcfOmMN+H</span><br><span class="line">fBZlUeKJKs6c5WmSVdnZB0R4UAWuQ30aHEBVqtrhgHqYDBokVe0/H4wmwZEIQTIN</span><br><span class="line">WniCOFR5UphJf5nP8ljGbmPxNTnfb/iHS/chjcjF7TGMG36e7EBoQijZEUQs5IBC</span><br><span class="line">eVefOnFLK5jLx+BC//X+FNzByDilTt+l28I/3ZN1ujhak73YFbWjjLR2tjtp+LQg</span><br><span class="line">NQIDAQAB</span><br><span class="line">-----END PUBLIC KEY-----</span><br></pre></td></tr></table></figure>
+
+<p>证书签名请求看起来像是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN CERTIFICATE REQUEST-----</span><br><span class="line">MIICzjCCAbYCAQAwgYgxFDASBgNVBAMMC2V4YW1wbGUuY29tMQswCQYDVQQLDAJJ</span><br><span class="line">VDEPMA0GA1UECAwGTG9uZG9uMRIwEAYDVQQKDAlBQ01FIEluYy4xIDAeBgkqhkiG</span><br><span class="line">9w0BCQEWEWFkbWluQGV4YW1wbGUuY29tMQswCQYDVQQGEwJHQjEPMA0GA1UEBwwG</span><br><span class="line">TG9uZG9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm+036O2PlUQb</span><br><span class="line">KbSSs2ik6O6TYy6+Zsas5oAk3GioGLl1RW9Ni8kagqdnD69Et29m1vl5OIPsBoW3</span><br><span class="line">OWb1aBW5e3J0x9prXI1W/fpvuP9NmrHBUN4ES17VliRpfVH3aHfPC8rKpv3GvHYO</span><br><span class="line">cfOmMN+HfBZlUeKJKs6c5WmSVdnZB0R4UAWuQ30aHEBVqtrhgHqYDBokVe0/H4wm</span><br><span class="line">wZEIQTINWniCOFR5UphJf5nP8ljGbmPxNTnfb/iHS/chjcjF7TGMG36e7EBoQijZ</span><br><span class="line">EUQs5IBCeVefOnFLK5jLx+BC//X+FNzByDilTt+l28I/3ZN1ujhak73YFbWjjLR2</span><br><span class="line">tjtp+LQgNQIDAQABoAAwDQYJKoZIhvcNAQELBQADggEBAGIQVhXfuWdINNfceNPm</span><br><span class="line">CkAGv4yzpx88L34bhO1Dw4PYWnoS2f7ItuQA5zNk9EJhjkwK8gYspK7mPkvHDbFa</span><br><span class="line">Um7lPSWsm3gjd3pU7dIaHxQ+0AW9lOw5ukiBlO4t3qgt+jTVZ3EhMbR0jDSyjTrY</span><br><span class="line">kTgfuqQrGOQSmLb5XviEtCcN0rseWib3fKIl8DM69JiA2AALxyk7DCkS1BqLNChT</span><br><span class="line">pnbgvtlUhc4yFXNCtwPGskXIvLsCn2LRy+qdsPM776kDLgD36hK0Wu14Lpsoa/p+</span><br><span class="line">ZRuwKqTjdaV23o2aUMULyCRuITlghEEkRdJsaXadHXtNd5I5vDJOAAt46PIXcyEZ</span><br><span class="line">aQY=</span><br><span class="line">-----END CERTIFICATE REQUEST-----</span><br></pre></td></tr></table></figure>
+
+<p>这个特定的CSR包含服务器的公钥和有关组织ACME Inc.的详细信息，该组织位于英国伦敦，并拥有该域名example.com。 最后，签名的HTTPS证书如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN CERTIFICATE-----</span><br><span class="line">MIIDjjCCAnYCCQCJdR6v1+W5RzANBgkqhkiG9w0BAQUFADCBiDEUMBIGA1UEAwwL</span><br><span class="line">ZXhhbXBsZS5jb20xCzAJBgNVBAsMAklUMQ8wDQYDVQQIDAZMb25kb24xEjAQBgNV</span><br><span class="line">BAoMCUFDTUUgSW5jLjEgMB4GCSqGSIb3DQEJARYRYWRtaW5AZXhhbXBsZS5jb20x</span><br><span class="line">CzAJBgNVBAYTAkdCMQ8wDQYDVQQHDAZMb25kb24wHhcNMTYwNDE5MTAzMjI1WhcN</span><br><span class="line">MTcwNDE5MTAzMjI1WjCBiDEUMBIGA1UEAwwLZXhhbXBsZS5jb20xCzAJBgNVBAsM</span><br><span class="line">AklUMQ8wDQYDVQQIDAZMb25kb24xEjAQBgNVBAoMCUFDTUUgSW5jLjEgMB4GCSqG</span><br><span class="line">SIb3DQEJARYRYWRtaW5AZXhhbXBsZS5jb20xCzAJBgNVBAYTAkdCMQ8wDQYDVQQH</span><br><span class="line">DAZMb25kb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCb7Tfo7Y+V</span><br><span class="line">RBsptJKzaKTo7pNjLr5mxqzmgCTcaKgYuXVFb02LyRqCp2cPr0S3b2bW+Xk4g+wG</span><br><span class="line">hbc5ZvVoFbl7cnTH2mtcjVb9+m+4/02ascFQ3gRLXtWWJGl9Ufdod88Lysqm/ca8</span><br><span class="line">dg5x86Yw34d8FmVR4okqzpzlaZJV2dkHRHhQBa5DfRocQFWq2uGAepgMGiRV7T8f</span><br><span class="line">jCbBkQhBMg1aeII4VHlSmEl/mc/yWMZuY/E1Od9v+IdL9yGNyMXtMYwbfp7sQGhC</span><br><span class="line">KNkRRCzkgEJ5V586cUsrmMvH4EL/9f4U3MHIOKVO36Xbwj/dk3W6OFqTvdgVtaOM</span><br><span class="line">tHa2O2n4tCA1AgMBAAEwDQYJKoZIhvcNAQEFBQADggEBABwwkE7wX5gmZMRYugSS</span><br><span class="line">7peSx83Oac1ikLnUDMMOU8WmqxaLTTZQeuoq5W23xWQWgcTtfjP9vfV50jFzXwat</span><br><span class="line">5Ch3OQUS53d06hX5EiVrmTyDgybPVlfbq5147MBEC0ePGxG6uV+Ed+oUYX4OM/bB</span><br><span class="line">XiFa4z7eamG+Md2d/A1cB54R3LH6vECLuyJrF0+sCGJJAGumJGhjcOdpvUVt5gvD</span><br><span class="line">FIgT9B04VJnaBatEgWbn9x50EP4j41PNFGx/A0CCLgbTs8kZCdhE4QFMxU9T+T9t</span><br><span class="line">rXgaspIi7RA4xkSE7x7B8NbvSlgP79/qUe80Z7d8Oolva6dTZduByr0CejdfhLhi</span><br><span class="line">mNU=</span><br><span class="line">-----END CERTIFICATE-----</span><br></pre></td></tr></table></figure>
+
+<p>上面的这些部分要连接起来并且应该能相互匹配。最终连接起来生成的证书仅仅是起说明作用 - 这也就是为什么被叫做自签名证书，因为它不是被权威的认证机构签名的。 下面的配置步骤将以cPanel，Linux，FreeBSD和Windows的实际步骤进行说明。这是一个通用的过程，适用于各种证书。</p>
+<h3 id="第一步：创建私钥和证书签名请求"><a href="#第一步：创建私钥和证书签名请求" class="headerlink" title="第一步：创建私钥和证书签名请求"></a>第一步：创建私钥和证书签名请求</h3><p>在以下示例中，我们将使用2048位的RSA证书，因为它们具有广泛的兼容性。如果您的服务器提供商支持ECC的话（例如，如果你不使用Heroku或AWS），那你可能更喜欢使用ECC。下面我们按照不同的环境来讲解如何进行这一步。</p>
+<h4 id="CPanel"><a href="#CPanel" class="headerlink" title="CPanel"></a>CPanel</h4><p>1、登录至服务器的CPanel 2、向下滚动到“security”部分，点击“SSL/TLS.”</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWlu9.png" alt></p>
+<p>3、你现在处于“SSL / TLS Maneger”的主界面。单击“Private Keys（KEY）”创建一个新的私钥。</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRW3H1.png" alt></p>
+<p>4、你会转到下面这个页面，在“Key size”框中选择2048 bit，点击“Generate”。</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWdjH.png" alt></p>
+<p>5、然后新的私钥就产生了，你会看到确认界面</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWDHI.png" alt></p>
+<p>6、如果你返回“private keys”界面，你会看到你的新密钥被列出来了</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRW64f.png" alt></p>
+<p>7、返回 “SSL/TLS Manager”主界面. 点击“Certificate Signing Requests (CSR)” 来创建一个新的证书请求。</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRW28S.png" alt></p>
+<p>8、您现在将看到“Generate Service Request”表单。选择先前创建的私钥并填写表格，回答所有问题（他们将在您的签名证书中公开），特别注意“Domains”部分，该部分应与你请求HTTPS证书的域名完全相符。仅包含顶级域（example.com）; CA通常也会添加www子域（即<a href="http://www.example.com）。完成后，单击“Generate”按钮。" target="_blank" rel="noopener">www.example.com）。完成后，单击“Generate”按钮。</a></p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWTU0.png" alt="img"></p>
+<p>9、然后新的CSR就生成啦，你会看到一个确认页面</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRW75V.png" alt="img"></p>
+<p>10、如果你回到“Certificate Signing Request”页面，你将看到你的新的CSR列表：</p>
+<p><img src="https://s2.ax1x.com/2019/08/26/mRWq8U.png" alt></p>
+<h4 id="Linux，Free-BSD"><a href="#Linux，Free-BSD" class="headerlink" title="Linux，Free BSD"></a>Linux，Free BSD</h4><p>1、首先确认你已经安装好了openssl，可以在终端中输入以下命令来确认：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl version</span><br></pre></td></tr></table></figure>
+
+<p>如果输入命令后啥都没有显示，那就根据你的系统选择下面的命令来安装openssl：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Debian, Ubuntu and clones</span><br><span class="line">sudo apt-get install openssl</span><br><span class="line">Red Hat, CentOS and clones</span><br><span class="line">sudo yum install openssl</span><br><span class="line">FreeBSD</span><br><span class="line">make -C /usr/ports/security/openssl install clean</span><br></pre></td></tr></table></figure>
+
+<p>2、接下来，使用下面这个命令生成私钥和CSR：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr</span><br></pre></td></tr></table></figure>
+
+<p>然后私钥就生成啦，你需要回答一些问题以生成CSR</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Generating a 2048 bit RSA private key</span><br><span class="line">........................+++</span><br><span class="line">................................................................+++</span><br><span class="line">writing new private key to &apos;example.com.key&apos;</span><br><span class="line">-----</span><br><span class="line">You are about to be asked to enter information that will be incorporated</span><br><span class="line">into your certificate request.</span><br><span class="line">What you are about to enter is what is called a Distinguished Name or a DN.</span><br><span class="line">There are quite a few fields but you can leave some blank</span><br><span class="line">For some fields there will be a default value,</span><br><span class="line">If you enter ‘.&apos;, the field will be left blank.</span><br></pre></td></tr></table></figure>
+
+<p>正确回答所有问题（他们将在您的签名证书中公开），特别注意“Common Name”部分（例如server FQDN or YOUR name），该部分应与你请求HTTPS证书的域名完全相符。仅包含顶级域（example.com）; CA通常也会添加www子域（即<a href="http://www.example.com）。" target="_blank" rel="noopener">www.example.com）。</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Country Name (2 letter code) [AU]:GB</span><br><span class="line">State or Province Name (full name) [Some-State]:London</span><br><span class="line">Locality Name (eg, city) []:London</span><br><span class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:ACME Inc.</span><br><span class="line">Organizational Unit Name (eg, section) []:IT</span><br><span class="line">Common Name (e.g. server FQDN or YOUR name) []:example.com</span><br><span class="line">Email Address []:admin@example.com</span><br><span class="line"></span><br><span class="line">Please enter the following &apos;extra&apos; attributes</span><br><span class="line">to be sent with your certificate request</span><br><span class="line">A challenge password []:</span><br><span class="line">An optional company name []:</span><br></pre></td></tr></table></figure>
+
+<h4 id="windows系统上的INTERNET-INFORMATION-SERVER-IIS"><a href="#windows系统上的INTERNET-INFORMATION-SERVER-IIS" class="headerlink" title="windows系统上的INTERNET INFORMATION SERVER (IIS)"></a>windows系统上的INTERNET INFORMATION SERVER (IIS)</h4><p>1、打开“开始”→“管理工具”→“INTERNET INFORMATION SERVER（IIS）”。单击服务器名称。双击中间那一栏的“Server Certificates”：</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy0trsxkj30fe0dp0wq.jpg" alt="img"></p>
+<p>2、单击右边那一栏的“Create Certificate Request”</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy1avywcj30fe0dptb0.jpg" alt="img"></p>
+<p>3、输入您的组织的详细信息，特别注意“Common Name”，这应该和您的域名相匹配。点击“Next”。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy1no4fpj30fe0bo75q.jpg" alt="img"></p>
+<p>4、保留默认的“Cryptographic Service Provider.”，将“Bit length”设置为2048，点击“Next”</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy24bu45j30fe0botab.jpg" alt="img"></p>
+<p>5、浏览一个地方来存储CSR，点击“Finish”</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy2j8lsjj30fe0boab1.jpg" alt="img"></p>
+<h3 id="第二步：获得HTTPS证书"><a href="#第二步：获得HTTPS证书" class="headerlink" title="第二步：获得HTTPS证书"></a>第二步：获得HTTPS证书</h3><p>为了获得您的网站证书，首先从HTTPS证书提供商处购买所选类型（DV，OV，EV，单站点，多站点，通配符 - 见上文）的HTTPS证书信用证。这一步完成后，你要提供CSR，你选择的域名需要的费用会从刚刚购买的信用额度中扣除。你需要提供（即粘贴在一个字段中或上传）整个CSR文本，包括—–BEGIN CERTIFICATE REQUEST—– 和 —–END CERTIFICATE REQUEST—– 这两行。如果您想要获得EV或OV证书，就需要提供请求这个证书的法律实体，你也就可能会被要求提供其他文件，以确认你代表该公司。然后，证书注册商将验证您的请求（和任何辅助支持文件）并签发签名的HTTPS证书。下面将分别讲解从HTTPS注册商处获取证书和自己对证书签名的步骤。</p>
+<h4 id="获取HTTPS证书步骤"><a href="#获取HTTPS证书步骤" class="headerlink" title="获取HTTPS证书步骤"></a>获取HTTPS证书步骤</h4><p>你的托管服务器提供商或HTTPS注册商可能有不同的产品和注册流程，但通用的过程应该类似。 1、查找HTTPS证书供应商。 2、选择一种类型的证书（DV，OV，EV，单站点，多站点，通配符），然后单击“添加到购物车”，指定首选付款方式并完成付款。 3、为您的域名激活新的HTTPS证书。您可以粘贴或上传证书签名请求。系统将从CSR中提取证书详细信息。 4、你需要选择“域控制验证”的方法 - 无论是通过电子邮件，上传HTML文件（基于HTTP）或将TXT记录添加到域区域文件（基于DNS）。按照您选择的DCV方法的说明进行验证。 5、等待几分钟，直到执行验证并发出HTTPS证书。下载签名的HTTPS证书。</p>
+<h4 id="自签名证书的步骤"><a href="#自签名证书的步骤" class="headerlink" title="自签名证书的步骤"></a>自签名证书的步骤</h4><p>你也可以自己签署证书，而不是从证书颁发机构处获得，如果是为了测试的话这样做很有效，因为它的加密方式与其他任何证书一样好，但不会被浏览器所信任，这将导致安全警告 – 你可以声明自己是任何你想声明的，但不会被受信任的第三方验证。如果用户信任网站，他们可以在浏览器中添加一个异常，这样会把证书存储起来并标为信任以供其以后访问。 上述示例证书是自签名证书，您可以将其用于域名example.com，这个证书会在其有效期内工作。 您可以在具有OpenSSL的任何平台上用下面这个命令创建自签名证书： openssl x509 -signkey example.com.key -in example.com.csr -req -days 365 -out example.com.crt 获得证书以后，你必须把它安装在你的服务器上，如果您使用来自同一托管服务器提供商的HTTPS注册服务（许多托管服务提供商也销售HTTPS证书），则可能会有一个自动的过程来安装并启用您新获得的网站的HTTPS证书。如果您在其他地方托管您的网站，则需要下载证书并配置您的服务器才能使用。</p>
+<h3 id="第三步：为你的网站安装HTTPS证书"><a href="#第三步：为你的网站安装HTTPS证书" class="headerlink" title="第三步：为你的网站安装HTTPS证书"></a>第三步：为你的网站安装HTTPS证书</h3><h4 id="CPanel-1"><a href="#CPanel-1" class="headerlink" title="CPanel"></a>CPanel</h4><p>1、返回“SSL/TLS Manager”主界面，点击“Certificates (CRT)”来打包新证书。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy5pxkp3j30fe094aga.jpg" alt="img"></p>
+<p>2、然后会转到“Paste, Upload or Generate” 页面，把从HTTPS注册商收到的证书的内容粘贴过来，或者使用 “Browse” 按钮上传。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy689kznj308b0pv41e.jpg" alt="img"></p>
+<p>3、粘贴HTTPS证书的内容时会进行解析，然后将纯文本值提供给你进行确认。查看内容，然后单击“Save Certificate”按钮。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy7f0n4bj30fe0kodko.jpg" alt="img"></p>
+<p>4、新的HTTPS证书会被保存，您将得到一个确认页面：</p>
+<p>5、如果你回到“Certificates (CRT)”主页面，你会发现上面列出了你的新的HTTPS证书：</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy8d8m4ij30fe06egne.jpg" alt="img"></p>
+<p>6、返回“SSL/TLS Manager”主界面，点击“Install and Manage SSL for your website (HTTPS)”来给你的网站分配一个新的证书。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy8uo41pj30fe094n2n.jpg" alt="img"></p>
+<p>7、你会看到“Install an SSL Website”表单。点击 “Browse Certificates”按钮然后选择你的HTTPS证书。从你的下拉单中选择你的网站域名（如果它没有被自动选出来的话）,然后检查 “Certificate”和“Private Key”区域都被填好了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuy95psrqj30fe0yqqic.jpg" alt="img"></p>
+<p>8、测试一下看看能不能访问<a href="https://www.example.com了，如果一切正常的话你可能会希望把所有的http都转为https，在apache/" target="_blank" rel="noopener">https://www.example.com了，如果一切正常的话你可能会希望把所有的HTTP都转为HTTPS，在Apache</a> web server下只需要这样做就可以了：在网站的根目录下创建文件.htaccess, 并把以下几行代码粘贴进去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RewriteEngine On</span><br><span class="line"></span><br><span class="line">RewriteCond %&#123;HTTPS&#125; off</span><br><span class="line">RewriteRule ^(.*)$ https://%&#123;HTTP_HOST&#125;%&#123;REQUEST_URI&#125; [L,R=301]</span><br></pre></td></tr></table></figure>
+
+<p>如果这个文件已经存在了，那么就把后两行代码粘贴进去就好了，粘贴的位置就在第一行代码的后面。</p>
+<h4 id="LINUX-FREEBSD"><a href="#LINUX-FREEBSD" class="headerlink" title="LINUX FREEBSD"></a>LINUX FREEBSD</h4><p>1、首先，将生成的私钥（example.com.key），证书签名请求（example.com.csr）和有效的HTTPS证书（example.com.crt）放在正确的位置上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Debian, Ubuntu and clones, FreeBSD</span><br><span class="line">cp example.com.crt /etc/ssl/certs/</span><br><span class="line">cp example.com.key /etc/ssl/private/</span><br><span class="line">cp example.com.csr /etc/ssl/private/</span><br><span class="line">Red Hat, CentOS and clones</span><br><span class="line">cp example.com.crt /etc/pki/tls/certs/</span><br><span class="line">cp example.com.key /etc/pki/tls/private/</span><br><span class="line">cp example.com.csr /etc/pki/tls/private/</span><br><span class="line">restorecon -RvF /etc/pki</span><br></pre></td></tr></table></figure>
+
+<p>2、这些文件的权限应该归root用户所有，需要用下面的命令将权限设置为600.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Debian, Ubuntu and clones</span><br><span class="line">chown -R root. /etc/ssl/certs /etc/ssl/private</span><br><span class="line">chmod -R 0600 /etc/ssl/certs /etc/ssl/private</span><br><span class="line">Red Hat, CentOS and clones</span><br><span class="line">chown -R root. /etc/pki/tls/certs /etc/pki/tls/private</span><br><span class="line">chmod -R 0600 /etc/pki/tls/certs /etc/pki/tls/private</span><br><span class="line">FreeBSD</span><br><span class="line">chown -R root:wheel /etc/ssl/certs /etc/ssl/private</span><br><span class="line">chmod -R 0600 /etc/ssl/certs /etc/ssl/private</span><br></pre></td></tr></table></figure>
+
+<p>3、下面分APACHE和NGINX两种服务器讲解这一步 ① APACHE 要激活你的网站的HTTPS协议，你应该按一下步骤进行： 首先确定mod_ssl安装在你的服务器上，接着将接收的HTTPS证书（.crt）文件上传到您的服务器，最后编辑Apache服务器配置文件。 第一步是检查mod_ssl文件，根据不同的操作系统尝试执行以下命令，一定有一个是可以用的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apache2 -M | grep ssl</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -M | grep ssl</span><br></pre></td></tr></table></figure>
+
+<p>如果mod_ssl文件成功安装了，你应该能看到以下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssl_module (shared)</span><br><span class="line">Syntax OK</span><br></pre></td></tr></table></figure>
+
+<p>或者类似的消息 如果mod_ssl不存在或未启用，按以下步骤执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Debian, Ubuntu and clones</span><br><span class="line">sudo a2enmod ssl</span><br><span class="line">sudo service apache2 restart</span><br><span class="line">Red Hat, CentOS and clones</span><br><span class="line">sudo yum install mod_ssl</span><br><span class="line">sudo service httpd restart</span><br><span class="line">FreeBSD (选中SSL选项)</span><br><span class="line">make -C /usr/ports/www/apache24 config install clean</span><br><span class="line">apachectl restart</span><br></pre></td></tr></table></figure>
+
+<p>第二步是编辑Apache配置文件（httpd.conf）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Debian，Ubuntu</span><br><span class="line">/etc/apache2/apache2.conf</span><br><span class="line">Redhat，CentOS</span><br><span class="line">/etc/httpd/conf/httpd.conf</span><br><span class="line">FreeBSD的</span><br><span class="line">/usr/local/etc/apache2x/httpd.conf</span><br></pre></td></tr></table></figure>
+
+<p>这个文件内容见附录httpd.conf.txt，文件使用前面提到的Mozilla SSL配置生成器（<a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/）生成的，检查它以获取最新的配置，记得要编辑证书和私钥的路径，提供的配置是根据中间的设置生成的：读取每个设置的限制条件和支持的浏览器配置，以确定哪个最适合你的情况。" target="_blank" rel="noopener">https://mozilla.github.io/server-side-tls/ssl-config-generator/）生成的，检查它以获取最新的配置，记得要编辑证书和私钥的路径，提供的配置是根据中间的设置生成的：读取每个设置的限制条件和支持的浏览器配置，以确定哪个最适合你的情况。</a> 一些对生成代码的修改是为了让网站从HTTP重定向到HTTPS和从非www重定向到www域（出于提高搜索引擎排名的目的）。 ② NGINX 编辑NGINX配置文件（nginx.conf）： Debian, Ubuntu, Red Hat, CentOS /etc/nginx/nginx.conf FreeBSD的 /usr/local/etc/nginx/nginx.conf 这个文件内容见附录nginx.conf.txt，文件使用前面提到的Mozilla SSL配置生成器（<a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/）生成的，检查它以获取最新的配置，记得要编辑证书和私钥的路径，提供的配置是根据中间的设置生成的：读取每个设置的限制条件和支持的浏览器配置，以确定哪个最适合你的情况。" target="_blank" rel="noopener">https://mozilla.github.io/server-side-tls/ssl-config-generator/）生成的，检查它以获取最新的配置，记得要编辑证书和私钥的路径，提供的配置是根据中间的设置生成的：读取每个设置的限制条件和支持的浏览器配置，以确定哪个最适合你的情况。</a> 生成器自动生成用于处理从HTTP到HTTPS的重定向的代码，并直接启用HTTP / 2！</p>
+<h4 id="windows系统上的INTERNET-INFORMATION-SERVER-IIS-1"><a href="#windows系统上的INTERNET-INFORMATION-SERVER-IIS-1" class="headerlink" title="windows系统上的INTERNET INFORMATION SERVER (IIS)"></a>windows系统上的INTERNET INFORMATION SERVER (IIS)</h4><p>1、打开“开始”→“管理工具”→“INTERNET INFORMATION SERVER（IIS）”。单击服务器名称。双击中间那一栏的“Server Certificates”：</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuydbir08j30fe0dp0wq.jpg" alt="img"></p>
+<p>2、在右边那一栏栏中点击“Complete Certificate Request”。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuydorbwsj30fe0dp40z.jpg" alt="img"></p>
+<p>3、选择你从CA获得的签名证书文件（example.com.crt）。在“Friendly name”这一栏中输入一些名称，以便稍后区分证书。将新证书存储在“Personal” certificate store (IIS 8+)中。点击“OK”。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuye3yr34j30fe0boq4c.jpg" alt="img"></p>
+<p>4、如果一切正常，您应该看到证书列在“Server Certificates” 下。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuyek2ejmj30fe0bw0v1.jpg" alt="img"></p>
+<p>5、点开服务器名称。在“sites”下，选择要为其分配HTTPS证书的网站。从右侧那一列中单击“Bindings”</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuyf0tm55j30fe0bwado.jpg" alt="img"></p>
+<p>6、在“Site bindings”窗口, 点击“Add”按钮。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005S1Vjily1fiuyfdff0mj30fe090dg7.jpg" alt="img"></p>
+<p>7、在新窗口中做如下选择： “Type”: “https” “IP address”: “All Unassigned” “Port”: “443” 在“SSL Certificate”这一栏, 通过选刚刚设定的friendly name来选择安装好的HTTPS证书，点击“OK.”按钮</p>
+<p>8、你现在应该已经为此网站安装好了HTTP和HTTPS。</p>
+<h4 id="MIXED-CONTENT警告"><a href="#MIXED-CONTENT警告" class="headerlink" title="MIXED-CONTENT警告"></a>MIXED-CONTENT警告</h4><p>您可能会在地址栏旁边收到一个警告信号，并显示一条消息，如“连接不安全！本页的部分内容不安全（如图像）。”，这并不意味着您的安装是错误的，只需确保无论是本地的还是远程服务器上的所有资源（图像，样式表，脚本等）的链接，都不能以<a href="http://xn--%2C(-tz2czm83bp3m2ya265avxeswhcw3aen8am6ezr9fe6e/images/image.png，/styles/style.css等等）或相对于当前文档（../images/image.png）的路径指向所有资源，或者它们应该是以https://开头的完整的URL，例如" target="_blank" rel="noopener">http://为起始即可，应该使用相对于根（/images/image.png，/styles/style.css等等）或相对于当前文档（../images/image.png）的路径指向所有资源，或者它们应该是以https://开头的完整的URL，例如</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://code.jquery.com/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;。</span><br></pre></td></tr></table></figure>
+
+<p>这些提示可以消除MIXED-CONTENT警告，您的浏览器应显示封闭的挂锁，而不会有感叹号。</p>
+<h4 id="测试您的服务器"><a href="#测试您的服务器" class="headerlink" title="测试您的服务器"></a>测试您的服务器</h4><p>配置好服务器并在网站上使HTTPS运行后，我强烈建议你使用Qualys SSL Server测试检查其安全配置。这将对您的网站进行扫描，包括对其配置的全面评估，可能的弱点和建议。按照这方面的建议，进一步改善您的服务器的安全配置。</p>
+<h4 id="续订"><a href="#续订" class="headerlink" title="续订"></a>续订</h4><p>您的证书在一段时间内有效，通常为一年。不要等到最后一刻才更新，您的注册商将在更新日期接近时开始发送电子邮件。当您第一次收到提醒时，请尽快发出新的证书，该过程几乎相同：创建新的证书签名请求，获取新的HTTPS证书，并将其安装在您的服务器上。证书的有效期将在签字时开始运行，将在当前证书到期后一年内启动设置。因此，您的旧证书和新证书都将有效，旧证书到期后的一年时间也将有效。在重叠期间，您将能够确保在旧的证书过期之前新证书也能正常工作。</p>
+<h4 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h4><p>如果你的服务器遭到入侵，或者您认为有人可能获取了你的私钥，则应立即撤销当前的HTTPS证书。不同的注册商有不同的过程，但通常是在注册商的特殊数据库中将受到损害的证书标记为不活动，然后发出新的HTTPS证书。当然，尽快撤销目前的证书，这样没有人可以冒充你，只有在调查和解决了安全漏洞的原因之后才能获得新的证书。详细内容请向您的注册服务商寻求帮助。</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'Http转入Https的完整攻略'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/10/优化hexo访问速度-将hexo部署到云主机VPS/">优化hexo访问速度-将hexo部署到云主机VPS</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/31/九月你好/">九月你好</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/网站收录提交入口/">网站收录提交入口</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/宝塔安装Lsky Pro图床教程/">宝塔安装Lsky Pro图床教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/WordPress程序搭建个人博客教程，如何快速建站？/">WordPress程序搭建个人博客教程，如何快速建站？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/使用wordpress建站流程的八个步骤/">使用wordpress建站流程的八个步骤</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/WP建站入门基础知识/">WP建站入门基础知识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/有关wordpress建站的7个必知常识/">有关wordpress建站的7个必知常识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/CSS3爱心飘落特效/">CSS3爱心飘落特效</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/19/HTML-JavaScript自己动手做日历/">HTML+JavaScript自己动手做日历</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/24/SpringBoot (一) ：入门篇/">SpringBoot (一) ：入门篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/java-final关键字的几种用法/">[java]final关键字的几种用法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/10/优化hexo访问速度-将hexo部署到云主机VPS/">优化hexo访问速度-将hexo部署到云主机VPS</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/腾讯视频如何转换MP4格式的2种方法/">腾讯视频如何转换MP4格式的2种方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/17/给你几点建议，大学生要怎样合理去理财呢？/">给你几点建议，大学生要怎样合理去理财呢？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/述说《邻家诗话》/">述说《邻家诗话》</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/11种高效单词记忆法，你想要的都有！/">11种高效单词记忆法，你想要的都有！</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/14/GitHub-Hexo-搭建个人博客史上最详细教程/">GitHub+Hexo 搭建个人博客史上最详细教程</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/26/Http转入Https的完整攻略/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/26/Http转入Https的完整攻略/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/26/Http转入Https的完整攻略/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/css/" style="font-size: 10.348331372562367px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 16.47081783513905px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/Apache/" style="font-size: 12.555476526561115px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 13.651088552738468px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 19.55741850334563px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/hexo/" style="font-size: 16.11920663573816px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 12.69913213467293px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/HTML/" style="font-size: 15.055519894311171px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 8.366728915378744px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 15.948419228392805px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/idea/" style="font-size: 9.28977584410202px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 15.910582954221965px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 17.58707371496271px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 14.25830407686516px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 12.079327147766548px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 16.090814386064878px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 12.081485241821028px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 10.725166648842576px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 16.833504685223602px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 17.029915928369167px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Python/" style="font-size: 15.605610979699087px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 18.590527051619723px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/java/" style="font-size: 17.030537833202104px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 14.527466579297748px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/wordpress/" style="font-size: 17.894916410951105px;" class="tag-cloud-link">wordpress</a>
+    
+    <a href="/tags/WordPress/" style="font-size: 17.850009168442803px;" class="tag-cloud-link">WordPress</a>
+    
+    <a href="/tags/自定义/" style="font-size: 12.39324757923868px;" class="tag-cloud-link">自定义</a>
+    
+    <a href="/tags/Vue/" style="font-size: 8.770771560317623px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 19.54082063901799px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/部署/" style="font-size: 12.935714515101424px;" class="tag-cloud-link">部署</a>
+    
+    <a href="/tags/飘落特效/" style="font-size: 18.588776739945484px;" class="tag-cloud-link">飘落特效</a>
+    
+    <a href="/tags/jquery/" style="font-size: 16.499717588084117px;" class="tag-cloud-link">jquery</a>
+    
+    <a href="/tags/jsDeliver/" style="font-size: 8.579248772957907px;" class="tag-cloud-link">jsDeliver</a>
+    
+    <a href="/tags/cnd/" style="font-size: 19.275079073754405px;" class="tag-cloud-link">cnd</a>
+    
+    <a href="/tags/final/" style="font-size: 9.715191494880393px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 19.363358399983852px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 19.24931638523994px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 13.501752185661104px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 18.85344881547716px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/npm/" style="font-size: 16.750057855717007px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/mysql/" style="font-size: 8.504171228086356px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/代码/" style="font-size: 16.941029222500163px;" class="tag-cloud-link">代码</a>
+    
+    <a href="/tags/安卓/" style="font-size: 10.81905671062276px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 11.110578190577801px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/纪念/" style="font-size: 18.72600952769271px;" class="tag-cloud-link">纪念</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 10.692147713399784px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 11.19442804577042px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 15.065713203675607px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 14.951741825535407px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/codding/" style="font-size: 15.949687257111261px;" class="tag-cloud-link">codding</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 17.85482032886068px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/reading/" style="font-size: 12.1615892033636px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 16.596521112152864px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 12.10507433730264px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 19.541876330205586px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 8.43452290555004px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 19.328553497663748px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/Wordpress/" style="font-size: 10.375257887394126px;" class="tag-cloud-link">Wordpress</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 14.357419846777397px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 16.938893410745546px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 16.97131532982735px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/码云/" style="font-size: 8.944399913423002px;" class="tag-cloud-link">码云</a>
+    
+    <a href="/tags/物语/" style="font-size: 17.341413438178385px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 14.454542291852501px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/网站收录/" style="font-size: 12.07412006614873px;" class="tag-cloud-link">网站收录</a>
+    
+    <a href="/tags/引导页/" style="font-size: 14.924413888968697px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/CSS/" style="font-size: 13.626197660433238px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 13.89309983420855px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 13.387065283790376px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 14.818575355817265px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 15.426305036122685px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 19.701770979525804px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 10.815374054872294px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/主题/" style="font-size: 12.82811475820565px;" class="tag-cloud-link">主题</a>
+    
+    <a href="/tags/Lsky-Pro/" style="font-size: 11.830460610074196px;" class="tag-cloud-link">Lsky Pro</a>
+    
+    <a href="/tags/宝塔/" style="font-size: 19.381752909562927px;" class="tag-cloud-link">宝塔</a>
+    
+    <a href="/tags/Android/" style="font-size: 12.697131982230639px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 18.770614616494306px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 17.109764253427073px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 15.463930756363963px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/http/" style="font-size: 11.005130338681212px;" class="tag-cloud-link">http</a>
+    
+    <a href="/tags/https/" style="font-size: 9.883516491116033px;" class="tag-cloud-link">https</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 8.400953593073332px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 18.752155595295452px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">【KDays Forum】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">【绅士导航♂】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">【萌导航】</a>
+    </li>
+    
+    <li>
+        <a href="http://chuangzaoshi.com/" target="_blank">【创造师】</a>
+    </li>
+    
+    <li>
+        <a href="http://yelog.org/" target="_blank">【叶落阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.qxxmx.com" target="_blank">【草莓酱】</a>
+    </li>
+    
+    <li>
+        <a href="https://wxy97.com/" target="_blank">【王旭阳】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.liaoxuefeng.com/wiki/1022910821149312" target="_blank">【廖雪峰】</a>
+    </li>
+    
+    <li>
+        <a href="https://xian6ge.cn/posts/82ce1911/" target="_blank">【贤柳阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://rzfyu.com/" target="_blank">【非汝鱼】</a>
+    </li>
+    
+    <li>
+        <a href="https://oriheart.top/" target="_blank">【梨花诗】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.live/" target="_blank">【 流  年】</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin/" target="_blank">【樱花庄】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.club/" target="_blank">【yremp】</a>
+    </li>
+    
+    <li>
+        <a href="http://bbs.kdays.net/index" target="_blank">【KDays论坛】</a>
+    </li>
+    
+    <li>
+        <a href="https://myau.moe/" target="_blank">【myau】</a>
+    </li>
+    
+    <li>
+        <a href="https://marmomento.github.io/" target="_blank">【marmomento】</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz" target="_blank">【Zevs】</a>
+    </li>
+    
+    <li>
+        <a href="https://powerlrl.github.io/" target="_blank">【LinYo】</a>
+    </li>
+    
+    <li>
+        <a href="https://jackym06.github.io/" target="_blank">【MaoLi】</a>
+    </li>
+    
+    <li>
+        <a href="http://fangzh.top/2018/2018090514/" target="_blank">【FangL】</a>
+    </li>
+    
+    <li>
+        <a href="http://litten.me" target="_blank">【Litten】</a>
+    </li>
+    
+    <li>
+        <a href="https://imsun.net/" target="_blank">【Sun】</a>
+    </li>
+    
+    <li>
+        <a href="http://hfanss.com/" target="_blank">【HFan】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.whyvv.top/" target="_blank">【Whyvv】</a>
+    </li>
+    
+    <li>
+        <a href="https://staunchkai.com/" target="_blank">【STAUN】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.creat.kim/" target="_blank">【DS Blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.wzdxy.com/" target="_blank">【WZdxy】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.zhaojun.im/" target="_blank">【ZJK】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.cnblogs.com/zhsh666/" target="_blank">【blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.php.cn" target="_blank">【PHP】</a>
+    </li>
+    
+    <li>
+        <a href="https://hellowangheng.github.io/" target="_blank">【WangH】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.damonare.cn/" target="_blank">【Damonare】</a>
+    </li>
+    
+    <li>
+        <a href="https://claiyre.github.io/" target="_blank">【Claiyre】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.slomoo.cn/" target="_blank">【Slomoo】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.givensir.cn/" target="_blank">【GivenSir】</a>
+    </li>
+    
+    <li>
+        <a href="https://laustar.fun/" target="_blank">【laustar】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mckinleylu.com/" target="_blank">【McKinley】</a>
+    </li>
+    
+    <li>
+        <a href="http://cnm.one/" target="_blank">【喵帕斯】</a>
+    </li>
+    
+    <li>
+        <a href="http://ibruce.info/" target="_blank">【不如】</a>
+    </li>
+    
+    <li>
+        <a href="https://xdlrt.github.io/" target="_blank">【小居】</a>
+    </li>
+    
+    <li>
+        <a href="http://damonare.cn/" target="_blank">【念念】</a>
+    </li>
+    
+    <li>
+        <a href="https://helloqingfeng.github.io/" target="_blank">【清风】</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://www.bilibili.com/" target="_blank">bibi</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz/demo/myseo" target="_blank">导航</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhsh666.xyz" target="_blank">皮皮猪</a>
+    </li>
+    
+    <li>
+        <a href="https://www.picb.cc/" target="_blank">图床</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin" target="_blank">樱花</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/mashirozx" target="_blank">主题</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/yremp" target="_blank">流年</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Mon Aug 26 2019 09:40:16 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Mon Aug 26 2019 09:40:16 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>

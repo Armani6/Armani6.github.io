@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Armani">
+    
+    
+    
+    
+    
+    
+    <title>✍神奇的一行代码 | 喵绪~~</title>
+    <link href="”https://z.zhsh666.xyz“" rel="”prefetch”">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va',
+        appKey: 'FUCDJNElBOM5yMjIPNSFEy8z'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview1.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview2.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview3.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview4.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview5.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview6.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview7.jpg,https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/preview/preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+  <script>AV.initialize("73Abvm6XRQ0U1tBrHieC2tYJ-9Nh9j0Va ", "FUCDJNElBOM5yMjIPNSFEy8z");</script></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://z.zhsh666.xyz" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://z.zhsh666.xyz">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">喵绪~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/css/">css</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Flex/">Flex</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Apache/">Apache</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/Tomcat/">Tomcat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/服务器/">服务器</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/hexo/">hexo</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="http://www.zhsh666.xyz/demo/myseo">
+                        <i class="fa fa-home"></i>导航
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="https://www.picb.cc/">
+                        <i class="fa fa-"></i>图床
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://z.zhsh666.xyz">喵绪~~</a>
+        >
+        <span>✍神奇的一行代码</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/08/26/✍神奇的一行代码/">✍神奇的一行代码</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/代码/">代码</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-08-26
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/08/26/✍神奇的一行代码/">✍神奇的一行代码</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-08-26
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/代码/">代码</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <blockquote>
+<p><em>介绍基于Google浏览器的文本编辑器最简版本</em></p>
+<p>源于 Jose 在CoderWall 分享的一个<a href="https://coderwall.com/p/lhsrcq/one-line-browser-notepad" target="_blank" rel="noopener">小技巧</a>：在浏览器地址栏中输入下面这行代码:<code>data:text/html, &lt;html contenteditable&gt;</code>，回车即可把浏览器变临时编辑器，于是短短1小时被演绎成各种版本。</p>
+</blockquote>
+<h2 id="现在能用的😴ace-js源"><a href="#现在能用的😴ace-js源" class="headerlink" title="现在能用的😴ace.js源"></a>现在能用的😴<code>ace.js</code>源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+ http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js</span><br><span class="line">+ http://cdn.bootcss.com/ace/1.2.3/ace.js</span><br><span class="line">- http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="最初的版本："><a href="#最初的版本：" class="headerlink" title="最初的版本："></a>最初的版本：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;html contenteditable&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加了标题"><a href="#加了标题" class="headerlink" title="加了标题"></a>加了标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;title&gt;Text Editor&lt;/title&gt;&lt;body contenteditable style=&quot;font-size:2rem;line-height:1.4;max-width:60rem;margin:0 auto;padding:4rem;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加了文本标题"><a href="#加了文本标题" class="headerlink" title="加了文本标题"></a>加了文本标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html;charset=utf-8, &lt;title&gt;TextEditor&lt;/title&gt;&lt;body contenteditable style=&quot;font-size:2rem;font-family:monaco;line-height:1.4;max-width:60rem;margin:0 auto;padding:4rem;&quot; spellcheck=&quot;false&quot;&gt;&lt;h1&gt;Text Editor&lt;/h1&gt;&lt;p&gt;Start Here.</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动切换😍背景颜色"><a href="#自动切换😍背景颜色" class="headerlink" title="自动切换😍背景颜色"></a>自动切换😍背景颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;html&gt;&lt;head&gt;&lt;link href=&apos;http://fonts.googleapis.com/css?family=Open+Sans&apos; rel=&apos;stylesheet&apos; type=&apos;text/css&apos;&gt;&lt;style type=&quot;text/css&quot;&gt; html &#123; font-family: &quot;Open Sans&quot; &#125; * &#123; -webkit-transition: all linear 1s; &#125;&lt;/style&gt;&lt;script&gt;window.onload=function()&#123;var e=false;var t=0;setInterval(function()&#123;if(!e)&#123;t=Math.round(Math.max(0,t-Math.max(t/3,1)))&#125;var n=(255-t*2).toString(16);document.body.style.backgroundColor=&quot;#ff&quot;+n+&quot;&quot;+n&#125;,1e3);var n=null;document.onkeydown=function()&#123;t=Math.min(128,t+2);e=true;clearTimeout(n);n=setTimeout(function()&#123;e=false&#125;,1500)&#125;&#125;&lt;/script&gt;&lt;/head&gt;&lt;body contenteditable style=&quot;font-size:2rem;line-height:1.4;max-width:60rem;margin:0 auto;padding:4rem;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;html contenteditable&gt;&lt;style&gt;body&#123;font-family:helvetica;font-size:15px;line-height:22px;color:#666;width:600px;margin:40px auto;background:#FFF;border:1px solid #DADADA;padding:50px; &#125;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="改变了背景"><a href="#改变了背景" class="headerlink" title="改变了背景"></a>改变了背景</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;TextEditorLocal&lt;/title&gt;&lt;script&gt;window.onload=function()&#123;f1()&#125;; </span><br><span class="line">function f1()&#123;a=window.localStorage[&apos;e&apos;];if(a) document.body.innerHTML=a&#125;;function f2(t,e)&#123;if(e.keyCode==13)&#123;window.localStorage[&apos;e&apos;]=t.innerHTML&#125;&#125;&lt;/script&gt;</span><br><span class="line">&lt;body contenteditable style=&quot;font-size:2rem;line-height:1.4;max-width:60rem;margin:0 auto;padding:4rem;word-wrap:break-word;background:black;color:green;&quot; spellcheck=&quot;false&quot; onkeypress=&quot;f2(this,event);&quot;&gt;&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="有保存按钮"><a href="#有保存按钮" class="headerlink" title="有保存按钮"></a>有保存按钮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html,&lt;button onClick=&quot;SaveTextArea()&quot;&gt;Save&lt;/button&gt; &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt; function SaveTextArea() &#123; window.location = &quot;data:application/octet-stream,&quot; + escape(txtBody.value); &#125; &lt;/script&gt; &lt;textarea id=&quot;txtBody&quot; style=&quot;font-size: 1.5em; width: 100%; height: 100%; boarder: none; outline: none&quot; autofocus&gt; &lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="html预览"><a href="#html预览" class="headerlink" title="html预览"></a>html预览</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html,&lt;pre onkeyup=&quot;(function(d,t)&#123;d[t](&apos;iframe&apos;)[0].contentDocument.body.innerHTML = d[t](&apos;pre&apos;)[0].textContent;&#125;)(document,&apos;getElementsByTagName&apos;)&quot; style=&quot;width:100%;height:48%;white-space:pre-wrap;overflow:auto;&quot; contenteditable&gt;&lt;/pre&gt;&lt;iframe style=&quot;width:100%;height:48%&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="笔记本样式"><a href="#笔记本样式" class="headerlink" title="笔记本样式"></a>笔记本样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">data:text/html;charset=utf-8, &lt;title&gt;TextEditor&lt;/title&gt;</span><br><span class="line">       </span><br><span class="line">&lt;style&gt;</span><br><span class="line">body &#123;</span><br><span class="line">        background: -webkit-linear-gradient(#f0f0f0, #fff);</span><br><span class="line">        padding: 3%;</span><br><span class="line">        height: 94%;</span><br><span class="line">       </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.paper &#123;</span><br><span class="line">        font: normal 14px &quot;Lucida Grande&quot;, arial, sans-serif;</span><br><span class="line">        width: 50%;</span><br><span class="line">        height: 80%;</span><br><span class="line">        margin: 0 auto;</span><br><span class="line">        padding: 6px 5px 4px 42px;</span><br><span class="line">        position: relative;</span><br><span class="line">        color: #444;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">        border: 1px solid #d2d2d2;</span><br><span class="line">        background: #fff;</span><br><span class="line">        background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;</span><br><span class="line">        background: -webkit-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;</span><br><span class="line">        background: -moz-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;</span><br><span class="line">        background: -ms-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;</span><br><span class="line">        background: -o-linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;</span><br><span class="line">        background: linear-gradient(top, #d9eaf3 0%, #fff 8%) 0 4px;</span><br><span class="line">        -webkit-background-size: 100% 20px;</span><br><span class="line">        -moz-background-size: 100% 20px;</span><br><span class="line">        -ms-background-size: 100% 20px;</span><br><span class="line">        -o-background-size: 100% 20px;</span><br><span class="line">        background-size: 100% 20px;</span><br><span class="line">        -webkit-border-radius: 3px;</span><br><span class="line">        -moz-border-radius: 3px;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);</span><br><span class="line">        -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);</span><br><span class="line">        box-shadow: 0 1px 2px rgba(0,0,0,0.07);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.paper::before &#123;</span><br><span class="line">        content: &apos;&apos;;</span><br><span class="line">        position: absolute;</span><br><span class="line">        width: 4px;</span><br><span class="line">        top: 0;</span><br><span class="line">        left: 30px;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        border: 1px solid;</span><br><span class="line">        border-color: transparent #efe4e4;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">textarea &#123;</span><br><span class="line">        display: block;</span><br><span class="line">        width:94%;</span><br><span class="line">        margin:0 auto;</span><br><span class="line">        padding:3.8% 3%;</span><br><span class="line">        border: none;</span><br><span class="line">        outline: none;</span><br><span class="line">        height: 94%;</span><br><span class="line">        background: transparent;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">&#125;&quot;&gt;&lt;h1&gt;Text Editor&lt;/h1&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"> </span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;http://g.etfv.co/https://docs.google.com&quot;/&gt;</span><br><span class="line"> </span><br><span class="line">&lt;body OnLoad=&apos;document.body.focus();&apos; contenteditable spellcheck=&quot;true&quot; class=&quot;paper&quot; &gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ruby😍高亮"><a href="#Ruby😍高亮" class="headerlink" title="Ruby😍高亮"></a>Ruby😍高亮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:text/html, &lt;style type=&quot;text/css&quot;&gt;#e&#123;position:absolute;top:0;right:0;bottom:0;left:0;&#125;&lt;/style&gt;&lt;div id=&quot;e&quot;&gt;&lt;/div&gt;&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit(&quot;e&quot;);e.setTheme(&quot;ace/theme/monokai&quot;);e.getSession().setMode(&quot;ace/mode/ruby&quot;);&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="另一种html编辑器带预览"><a href="#另一种html编辑器带预览" class="headerlink" title="另一种html编辑器带预览"></a>另一种html编辑器带预览</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;!-- 自动变色 --&gt;</span><br><span class="line">	&lt;link href=&apos;http://fonts.googleapis.com/css?family=Open+Sans&apos; rel=&apos;stylesheet&apos; type=&apos;text/css&apos;&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt; html &#123; font-family: &quot;Open Sans&quot; &#125; * &#123; -webkit-transition: all linear 1s; &#125;&lt;/style&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		window.onload=function()&#123;var e=false;var t=0;setInterval(function()&#123;if(!e)&#123;t=Math.round(Math.max(0,t-Math.max(t/3,1)))&#125;var n=(255-t*2).toString(16);document.body.style.backgroundColor=&quot;#ff&quot;+n+&quot;&quot;+n&#125;,1e3);var n=null;document.onkeydown=function()&#123;t=Math.min(128,t+2);e=true;clearTimeout(n);n=setTimeout(function()&#123;e=false&#125;,1500)&#125;&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;textarea rows=&quot;10&quot; cols=&quot;35&quot; id=&quot;inputdata&quot; style=&quot;resize: auto;margin: 0px;height: 500px;width: 370px;&quot;&gt;在此输入html...&lt;/textarea&gt;</span><br><span class="line">        &lt;button id=&quot;rundata&quot; onclick=&quot;rundata()&quot;&gt;RUN&lt;/button&gt;</span><br><span class="line">        &lt;iframe id=&quot;iframe1&quot; style=&quot;resize: auto;margin: 0px;height: 500px;width: 370px;&quot;&gt;&lt;/iframe&gt;  </span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function rundata()&#123;</span><br><span class="line">                //获取输入框内的数据</span><br><span class="line">                var text = document.getElementById(&apos;inputdata&apos;).value;</span><br><span class="line">                // 先清空iframe</span><br><span class="line">                var iframe = document.getElementById(&quot;iframe1&quot;).contentWindow.document.body.innerText = &quot;&quot;;</span><br><span class="line">                //将输入框内的数据传给iframe</span><br><span class="line">                iframe = document.getElementById(&apos;iframe1&apos;).contentDocument.write(text);</span><br><span class="line">               &#125;</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '✍神奇的一行代码'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Armani
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description">가죽 돼지</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/09/10/优化hexo访问速度-将hexo部署到云主机VPS/">优化hexo访问速度-将hexo部署到云主机VPS</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/31/九月你好/">九月你好</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/30/回首过往/">回首过往</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/网站收录提交入口/">网站收录提交入口</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/宝塔安装Lsky Pro图床教程/">宝塔安装Lsky Pro图床教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/WordPress程序搭建个人博客教程，如何快速建站？/">WordPress程序搭建个人博客教程，如何快速建站？</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/使用wordpress建站流程的八个步骤/">使用wordpress建站流程的八个步骤</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/WP建站入门基础知识/">WP建站入门基础知识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/有关wordpress建站的7个必知常识/">有关wordpress建站的7个必知常识</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/CSS3爱心飘落特效/">CSS3爱心飘落特效</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/PHP 5 echo 和 print 语句/">PHP 5 echo 和 print 语句</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/hexo常用指令/">hexo常用指令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/29/jsDeliver-github使用教程，免费的cnd/">jsDeliver+github使用教程，免费的cdn</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/28/使用coding和hexo快速搭建博客/">使用coding和hexo快速搭建博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/21/学习推荐菜鸟教程/">学习推荐菜鸟教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/18/富有品位的尤家花园/">富有品位的尤家花园</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/15/视频分享/">视频分享</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/23/述说《邻家诗话》/">述说《邻家诗话》</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/22/读书语录3/">读书语录3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/08/26/为什么说-Java-程序员到了必须掌握-Spring-Boot-的时候？/">为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/08/26/✍神奇的一行代码/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/26/✍神奇的一行代码/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/08/26/✍神奇的一行代码/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/css/" style="font-size: 19.104997941856297px;" class="tag-cloud-link">css</a>
+    
+    <a href="/tags/Flex/" style="font-size: 14.801927394147292px;" class="tag-cloud-link">Flex</a>
+    
+    <a href="/tags/Apache/" style="font-size: 9.076176022056705px;" class="tag-cloud-link">Apache</a>
+    
+    <a href="/tags/Tomcat/" style="font-size: 10.353728985175547px;" class="tag-cloud-link">Tomcat</a>
+    
+    <a href="/tags/服务器/" style="font-size: 13.026172595324912px;" class="tag-cloud-link">服务器</a>
+    
+    <a href="/tags/hexo/" style="font-size: 13.671005612327676px;" class="tag-cloud-link">hexo</a>
+    
+    <a href="/tags/3-hexo/" style="font-size: 14.068881226760375px;" class="tag-cloud-link">3-hexo</a>
+    
+    <a href="/tags/HTML/" style="font-size: 16.37570532875909px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/HTML5/" style="font-size: 13.259679186847318px;" class="tag-cloud-link">HTML5</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 8.466852517016036px;" class="tag-cloud-link">JavaScript</a>
+    
+    <a href="/tags/idea/" style="font-size: 8.036032323842434px;" class="tag-cloud-link">idea</a>
+    
+    <a href="/tags/IDEA/" style="font-size: 10.10121074997262px;" class="tag-cloud-link">IDEA</a>
+    
+    <a href="/tags/Java/" style="font-size: 19.761687967082835px;" class="tag-cloud-link">Java</a>
+    
+    <a href="/tags/js/" style="font-size: 19.668191240973343px;" class="tag-cloud-link">js</a>
+    
+    <a href="/tags/JDBC/" style="font-size: 18.614790187942194px;" class="tag-cloud-link">JDBC</a>
+    
+    <a href="/tags/MySQL/" style="font-size: 8.288600118253978px;" class="tag-cloud-link">MySQL</a>
+    
+    <a href="/tags/Github/" style="font-size: 18.366616529683565px;" class="tag-cloud-link">Github</a>
+    
+    <a href="/tags/node-js/" style="font-size: 18.281998554061232px;" class="tag-cloud-link">node.js</a>
+    
+    <a href="/tags/Node-js/" style="font-size: 19.7323684354978px;" class="tag-cloud-link">Node.js</a>
+    
+    <a href="/tags/PHP/" style="font-size: 17.68776032670725px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Python/" style="font-size: 11.064008858264248px;" class="tag-cloud-link">Python</a>
+    
+    <a href="/tags/PanDownload/" style="font-size: 10.670529877070036px;" class="tag-cloud-link">PanDownload</a>
+    
+    <a href="/tags/java/" style="font-size: 8.923709963800228px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/SpringBoot/" style="font-size: 17.16353188018511px;" class="tag-cloud-link">SpringBoot</a>
+    
+    <a href="/tags/wordpress/" style="font-size: 12.844725764681165px;" class="tag-cloud-link">wordpress</a>
+    
+    <a href="/tags/WordPress/" style="font-size: 19.494359546306434px;" class="tag-cloud-link">WordPress</a>
+    
+    <a href="/tags/自定义/" style="font-size: 10.178853719072066px;" class="tag-cloud-link">自定义</a>
+    
+    <a href="/tags/Vue/" style="font-size: 16.40498220084193px;" class="tag-cloud-link">Vue</a>
+    
+    <a href="/tags/框架/" style="font-size: 10.822095375671566px;" class="tag-cloud-link">框架</a>
+    
+    <a href="/tags/部署/" style="font-size: 17.439665184258754px;" class="tag-cloud-link">部署</a>
+    
+    <a href="/tags/飘落特效/" style="font-size: 10.926139535799354px;" class="tag-cloud-link">飘落特效</a>
+    
+    <a href="/tags/jquery/" style="font-size: 10.536449543393669px;" class="tag-cloud-link">jquery</a>
+    
+    <a href="/tags/jsDeliver/" style="font-size: 17.729088364740207px;" class="tag-cloud-link">jsDeliver</a>
+    
+    <a href="/tags/cnd/" style="font-size: 19.087799169257515px;" class="tag-cloud-link">cnd</a>
+    
+    <a href="/tags/final/" style="font-size: 16.111707179122472px;" class="tag-cloud-link">final</a>
+    
+    <a href="/tags/常量/" style="font-size: 19.19284844897561px;" class="tag-cloud-link">常量</a>
+    
+    <a href="/tags/数据库/" style="font-size: 19.53588955070206px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/nodejs/" style="font-size: 18.393461560950442px;" class="tag-cloud-link">nodejs</a>
+    
+    <a href="/tags/GitHub/" style="font-size: 11.910657288356871px;" class="tag-cloud-link">GitHub</a>
+    
+    <a href="/tags/npm/" style="font-size: 11.338544610445748px;" class="tag-cloud-link">npm</a>
+    
+    <a href="/tags/mysql/" style="font-size: 19.541531155971274px;" class="tag-cloud-link">mysql</a>
+    
+    <a href="/tags/代码/" style="font-size: 12.909198161920372px;" class="tag-cloud-link">代码</a>
+    
+    <a href="/tags/安卓/" style="font-size: 14.874124918795431px;" class="tag-cloud-link">安卓</a>
+    
+    <a href="/tags/博客/" style="font-size: 18.0031927278413px;" class="tag-cloud-link">博客</a>
+    
+    <a href="/tags/纪念/" style="font-size: 18.334836179119378px;" class="tag-cloud-link">纪念</a>
+    
+    <a href="/tags/gitbash/" style="font-size: 16.098792574199702px;" class="tag-cloud-link">gitbash</a>
+    
+    <a href="/tags/Markdown/" style="font-size: 13.626943997671692px;" class="tag-cloud-link">Markdown</a>
+    
+    <a href="/tags/Typora/" style="font-size: 17.47171258933392px;" class="tag-cloud-link">Typora</a>
+    
+    <a href="/tags/数据结构/" style="font-size: 11.723409667332898px;" class="tag-cloud-link">数据结构</a>
+    
+    <a href="/tags/codding/" style="font-size: 16.39320195150236px;" class="tag-cloud-link">codding</a>
+    
+    <a href="/tags/Chrome/" style="font-size: 12.38560478953907px;" class="tag-cloud-link">Chrome</a>
+    
+    <a href="/tags/reading/" style="font-size: 17.145183897914265px;" class="tag-cloud-link">reading</a>
+    
+    <a href="/tags/Cookie/" style="font-size: 19.460138471002573px;" class="tag-cloud-link">Cookie</a>
+    
+    <a href="/tags/Session/" style="font-size: 14.002898671485596px;" class="tag-cloud-link">Session</a>
+    
+    <a href="/tags/剪辑/" style="font-size: 14.438071313775115px;" class="tag-cloud-link">剪辑</a>
+    
+    <a href="/tags/缘起/" style="font-size: 9.335451040571975px;" class="tag-cloud-link">缘起</a>
+    
+    <a href="/tags/模拟器/" style="font-size: 18.037069017856673px;" class="tag-cloud-link">模拟器</a>
+    
+    <a href="/tags/Wordpress/" style="font-size: 9.484190185126788px;" class="tag-cloud-link">Wordpress</a>
+    
+    <a href="/tags/虚拟机/" style="font-size: 19.70228410073357px;" class="tag-cloud-link">虚拟机</a>
+    
+    <a href="/tags/智慧树/" style="font-size: 17.20816634389478px;" class="tag-cloud-link">智慧树</a>
+    
+    <a href="/tags/测试/" style="font-size: 19.505705810728323px;" class="tag-cloud-link">测试</a>
+    
+    <a href="/tags/码云/" style="font-size: 16.659165650326017px;" class="tag-cloud-link">码云</a>
+    
+    <a href="/tags/物语/" style="font-size: 8.165996902445238px;" class="tag-cloud-link">物语</a>
+    
+    <a href="/tags/图床/" style="font-size: 14.559881808017078px;" class="tag-cloud-link">图床</a>
+    
+    <a href="/tags/网站收录/" style="font-size: 9.380488368409518px;" class="tag-cloud-link">网站收录</a>
+    
+    <a href="/tags/引导页/" style="font-size: 10.435703449349415px;" class="tag-cloud-link">引导页</a>
+    
+    <a href="/tags/CSS/" style="font-size: 19.196672896723932px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/轮播图/" style="font-size: 12.518861851429346px;" class="tag-cloud-link">轮播图</a>
+    
+    <a href="/tags/鼠标点击/" style="font-size: 14.526089415081255px;" class="tag-cloud-link">鼠标点击</a>
+    
+    <a href="/tags/点击特效/" style="font-size: 11.712096844230285px;" class="tag-cloud-link">点击特效</a>
+    
+    <a href="/tags/前端/" style="font-size: 19.874897710357295px;" class="tag-cloud-link">前端</a>
+    
+    <a href="/tags/Hexo/" style="font-size: 12.32949347850974px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/Swing/" style="font-size: 17.77278024717924px;" class="tag-cloud-link">Swing</a>
+    
+    <a href="/tags/主题/" style="font-size: 18.46824756573117px;" class="tag-cloud-link">主题</a>
+    
+    <a href="/tags/Lsky-Pro/" style="font-size: 18.657617905540484px;" class="tag-cloud-link">Lsky Pro</a>
+    
+    <a href="/tags/宝塔/" style="font-size: 14.535795940407578px;" class="tag-cloud-link">宝塔</a>
+    
+    <a href="/tags/Android/" style="font-size: 14.491033373805466px;" class="tag-cloud-link">Android</a>
+    
+    <a href="/tags/Vue-js/" style="font-size: 9.487222502659137px;" class="tag-cloud-link">Vue.js</a>
+    
+    <a href="/tags/Spring-Boot/" style="font-size: 16.264391864239407px;" class="tag-cloud-link">Spring Boot</a>
+    
+    <a href="/tags/网页设计/" style="font-size: 12.693111428595127px;" class="tag-cloud-link">网页设计</a>
+    
+    <a href="/tags/http/" style="font-size: 15.144472293006055px;" class="tag-cloud-link">http</a>
+    
+    <a href="/tags/https/" style="font-size: 8.030492667193784px;" class="tag-cloud-link">https</a>
+    
+    <a href="/tags/HTMK/" style="font-size: 17.87507041948484px;" class="tag-cloud-link">HTMK</a>
+    
+    <a href="/tags/JS/" style="font-size: 18.361762558013304px;" class="tag-cloud-link">JS</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">【KDays Forum】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">【绅士导航♂】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">【萌导航】</a>
+    </li>
+    
+    <li>
+        <a href="http://chuangzaoshi.com/" target="_blank">【创造师】</a>
+    </li>
+    
+    <li>
+        <a href="http://yelog.org/" target="_blank">【叶落阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.qxxmx.com" target="_blank">【草莓酱】</a>
+    </li>
+    
+    <li>
+        <a href="https://wxy97.com/" target="_blank">【王旭阳】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.liaoxuefeng.com/wiki/1022910821149312" target="_blank">【廖雪峰】</a>
+    </li>
+    
+    <li>
+        <a href="https://xian6ge.cn/posts/82ce1911/" target="_blank">【贤柳阁】</a>
+    </li>
+    
+    <li>
+        <a href="https://rzfyu.com/" target="_blank">【非汝鱼】</a>
+    </li>
+    
+    <li>
+        <a href="https://oriheart.top/" target="_blank">【梨花诗】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.live/" target="_blank">【 流  年】</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin/" target="_blank">【樱花庄】</a>
+    </li>
+    
+    <li>
+        <a href="https://yremp.club/" target="_blank">【yremp】</a>
+    </li>
+    
+    <li>
+        <a href="http://bbs.kdays.net/index" target="_blank">【KDays论坛】</a>
+    </li>
+    
+    <li>
+        <a href="https://myau.moe/" target="_blank">【myau】</a>
+    </li>
+    
+    <li>
+        <a href="https://marmomento.github.io/" target="_blank">【marmomento】</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz" target="_blank">【Zevs】</a>
+    </li>
+    
+    <li>
+        <a href="https://powerlrl.github.io/" target="_blank">【LinYo】</a>
+    </li>
+    
+    <li>
+        <a href="https://jackym06.github.io/" target="_blank">【MaoLi】</a>
+    </li>
+    
+    <li>
+        <a href="http://fangzh.top/2018/2018090514/" target="_blank">【FangL】</a>
+    </li>
+    
+    <li>
+        <a href="http://litten.me" target="_blank">【Litten】</a>
+    </li>
+    
+    <li>
+        <a href="https://imsun.net/" target="_blank">【Sun】</a>
+    </li>
+    
+    <li>
+        <a href="http://hfanss.com/" target="_blank">【HFan】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.whyvv.top/" target="_blank">【Whyvv】</a>
+    </li>
+    
+    <li>
+        <a href="https://staunchkai.com/" target="_blank">【STAUN】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.creat.kim/" target="_blank">【DS Blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.wzdxy.com/" target="_blank">【WZdxy】</a>
+    </li>
+    
+    <li>
+        <a href="http://www.zhaojun.im/" target="_blank">【ZJK】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.cnblogs.com/zhsh666/" target="_blank">【blog】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.php.cn" target="_blank">【PHP】</a>
+    </li>
+    
+    <li>
+        <a href="https://hellowangheng.github.io/" target="_blank">【WangH】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.damonare.cn/" target="_blank">【Damonare】</a>
+    </li>
+    
+    <li>
+        <a href="https://claiyre.github.io/" target="_blank">【Claiyre】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.slomoo.cn/" target="_blank">【Slomoo】</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.givensir.cn/" target="_blank">【GivenSir】</a>
+    </li>
+    
+    <li>
+        <a href="https://laustar.fun/" target="_blank">【laustar】</a>
+    </li>
+    
+    <li>
+        <a href="https://www.mckinleylu.com/" target="_blank">【McKinley】</a>
+    </li>
+    
+    <li>
+        <a href="http://cnm.one/" target="_blank">【喵帕斯】</a>
+    </li>
+    
+    <li>
+        <a href="http://ibruce.info/" target="_blank">【不如】</a>
+    </li>
+    
+    <li>
+        <a href="https://xdlrt.github.io/" target="_blank">【小居】</a>
+    </li>
+    
+    <li>
+        <a href="http://damonare.cn/" target="_blank">【念念】</a>
+    </li>
+    
+    <li>
+        <a href="https://helloqingfeng.github.io/" target="_blank">【清风】</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://www.bilibili.com/" target="_blank">bibi</a>
+    </li>
+    
+    <li>
+        <a href="https://zhsh666.xyz/demo/myseo" target="_blank">导航</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhsh666.xyz" target="_blank">皮皮猪</a>
+    </li>
+    
+    <li>
+        <a href="https://www.picb.cc/" target="_blank">图床</a>
+    </li>
+    
+    <li>
+        <a href="https://2heng.xin" target="_blank">樱花</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/mashirozx" target="_blank">主题</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/yremp" target="_blank">流年</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2019 Armani Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+	<span id="sitetime"></span>
+<script language=javascript>
+    function siteTime(){
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth()+1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019,08,24,00,00,00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+        var diff = t2-t1;
+        var diffYears = Math.floor(diff/years);
+        var diffDays = Math.floor((diff/days)-diffYears*365);
+        var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+        var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+        var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+        document.getElementById("sitetime").innerHTML="本网站已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+<p>本站访问人数：***人 | ◎本站总访问量：***人次</p>
+</footer>
+
+
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+
+<!--给WordPress网站添加鼠标点击爆炸五颜六色特效-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="http://a-oss.zmki.cn/20190502/aixintexiao.js"></script>
+
+
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: 'https://cdn.jsdelivr.net/gh/Zevs6/CDN/img/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Mon Aug 26 2019 09:55:09 GMT+0800'
+      window.commentConfig.owner = 'Armani6'
+      window.commentConfig.repo = 'Armani6.github.io'
+      window.commentConfig.client_id = '0f5c2c94c19aebf669ba'
+      window.commentConfig.client_secret = '7895f37559318fb26f59f6a5f2400224e9bc0950'
+      window.commentConfig.redirect_uri = 'https://z.zhsh666.xyz'
+    } else {
+      window.commentConfig = {
+      	id: 'Mon Aug 26 2019 09:55:09 GMT+0800',
+        owner: 'Armani6',
+        repo: 'Armani6.github.io',
+        client_id: '0f5c2c94c19aebf669ba',
+        client_secret: '7895f37559318fb26f59f6a5f2400224e9bc0950',
+        redirect_uri: 'https://z.zhsh666.xyz'
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
